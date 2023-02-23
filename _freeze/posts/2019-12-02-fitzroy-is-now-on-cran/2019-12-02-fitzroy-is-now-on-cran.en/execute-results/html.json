@@ -1,0 +1,14 @@
+{
+  "hash": "bf77ee19ee72cd6f2cd984fae0157f12",
+  "result": {
+    "markdown": "---\ntitle: fitzRoy is now on CRAN!\nauthor: James Day\ndate: '2019-12-02'\nslug: fitzroy-is-now-on-cran\ncategories: []\ntags: []\nsubtitle: ''\n---\n\n\nJust a quick note to confirm that fitzRoy is now on CRAN! You can see it [here](https://cran.r-project.org/web/packages/fitzRoy/index.html). Release notes for this v0.2.0 can be seen [here](https://jimmyday12.github.io/fitzRoy/news/index.html). \n\nMake sure you read the [getting started guide](https://jimmyday12.github.io/fitzRoy/articles/mens-stats.html) and reach out on github if you have any feedback! \n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

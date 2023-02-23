@@ -1,0 +1,10 @@
+---
+title: "Welcome To My Blog"
+author: "James Day"
+date: "2023-02-24"
+categories: [news]
+---
+
+I've migrated my old blog to Quarto. The old blogdown/hugo setup had broken and rather than try to fix it, I've decided to just move things over. This will be a bit of a work in progress as I figure things out. But for now, Welcome!
+
+![](thumbnail.jpg)
