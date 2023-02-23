@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="James Day">
+
+<title>plusSixOne Blog - AFLM Predictions</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+<script src="../site_libs/core-js-2.5.3/shim.min.js"></script>
+<script src="../site_libs/react-17.0.0/react.min.js"></script>
+<script src="../site_libs/react-17.0.0/react-dom.min.js"></script>
+<script src="../site_libs/reactwidget-1.0.0/react-tools.js"></script>
+<script src="../site_libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<link href="../site_libs/reactable-0.4.3/reactable.css" rel="stylesheet">
+<script src="../site_libs/reactable-binding-0.4.3/reactable.js"></script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">plusSixOne Blog</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aflm" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">AFLM</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-aflm">    
+        <li>
+    <a class="dropdown-item" href="../pages/aflm-predictions.html">
+ <span class="dropdown-text">AFLM Predictions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../pages/aflm-games.html">
+ <span class="dropdown-text">AFLM Games</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../pages/aflm-model-results.html">
+ <span class="dropdown-text">Model Results</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aflw" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">AFLW</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-aflw">    
+        <li>
+    <a class="dropdown-item" href="../pages/aflw-coming-soon.html">
+ <span class="dropdown-text">AFLW - Coming soon</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jimmyday12"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/plusSixOneBlog"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">AFLM Predictions</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">AFLM</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>James Day </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="standings">
+<div class="title">
+<h2 class="anchored">AFLM Premiership 2023 Season Predictions</h2>
+ELO ratings and chances of making various finals for every team in the AFLM competition
+</div>
+Last updated Feb 24 at 10:53AM
+<div id="htmlwidget-47a48579ff9cf176936a" class="reactable html-widget " style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-47a48579ff9cf176936a">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"team":["Adelaide","Brisbane Lions","Carlton","Collingwood","Essendon","Footscray","Fremantle","GWS","Geelong","Gold Coast","Hawthorn","Melbourne","North Melbourne","Port Adelaide","Richmond","St Kilda","Sydney","West Coast"],"elo":[1426.90959263216,1569.6481059974,1512.94422498292,1516.25873102157,1438.0505485139,1541.77081348209,1533.86429013012,1461.65135643872,1622.9826445961,1492.35569898869,1458.57503296731,1591.78032589141,1319.00864200402,1529.61064576943,1554.09258406337,1504.30886445313,1581.83797827642,1344.34992337953],"elo.change":["NA","NA","NA","NA","NA","NA","NA","NA",7.7841372938849,"NA","NA","NA","NA","NA","NA","NA",-7.7841372938849,"NA"],"Form":["-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-"],"spi":[1426.90959263216,1569.6481059974,1512.94422498292,1516.25873102157,1438.0505485139,1541.77081348209,1533.86429013012,1461.65135643872,1622.9826445961,1492.35569898869,1458.57503296731,1591.78032589141,1319.00864200402,1529.61064576943,1554.09258406337,1504.30886445313,1581.83797827642,1344.34992337953],"global_o":[1426.90959263216,1569.6481059974,1512.94422498292,1516.25873102157,1438.0505485139,1541.77081348209,1533.86429013012,1461.65135643872,1622.9826445961,1492.35569898869,1458.57503296731,1591.78032589141,1319.00864200402,1529.61064576943,1554.09258406337,1504.30886445313,1581.83797827642,1344.34992337953],"global_d":[1426.90959263216,1569.6481059974,1512.94422498292,1516.25873102157,1438.0505485139,1541.77081348209,1533.86429013012,1461.65135643872,1622.9826445961,1492.35569898869,1458.57503296731,1591.78032589141,1319.00864200402,1529.61064576943,1554.09258406337,1504.30886445313,1581.83797827642,1344.34992337953],"Wins":[7.64854999999926,15.4627500000005,12.2873999999995,12.3217999999992,8.26700000000016,13.7008000000006,13.2041499999995,8.49259999999938,18.2290499999996,10.9014000000005,8.59565000000053,16.7840999999994,2.32484999999962,13.1583000000007,14.3501500000008,11.7363999999992,15.7420000000007,3.7930499999998],"Top.1":[0.0025,0.1189,0.036,0.0425,0.0042,0.0605,0.0365,0.0063,0.248,0.0231,0.0073,0.1515,0,0.0404,0.083,0.033,0.1062,0.0001],"Top.4":[0.0449,0.4106,0.2097,0.208,0.052,0.2806,0.2278,0.0677,0.6261,0.1417,0.0624,0.5088,0.0012,0.2297,0.3336,0.182,0.4104,0.0028],"make_finals":[0.1804,0.6959,0.4723,0.4806,0.1948,0.5779,0.5479,0.2393,0.8651,0.3703,0.2205,0.785,0.0106,0.5485,0.619,0.4365,0.7256,0.0298],"make_semis":[0.0952,0.5689,0.3335,0.3394,0.1056,0.4366,0.3864,0.1345,0.7766,0.2475,0.1293,0.6733,0.0035,0.3859,0.4879,0.297,0.5884,0.0105],"make_prelim":[0.0407,0.3986,0.2056,0.1998,0.0542,0.2846,0.2457,0.0696,0.6195,0.139,0.0634,0.5056,0.0008,0.2395,0.3333,0.1746,0.4215,0.004],"make_gf":[0.0132,0.2076,0.0944,0.088,0.0178,0.1306,0.1153,0.0253,0.3686,0.0552,0.0223,0.2784,0.0002,0.1072,0.1707,0.076,0.2281,0.0011],"win_league":[0.005,0.1039,0.0431,0.0397,0.0067,0.0629,0.0535,0.0105,0.2135,0.0235,0.0091,0.1474,0.0001,0.0511,0.0802,0.0325,0.117,0.0003]},"columns":[{"id":"team","name":"team","type":"character","className":"cell","headerClassName":"header","defaultSortDesc":false,"cell":[{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Adelaide flag","src":"/image/Adelaide.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Adelaide"]},{"name":"div","attribs":{"className":"record"},"children":["-"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Brisbane Lions flag","src":"/image/Brisbane Lions.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Brisbane Lions"]},{"name":"div","attribs":{"className":"record"},"children":["-"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Carlton flag","src":"/image/Carlton.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Carlton"]},{"name":"div","attribs":{"className":"record"},"children":["-"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Collingwood flag","src":"/image/Collingwood.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Collingwood"]},{"name":"div","attribs":{"className":"record"},"children":["-"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Essendon flag","src":"/image/Essendon.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Essendon"]},{"name":"div","attribs":{"className":"record"},"children":["-"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Footscray flag","src":"/image/Footscray.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Footscray"]},{"name":"div","attribs":{"className":"record"},"children":["-"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Fremantle flag","src":"/image/Fremantle.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Fremantle"]},{"name":"div","attribs":{"className":"record"},"children":["-"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"GWS flag","src":"/image/GWS.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["GWS"]},{"name":"div","attribs":{"className":"record"},"children":["-"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Geelong flag","src":"/image/Geelong.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Geelong"]},{"name":"div","attribs":{"className":"record"},"children":["-"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Gold Coast flag","src":"/image/Gold Coast.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Gold Coast"]},{"name":"div","attribs":{"className":"record"},"children":["-"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Hawthorn flag","src":"/image/Hawthorn.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Hawthorn"]},{"name":"div","attribs":{"className":"record"},"children":["-"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Melbourne flag","src":"/image/Melbourne.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Melbourne"]},{"name":"div","attribs":{"className":"record"},"children":["-"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"North Melbourne flag","src":"/image/North Melbourne.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["North Melbourne"]},{"name":"div","attribs":{"className":"record"},"children":["-"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Port Adelaide flag","src":"/image/Port Adelaide.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Port Adelaide"]},{"name":"div","attribs":{"className":"record"},"children":["-"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Richmond flag","src":"/image/Richmond.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Richmond"]},{"name":"div","attribs":{"className":"record"},"children":["-"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"St Kilda flag","src":"/image/St Kilda.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["St Kilda"]},{"name":"div","attribs":{"className":"record"},"children":["-"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Sydney flag","src":"/image/Sydney.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Sydney"]},{"name":"div","attribs":{"className":"record"},"children":["-"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"West Coast flag","src":"/image/West Coast.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["West Coast"]},{"name":"div","attribs":{"className":"record"},"children":["-"]}]}],"minWidth":200,"align":"left","headerStyle":{"fontWeight":700}},{"id":"elo","name":"ELO","type":"numeric","className":"cell number ","headerClassName":"header","show":true,"format":{"cell":{"digits":0},"aggregated":{"digits":0}},"maxWidth":55,"align":"center"},{"id":"elo.change","name":"change","type":"numeric","className":"cell","headerClassName":"header","show":true,"format":{"cell":{"digits":0},"aggregated":{"digits":0}},"cell":[{"name":"div","attribs":{"className":"tag status-missing"},"children":["-"]},{"name":"div","attribs":{"className":"tag status-missing"},"children":["-"]},{"name":"div","attribs":{"className":"tag status-missing"},"children":["-"]},{"name":"div","attribs":{"className":"tag status-missing"},"children":["-"]},{"name":"div","attribs":{"className":"tag status-missing"},"children":["-"]},{"name":"div","attribs":{"className":"tag status-missing"},"children":["-"]},{"name":"div","attribs":{"className":"tag status-missing"},"children":["-"]},{"name":"div","attribs":{"className":"tag status-missing"},"children":["-"]},{"name":"div","attribs":{"className":"tag status-up"},"children":["+8"]},{"name":"div","attribs":{"className":"tag status-missing"},"children":["-"]},{"name":"div","attribs":{"className":"tag status-missing"},"children":["-"]},{"name":"div","attribs":{"className":"tag status-missing"},"children":["-"]},{"name":"div","attribs":{"className":"tag status-missing"},"children":["-"]},{"name":"div","attribs":{"className":"tag status-missing"},"children":["-"]},{"name":"div","attribs":{"className":"tag status-missing"},"children":["-"]},{"name":"div","attribs":{"className":"tag status-missing"},"children":["-"]},{"name":"div","attribs":{"className":"tag status-down"},"children":["-8"]},{"name":"div","attribs":{"className":"tag status-missing"},"children":["-"]}],"maxWidth":70,"align":"center"},{"id":"Form","name":"Form","type":"character","className":"cell","headerClassName":"header","show":false},{"id":"spi","name":"ELO","type":"numeric","className":"cell number ","headerClassName":"header","show":false,"format":{"cell":{"digits":1},"aggregated":{"digits":1}},"maxWidth":55,"align":"center"},{"id":"global_o","name":"global_o","type":"numeric","className":"cell","headerClassName":"header","show":false},{"id":"global_d","name":"global_d","type":"numeric","className":"cell","headerClassName":"header","show":false},{"id":"Wins","name":"Proj. Wins","type":"numeric","className":"cell number border-left","headerClassName":"header","cell":[{"name":"div","attribs":{"style":{"background":"#F9D6CC"},"className":"spi-rating"},"children":["7.6"]},{"name":"div","attribs":{"style":{"background":"#78C278"},"className":"spi-rating"},"children":["15.5"]},{"name":"div","attribs":{"style":{"background":"#B5DDB4"},"className":"spi-rating"},"children":["12.3"]},{"name":"div","attribs":{"style":{"background":"#B4DDB4"},"className":"spi-rating"},"children":["12.3"]},{"name":"div","attribs":{"style":{"background":"#F8EAE4"},"className":"spi-rating"},"children":["8.3"]},{"name":"div","attribs":{"style":{"background":"#9AD199"},"className":"spi-rating"},"children":["13.7"]},{"name":"div","attribs":{"style":{"background":"#A3D6A3"},"className":"spi-rating"},"children":["13.2"]},{"name":"div","attribs":{"style":{"background":"#F8F2EC"},"className":"spi-rating"},"children":["8.5"]},{"name":"div","attribs":{"style":{"background":"#44AB43"},"className":"spi-rating"},"children":["18.2"]},{"name":"div","attribs":{"style":{"background":"#CFE9CF"},"className":"spi-rating"},"children":["10.9"]},{"name":"div","attribs":{"style":{"background":"#F8F5F0"},"className":"spi-rating"},"children":["8.6"]},{"name":"div","attribs":{"style":{"background":"#5FB75E"},"className":"spi-rating"},"children":["16.8"]},{"name":"div","attribs":{"style":{"background":"#FF2700"},"className":"spi-rating"},"children":["2.3"]},{"name":"div","attribs":{"style":{"background":"#A4D6A4"},"className":"spi-rating"},"children":["13.2"]},{"name":"div","attribs":{"style":{"background":"#8DCC8D"},"className":"spi-rating"},"children":["14.4"]},{"name":"div","attribs":{"style":{"background":"#BFE2BF"},"className":"spi-rating"},"children":["11.7"]},{"name":"div","attribs":{"style":{"background":"#73C072"},"className":"spi-rating"},"children":["15.7"]},{"name":"div","attribs":{"style":{"background":"#FD5738"},"className":"spi-rating"},"children":["3.8"]}],"maxWidth":55,"align":"center"},{"id":"Top.1","name":"1st","type":"numeric","className":"cell number ","headerClassName":"header","cell":[" <1%"," 12%","  4%","  4%"," <1%","  6%","  4%"," <1%"," 25%","  2%"," <1%"," 15%","  – ","  4%","  8%","  3%"," 11%"," <1%"],"maxWidth":70,"align":"center"},{"id":"Top.4","name":"Top 4","type":"numeric","className":"cell number ","headerClassName":"header","cell":["  4%"," 41%"," 21%"," 21%","  5%"," 28%"," 23%","  7%"," 63%"," 14%","  6%"," 51%"," <1%"," 23%"," 33%"," 18%"," 41%"," <1%"],"maxWidth":70,"align":"center"},{"id":"make_finals","name":"Make Finals","type":"numeric","className":"cell number ","headerClassName":"header","cell":[" 18%"," 70%"," 47%"," 48%"," 19%"," 58%"," 55%"," 24%"," 87%"," 37%"," 22%"," 78%","  1%"," 55%"," 62%"," 44%"," 73%","  3%"],"maxWidth":70,"style":[{"color":"#111","background":"#D8F1BF"},{"color":"#111","background":"#76C8AB"},{"color":"#111","background":"#A2DAAD"},{"color":"#111","background":"#A1D9AD"},{"color":"#111","background":"#D5F0BC"},{"color":"#111","background":"#8FD1AB"},{"color":"#111","background":"#95D4AB"},{"color":"#111","background":"#CBECB5"},{"color":"#111","background":"#51BAAB"},{"color":"#111","background":"#B4E2B0"},{"color":"#111","background":"#CFEEB8"},{"color":"#111","background":"#63C1AB"},{"color":"#111","background":"#FCFEF7"},{"color":"#111","background":"#95D4AB"},{"color":"#111","background":"#86CEAB"},{"color":"#111","background":"#A8DDAE"},{"color":"#111","background":"#6FC5AB"},{"color":"#111","background":"#F8FDE9"}]},{"id":"make_semis","name":"Make Semis","type":"numeric","className":"cell number border-left","headerClassName":"header","cell":[" 10%"," 57%"," 33%"," 34%"," 11%"," 44%"," 39%"," 13%"," 78%"," 25%"," 13%"," 67%"," <1%"," 39%"," 49%"," 30%"," 59%","  1%"],"maxWidth":90,"style":[{"color":"#111","background":"#EAF8CC"},{"color":"#111","background":"#91D2AB"},{"color":"#111","background":"#BAE5B1"},{"color":"#111","background":"#B9E4B1"},{"color":"#111","background":"#E8F7CB"},{"color":"#111","background":"#A8DDAE"},{"color":"#111","background":"#B1E1B0"},{"color":"#111","background":"#E2F5C6"},{"color":"#111","background":"#64C1AB"},{"color":"#111","background":"#C9ECB4"},{"color":"#111","background":"#E3F5C7"},{"color":"#111","background":"#7BCAAB"},{"color":"#aaa"},{"color":"#111","background":"#B1E1B0"},{"color":"#111","background":"#9FD8AD"},{"color":"#111","background":"#C0E8B2"},{"color":"#111","background":"#8DD0AB"},{"color":"#111","background":"#FCFEF7"}]},{"id":"make_prelim","name":"Make Prelim","type":"numeric","className":"cell number ","headerClassName":"header","cell":["  4%"," 40%"," 21%"," 20%","  5%"," 28%"," 25%","  7%"," 62%"," 14%","  6%"," 51%"," <1%"," 24%"," 33%"," 17%"," 42%"," <1%"],"maxWidth":70,"style":[{"color":"#111","background":"#F6FCE1"},{"color":"#111","background":"#AFE0AF"},{"color":"#111","background":"#D2EFBB"},{"color":"#111","background":"#D3F0BC"},{"color":"#111","background":"#F3FBD7"},{"color":"#111","background":"#C3E9B3"},{"color":"#111","background":"#C9ECB4"},{"color":"#111","background":"#F0FAD0"},{"color":"#111","background":"#86CEAB"},{"color":"#111","background":"#E1F4C5"},{"color":"#111","background":"#F1FAD1"},{"color":"#111","background":"#9CD7AC"},{"color":"#aaa"},{"color":"#111","background":"#CBECB5"},{"color":"#111","background":"#BAE5B1"},{"color":"#111","background":"#D9F2C0"},{"color":"#111","background":"#ABDEAF"},{"color":"#aaa"}]},{"id":"make_gf","name":"Make GF","type":"numeric","className":"cell number ","headerClassName":"header","cell":["  1%"," 21%","  9%","  9%","  2%"," 13%"," 12%","  3%"," 37%","  6%","  2%"," 28%"," <1%"," 11%"," 17%","  8%"," 23%"," <1%"],"maxWidth":70,"style":[{"color":"#111","background":"#FCFEF5"},{"color":"#111","background":"#D2EFBA"},{"color":"#111","background":"#EBF8CC"},{"color":"#111","background":"#ECF8CD"},{"color":"#111","background":"#FBFDF2"},{"color":"#111","background":"#E3F5C7"},{"color":"#111","background":"#E6F6C9"},{"color":"#111","background":"#F9FDEC"},{"color":"#111","background":"#B4E2B0"},{"color":"#111","background":"#F3FBD7"},{"color":"#111","background":"#FAFDEE"},{"color":"#111","background":"#C4E9B3"},{"color":"#aaa"},{"color":"#111","background":"#E8F7CA"},{"color":"#111","background":"#DAF2C0"},{"color":"#111","background":"#EFF9CF"},{"color":"#111","background":"#CDEDB7"},{"color":"#aaa"}]},{"id":"win_league","name":"Premier","type":"numeric","className":"cell number ","headerClassName":"header","cell":[" <1%"," 10%","  4%","  4%"," <1%","  6%","  5%","  1%"," 21%","  2%"," <1%"," 15%"," <1%","  5%","  8%","  3%"," 12%"," <1%"],"maxWidth":70,"style":[{"color":"#aaa"},{"color":"#111","background":"#E8F7CB"},{"color":"#111","background":"#F6FCDF"},{"color":"#111","background":"#F6FCE2"},{"color":"#aaa"},{"color":"#111","background":"#F1FAD1"},{"color":"#111","background":"#F3FBD8"},{"color":"#111","background":"#FCFEF7"},{"color":"#111","background":"#D0EEB9"},{"color":"#111","background":"#FAFDEE"},{"color":"#aaa"},{"color":"#111","background":"#DFF4C4"},{"color":"#aaa"},{"color":"#111","background":"#F4FBDA"},{"color":"#111","background":"#EEF9CF"},{"color":"#111","background":"#F8FCE7"},{"color":"#111","background":"#E6F6C9"},{"color":"#aaa"}]}],"columnGroups":[{"headerClassName":"group-header","name":"Team Rating","columns":["spi","global_o","global_d"]},{"headerClassName":"group-header","name":"Home and Away Season","columns":["Wins","Top.1","Top.4","make_finals"]},{"headerClassName":"group-header","name":"Finals Chances","columns":["make_semis","make_prelim","make_gf","win_league"]}],"defaultSorted":[{"id":"Wins","desc":true},{"id":"win_league","desc":true}],"pagination":false,"borderless":true,"showSortIcon":false,"className":"standings-table","rowClassName":"\n    function(rowInfo, state) {\n      const firstSorted = state.sorted[0]\n      if (firstSorted && firstSorted.id === 'group') {\n        const nextRow = state.pageRows[rowInfo.viewIndex + 1]\n        if (nextRow && rowInfo.row.group !== nextRow.group) {\n          return 'group-last'\n        }\n      }\n    }","width":"100%","dataKey":"d3b07680117fcf0947a26b4c13761fe1"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.rowClassName"],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<link href="https://fonts.googleapis.com/css?family=Karla:400,700|Fira+Mono&amp;display=fallback" rel="stylesheet">
+</div>
+</div>
+<div class="cell">
+
+<style type="text/css">
+.standings {
+  font-family: Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+.title {
+  margin: 18px 0;
+  font-size: 16px;
+}
+.title h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.standings-table {
+  margin-bottom: 20px;
+}
+/* Align header text to the bottom */
+.header,
+.group-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.header {
+  border-bottom-color: #555;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+/* Highlight headers when sorting */
+.header:hover,
+.header[aria-sort="ascending"],
+.header[aria-sort="descending"] {
+  background-color: #eee;
+}
+.border-left {
+  border-left: 2px solid #555;
+}
+/* Use box-shadow to create row borders that appear behind vertical borders */
+.cell {
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+}
+.group-last .cell {
+  box-shadow: inset 0 -2px 0 #555;
+}
+.team {
+  display: inline-flex;
+  align-items: baseline;
+  align-content: left;
+}
+.record {
+  margin-left: 5px;
+  color: #999;
+  font-size: 13px;
+}
+.team-name {
+  font-size: 18px;
+  font-weight: 700;
+}
+.flag {
+  margin-right: 8px;
+  height: 21px;
+  border: 0px solid #f0f0f0;
+  align-content: left;
+}
+.group {
+  font-size: 19px;
+}
+.number {
+  font-family: "Fira Mono", Consolas, Monaco, monospace;
+  font-size: 16px;
+  line-height: 30px;
+  white-space: pre;
+}
+.spi-rating {
+  width: 35px;
+  height: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  border-radius: 50%;
+  color: #000;
+  font-size: 13px;
+  letter-spacing: -2px;
+  
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 12px;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 12px;
+  vertical-align: bottom;
+}
+
+.status-up {
+  background: rgba(68,171,67,.5);
+  color: hsl(116, 30%, 25%);
+}
+
+.status-no-change {
+  background: hsl(0, 0%, 80%);
+  color: hsl(0, 0%, 50%);
+}
+
+.status-missing {
+  display: none;
+}
+
+.status-down {
+  background: rgba(255,39,0,.5);
+  color: hsl(350, 45%, 30%);
+}
+</style>
+</div>
+<div class="cell">
+<style type="text/css">
+# /* rmarkdown html documents */
+.container[role="main"] {
+  min-width: 100% !important;
+  max-width: 1054 !important;
+  width: 100%;
+}
+
+.container {
+  min-width: 100% !important;
+  max-width: 1054px !important;
+  width: 100%;
+}
+
+ #h1.title {
+ #  display: none;
+ #}
+# /* pkgdown articles */
+# .contents {
+#   width: 1054px;
+# }
+# .page-header {
+#   display: none;
+#}
+</style>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

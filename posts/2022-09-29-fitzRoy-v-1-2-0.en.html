@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="James Day">
+<meta name="dcterms.date" content="2022-09-29">
+<meta name="description" content="fitzRoy v1.2.0 is now on CRAN">
+
+<title>plusSixOne Blog - fitzRoy v1.2.0</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">plusSixOne Blog</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aflm" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">AFLM</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-aflm">    
+        <li>
+    <a class="dropdown-item" href="../pages/aflm-predictions.html">
+ <span class="dropdown-text">AFLM Predictions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../pages/aflm-games.html">
+ <span class="dropdown-text">AFLM Games</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../pages/aflm-model-results.html">
+ <span class="dropdown-text">Model Results</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aflw" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">AFLW</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-aflw">    
+        <li>
+    <a class="dropdown-item" href="../pages/aflw-coming-soon.html">
+ <span class="dropdown-text">AFLW - Coming soon</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jimmyday12"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/plusSixOneBlog"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">fitzRoy v1.2.0</h1>
+                  <div>
+        <div class="description">
+          fitzRoy v1.2.0 is now on CRAN
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">fitzRoy</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>James Day </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 29, 2022</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>I’m excited to announce the official v1.2.0 release of fitzRoy has landed on CRAN!</p>
+<p>This release includes a few new features and some improvements to bugs that had been reported. Read on to find out about them.</p>
+<section id="breaking-change---default-argument-behaviour" class="level3">
+<h3 class="anchored" data-anchor-id="breaking-change---default-argument-behaviour">Breaking Change - default argument behaviour</h3>
+<p>There was some inconsistencies in how <code>fetch_player_stats_afltables</code> handled NULL dates. For most functions, this would return the current season. However, for this particular function it was returning all data which was confusing. This has been changed to be consistent with other functions but will break existing code that relied on the incorrect logic so you should update your code where needed.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>player_stats <span class="ot">&lt;-</span> <span class="fu">fetch_player_details</span>()</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(player_stats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 17
+  firstName surname      id team  season jumpe…¹ posit…² provi…³ dateO…⁴ draft…⁵
+  &lt;chr&gt;     &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;  &lt;dbl&gt;   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  
+1 Tom       Doedee      813 Adel…   2023      39 KEY_DE… CD_I10… 1997-0… 2015   
+2 Lachlan   Murphy     1723 Adel…   2023       4 MEDIUM… CD_I10… 1998-1… 2017   
+3 Izak      Rankine    1815 Adel…   2023      22 MEDIUM… CD_I10… 2000-0… 2018   
+4 Mitchell  Hinge      1292 Adel…   2023      20 MEDIUM… CD_I10… 1998-0… 2020   
+5 Jordon    Butts      1824 Adel…   2023      41 KEY_DE… CD_I10… 1999-1… 2018   
+6 Elliott   Himmelbe…  1357 Adel…   2023      34 KEY_FO… CD_I10… 1998-0… 2016   
+# … with 7 more variables: heightInCm &lt;int&gt;, weightInKg &lt;int&gt;,
+#   recruitedFrom &lt;chr&gt;, debutYear &lt;chr&gt;, draftType &lt;chr&gt;, draftPosition &lt;chr&gt;,
+#   data_accessed &lt;date&gt;, and abbreviated variable names ¹​jumperNumber,
+#   ²​position, ³​providerId, ⁴​dateOfBirth, ⁵​draftYear</code></pre>
+</div>
+</div>
+</section>
+<section id="second-2022-aflw-season-is-now-returned" class="level3">
+<h3 class="anchored" data-anchor-id="second-2022-aflw-season-is-now-returned">Second 2022 AFLW Season is now returned</h3>
+<p>Having two seasons in the same year for the AFLW competition was causing issues with all <code>fetch_*</code> functions. Specifically, the functions were only returning data for the first of the two seasons.</p>
+<p>A change has been made that now returns both seasons when setting the <code>season</code> argument to “2022”. This has been determined as the simplest, least disruptive option for now but may be reviewed in the future. You can use various fields in the returned data to filter out the season you are interested in.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>aflw_fixture <span class="ot">&lt;-</span> <span class="fu">fetch_fixture_afl</span>(<span class="dv">2022</span>, <span class="at">round_number =</span> <span class="dv">1</span>, <span class="at">comp =</span> <span class="st">"AFLW"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>aflw_fixture <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(compSeason.id, compSeason.shortName,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                round.id, round.name, </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                home.team.name, away.team.name, venue.name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 16 × 7
+   compSeason.id compSeason.shortName round.id round.n…¹ home.…² away.…³ venue…⁴
+           &lt;int&gt; &lt;chr&gt;                   &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  
+ 1            41 AFLW Season 6             578 Round 1   St Kil… Richmo… Kineti…
+ 2            41 AFLW Season 6             578 Round 1   Kangar… Geelon… Arden …
+ 3            41 AFLW Season 6             578 Round 1   Wester… Melbou… Victor…
+ 4            41 AFLW Season 6             578 Round 1   Freman… West C… Freman…
+ 5            41 AFLW Season 6             578 Round 1   Adelai… Brisba… Flinde…
+ 6            41 AFLW Season 6             578 Round 1   Carlton Collin… Ikon P…
+ 7            41 AFLW Season 6             578 Round 1   Gold C… GWS Gi… Great …
+ 8            51 AFLW Season 7             728 Round 1   Carlton Collin… Ikon P…
+ 9            51 AFLW Season 7             728 Round 1   Adelai… Melbou… ACH Gr…
+10            51 AFLW Season 7             728 Round 1   Kangar… Gold C… Blunds…
+11            51 AFLW Season 7             728 Round 1   West C… Port A… Minera…
+12            51 AFLW Season 7             728 Round 1   Sydney… St Kil… North …
+13            51 AFLW Season 7             728 Round 1   Essend… Hawtho… Marvel…
+14            51 AFLW Season 7             728 Round 1   Wester… GWS Gi… Ikon P…
+15            51 AFLW Season 7             728 Round 1   Brisba… Freman… Gabba  
+16            51 AFLW Season 7             728 Round 1   Geelon… Richmo… GMHBA …
+# … with abbreviated variable names ¹​round.name, ²​home.team.name,
+#   ³​away.team.name, ⁴​venue.name</code></pre>
+</div>
+</div>
+</section>
+<section id="non-afl-data" class="level3">
+<h3 class="anchored" data-anchor-id="non-afl-data">Non-AFL data</h3>
+<p>An experimental feature as of version 1.2.0 is returning non-AFL related data. This only works for the source <code>AFL</code> but there are other comps that are available. These comps do not have as much data as the AFLM and AFLW comps but some functions will work.</p>
+<p>Available comps include</p>
+<ul>
+<li>“VFL”</li>
+<li>“VFLW”</li>
+<li>“WAFL”</li>
+<li>“U18B”</li>
+<li>“U18G”</li>
+</ul>
+<p>You will have to experiment with which dates, rounds and comps work for various functions but the API should at least return a NULL value or warning if no data exists. You will also note that not all data exists, particularly advanced statistics. Please note this feature is experimental and will be improved over time.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_fixture</span>(<span class="dv">2022</span>, <span class="at">source =</span> <span class="st">"AFL"</span>, <span class="at">comp =</span> <span class="st">"VFL"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 198 × 54
+      id provid…¹ utcSt…² status compS…³ compS…⁴ compS…⁵ compS…⁶ compS…⁷ round…⁸
+   &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt;   &lt;int&gt;
+ 1  4348 CD_M202… 2022-0… CONCL…      47 CD_S20… 2022 V… 2022 V…      26     637
+ 2  4347 CD_M202… 2022-0… CONCL…      47 CD_S20… 2022 V… 2022 V…      26     637
+ 3  4350 CD_M202… 2022-0… CONCL…      47 CD_S20… 2022 V… 2022 V…      26     637
+ 4  4349 CD_M202… 2022-0… CONCL…      47 CD_S20… 2022 V… 2022 V…      26     637
+ 5  4162 CD_M202… 2022-0… CONCL…      47 CD_S20… 2022 V… 2022 V…      26     637
+ 6  4164 CD_M202… 2022-0… CONCL…      47 CD_S20… 2022 V… 2022 V…      26     637
+ 7  4163 CD_M202… 2022-0… CONCL…      47 CD_S20… 2022 V… 2022 V…      26     637
+ 8  4167 CD_M202… 2022-0… CONCL…      47 CD_S20… 2022 V… 2022 V…      26     637
+ 9  4165 CD_M202… 2022-0… CONCL…      47 CD_S20… 2022 V… 2022 V…      26     637
+10  4168 CD_M202… 2022-0… CONCL…      47 CD_S20… 2022 V… 2022 V…      26     637
+# … with 188 more rows, 44 more variables: round.providerId &lt;chr&gt;,
+#   round.abbreviation &lt;chr&gt;, round.name &lt;chr&gt;, round.roundNumber &lt;int&gt;,
+#   round.byes &lt;list&gt;, home.team.id &lt;int&gt;, home.team.providerId &lt;chr&gt;,
+#   home.team.name &lt;chr&gt;, home.team.abbreviation &lt;chr&gt;,
+#   home.team.nickname &lt;chr&gt;, home.team.teamType &lt;chr&gt;,
+#   home.team.club.id &lt;int&gt;, home.team.club.providerId &lt;chr&gt;,
+#   home.team.club.name &lt;chr&gt;, home.team.club.abbreviation &lt;chr&gt;, …</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_player_stats</span>(<span class="dv">2022</span>, <span class="at">round =</span> <span class="dv">1</span>, <span class="at">source =</span> <span class="st">"AFL"</span>, <span class="at">comp =</span> <span class="st">"VFLW"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 252 × 70
+   providerId     utcSt…¹ status compS…² round…³ round…⁴ venue…⁵ home.…⁶ home.…⁷
+   &lt;chr&gt;          &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  
+ 1 CD_M202246401… 2022-0… CONCL… 2022 V… Round 1       1 Casey … Casey … Melbou…
+ 2 CD_M202246401… 2022-0… CONCL… 2022 V… Round 1       1 Casey … Casey … Melbou…
+ 3 CD_M202246401… 2022-0… CONCL… 2022 V… Round 1       1 Casey … Casey … Melbou…
+ 4 CD_M202246401… 2022-0… CONCL… 2022 V… Round 1       1 Casey … Casey … Melbou…
+ 5 CD_M202246401… 2022-0… CONCL… 2022 V… Round 1       1 Casey … Casey … Melbou…
+ 6 CD_M202246401… 2022-0… CONCL… 2022 V… Round 1       1 Casey … Casey … Melbou…
+ 7 CD_M202246401… 2022-0… CONCL… 2022 V… Round 1       1 Casey … Casey … Melbou…
+ 8 CD_M202246401… 2022-0… CONCL… 2022 V… Round 1       1 Casey … Casey … Melbou…
+ 9 CD_M202246401… 2022-0… CONCL… 2022 V… Round 1       1 Casey … Casey … Melbou…
+10 CD_M202246401… 2022-0… CONCL… 2022 V… Round 1       1 Casey … Casey … Melbou…
+# … with 242 more rows, 61 more variables: away.team.name &lt;chr&gt;,
+#   away.team.club.name &lt;chr&gt;, player.jumperNumber &lt;int&gt;,
+#   player.photoURL &lt;chr&gt;, player.player.position &lt;chr&gt;,
+#   player.player.player.playerId &lt;chr&gt;, player.player.player.captain &lt;lgl&gt;,
+#   player.player.player.playerJumperNumber &lt;int&gt;,
+#   player.player.player.givenName &lt;chr&gt;, player.player.player.surname &lt;chr&gt;,
+#   teamId &lt;chr&gt;, gamesPlayed &lt;lgl&gt;, timeOnGroundPercentage &lt;lgl&gt;, …</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_fixture</span>(<span class="dv">2022</span>, <span class="at">source =</span> <span class="st">"AFL"</span>, <span class="at">comp =</span> <span class="st">"WAFL"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 96 × 54
+      id provid…¹ utcSt…² status compS…³ compS…⁴ compS…⁵ compS…⁶ compS…⁷ round…⁸
+   &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt;   &lt;int&gt;
+ 1  4458 CD_M202… 2022-0… CONCL…      49 CD_S20… 2022 W… 2022 W…      24     681
+ 2  4457 CD_M202… 2022-0… CONCL…      49 CD_S20… 2022 W… 2022 W…      24     681
+ 3  4459 CD_M202… 2022-0… CONCL…      49 CD_S20… 2022 W… 2022 W…      24     681
+ 4  4460 CD_M202… 2022-0… CONCL…      49 CD_S20… 2022 W… 2022 W…      24     681
+ 5  4461 CD_M202… 2022-0… CONCL…      49 CD_S20… 2022 W… 2022 W…      24     681
+ 6  4462 CD_M202… 2022-0… CONCL…      49 CD_S20… 2022 W… 2022 W…      24     682
+ 7  4463 CD_M202… 2022-0… CONCL…      49 CD_S20… 2022 W… 2022 W…      24     682
+ 8  4464 CD_M202… 2022-0… CONCL…      49 CD_S20… 2022 W… 2022 W…      24     682
+ 9  4465 CD_M202… 2022-0… CONCL…      49 CD_S20… 2022 W… 2022 W…      24     682
+10  4466 CD_M202… 2022-0… CONCL…      49 CD_S20… 2022 W… 2022 W…      24     682
+# … with 86 more rows, 44 more variables: round.providerId &lt;chr&gt;,
+#   round.abbreviation &lt;chr&gt;, round.name &lt;chr&gt;, round.roundNumber &lt;int&gt;,
+#   round.byes &lt;list&gt;, home.team.id &lt;int&gt;, home.team.providerId &lt;chr&gt;,
+#   home.team.name &lt;chr&gt;, home.team.abbreviation &lt;chr&gt;,
+#   home.team.nickname &lt;chr&gt;, home.team.teamType &lt;chr&gt;,
+#   home.team.club.id &lt;int&gt;, home.team.club.providerId &lt;chr&gt;,
+#   home.team.club.name &lt;chr&gt;, home.team.club.abbreviation &lt;chr&gt;, …</code></pre>
+</div>
+</div>
+</section>
+<section id="other-changes" class="level3">
+<h3 class="anchored" data-anchor-id="other-changes">Other changes</h3>
+<p>You can read about the rest of the bugs in the <a href="https://jimmyday12.github.io/fitzRoy/news/index.html">changelog</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="James Day">
+<meta name="dcterms.date" content="2022-01-11">
+<meta name="description" content="fitzRoy v1.1.0 is now on CRAN">
+
+<title>plusSixOne Blog - fitzRoy v1.1.0</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">plusSixOne Blog</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aflm" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">AFLM</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-aflm">    
+        <li>
+    <a class="dropdown-item" href="../pages/aflm-predictions.html">
+ <span class="dropdown-text">AFLM Predictions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../pages/aflm-games.html">
+ <span class="dropdown-text">AFLM Games</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../pages/aflm-model-results.html">
+ <span class="dropdown-text">Model Results</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aflw" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">AFLW</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-aflw">    
+        <li>
+    <a class="dropdown-item" href="../pages/aflw-coming-soon.html">
+ <span class="dropdown-text">AFLW - Coming soon</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jimmyday12"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/plusSixOneBlog"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">fitzRoy v1.1.0</h1>
+                  <div>
+        <div class="description">
+          fitzRoy v1.1.0 is now on CRAN
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">fitzRoy</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>James Day </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 11, 2022</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>I’m excited to announce the official v1.1.0 release of fitzRoy has landed on CRAN!</p>
+<p>This release includes a few new features and some improvements to bugs that had been reported. Read on to find out about them.</p>
+<section id="player-details" class="level2">
+<h2 class="anchored" data-anchor-id="player-details">Player Details</h2>
+<p>Newly included are the <code>player_details</code> functions. These follow the same pattern as the main <code>fetch_</code> family of functions, with some slight differences.</p>
+<p>You can use <code>fetch_player_details</code> to return a list of player details for a given club and source. The source will determine exactly what details are returned. The default is the AFL.com.au website.</p>
+<p>The AFL website will return AFLW or AFLM data, while other sources only include AFLM data.</p>
+<div class="cell" data-hash="2022-01-11-fitzRoy-v-1-1-0.en_cache/html/unnamed-chunk-1_7087f30d2921eff194b0eaee36c12f43">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>aflw_players <span class="ot">&lt;-</span> <span class="fu">fetch_player_details</span>(<span class="at">team =</span> <span class="st">"Western Bulldogs"</span>, <span class="at">current =</span> <span class="cn">TRUE</span>, <span class="at">comp =</span> <span class="st">"AFLW"</span>, <span class="at">source =</span> <span class="st">"AFL"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(aflw_players)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 0 × 1
+# … with 1 variable: data_accessed &lt;date&gt;</code></pre>
+</div>
+</div>
+<p>The list of details for AFL.com.au website is below.</p>
+<div class="cell" data-hash="2022-01-11-fitzRoy-v-1-1-0.en_cache/html/unnamed-chunk-2_547c3f6ce41eb039c4458d30dc44edc1">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(aflw_players)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 0
+Columns: 1
+$ data_accessed &lt;date&gt; </code></pre>
+</div>
+</div>
+<p>The AFLTables.com source will return all players who have played for the specified team over time.</p>
+<div class="cell" data-hash="2022-01-11-fitzRoy-v-1-1-0.en_cache/html/unnamed-chunk-3_14c5360f1d32b030642d85332494ab8f">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_player_details</span>(<span class="st">"Hawthorn"</span>, <span class="at">source =</span> <span class="st">"afltables"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 957 × 15
+   Player   Team    Cap `#`   HT    WT    Games  Wins Draws Losses Goals Seasons
+   &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  
+ 1 Paddy B… Hawt…     1 6     183cm "82k…    31     6     1     24    13 1925-1…
+ 2 Dave El… Hawt…     2 23    175cm "70k…     3     0     0      3     5 1925   
+ 3 Fred Fi… Hawt…     3 11    183cm "84k…    37     6     1     30    10 1925-1…
+ 4 Jack Gi… Hawt…     4 14    171cm ""       40     7     0     33     9 1925-1…
+ 5 Gil Hen… Hawt…     5 17    185cm "84k…    17     2     0     15     9 1925, …
+ 6 Jim Jac… Hawt…     6 1     174cm "73k…    22     4     1     17     1 1925-1…
+ 7 Jim McC… Hawt…     7 8     175cm "73k…    46     6     1     39     7 1925-1…
+ 8 Stan Mc… Hawt…     8 3     173cm "75k…    17     3     0     14    NA 1925   
+ 9 Cyril N… Hawt…     9 2     180cm "70k…    18     2     1     15     1 1925-1…
+10 Bert Of… Hawt…    10 21    182cm "80k…    12     2     0     10     6 1925   
+# … with 947 more rows, and 3 more variables: Debut &lt;chr&gt;, Last &lt;chr&gt;,
+#   date_accessed &lt;date&gt;</code></pre>
+</div>
+</div>
+<p>The Footywire.com source allows you to specify just the current list of players, which is fairly quick, or all players over time which can be a little slow.</p>
+<div class="cell" data-hash="2022-01-11-fitzRoy-v-1-1-0.en_cache/html/unnamed-chunk-4_446d2ce1422a5962f6a024fa1086e2df">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_player_details</span>(<span class="st">"Richmond"</span>, <span class="at">source =</span> <span class="st">"footywire"</span>, <span class="at">current =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 43 × 11
+   No    surname  first_name Games Age      Date …¹ Height Weight Origin Posit…²
+   &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  
+ 1 7     Baker    Liam       87    25yr     27 Jan… 173cm  72kg   Subia… Defend…
+ 2 21    Balta    Noah       62    23yr 4m… 23 Oct… 194cm  102kg  Calde… Defend…
+ 3 41    Banks    Sam        0     19yr 10… 2 Apr … 186cm  71kg   Tasma… Defend…
+ 4 43    Bauer    Jacob      0     20yr 6m… 6 Aug … 191cm  80kg   North… Forward
+ 5 29    Bolton   Shai       90    24yr 2m… 8 Dec … 175cm  77kg   South… Midfie…
+ 6 37    Bradtke  Kaelan     0     21yr 9m… 21 May… 195cm  95kg   Corow… Defend…
+ 7 35    Broad    Nathan     107   29yr 10… 15 Apr… 192cm  89kg   Swan … Defend…
+ 8 30    Brown    Tom        0     19yr 6m… 30 Jul… 186cm  77kg   Murra… Defend…
+ 9 44    Campbell Seth       0     18yr 1m… 29 Dec… 182cm  73kg   Tasma… Forward
+10 11    Castagna Jason      134   26yr 7m… 12 Jul… 182cm  82kg   North… Forward
+# … with 33 more rows, 1 more variable: Position_2 &lt;chr&gt;, and abbreviated
+#   variable names ¹​`Date of Birth`, ²​Position_1</code></pre>
+</div>
+</div>
+<p>One challenge is that each source accepts different values for the <code>team</code> argument. There is a helper function that will return an error if the wrong team is supplied and provide a list of acceptable values for that specific source.</p>
+<p>You can read full details on the <a href="https://jimmyday12.github.io/fitzRoy/articles/player-details.html">Player Details Vignette</a></p>
+<div class="cell" data-hash="2022-01-11-fitzRoy-v-1-1-0.en_cache/html/unnamed-chunk-5_e73479bcf61283f9ee55310afa895362">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_player_details</span>(<span class="st">"Greater Western Sydney"</span>, <span class="at">source =</span> <span class="st">"afltables"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `team_check_afltables()`:
+! Greater Western Sydney is not a valid input for afltables teams.
+Should be one of Adelaide, Brisbane Lions, Brisbane Bears, Carlton, Collingwood, Essendon, Fitzroy, Fremantle, GWS, Geelong, Gold Coast, Hawthorn, Melbourne, North Melbourne, Kangaroos, Port Adelaide, Richmond, St Kilda, Sydney, South Melbourne, West Coast, University, Western Bulldogs, Footscray </code></pre>
+</div>
+</div>
+</section>
+<section id="coaches-votes" class="level2">
+<h2 class="anchored" data-anchor-id="coaches-votes">Coaches votes</h2>
+<p>A new set of functions will return coaches votes.</p>
+<div class="cell" data-hash="2022-01-11-fitzRoy-v-1-1-0.en_cache/html/unnamed-chunk-6_145b70b2136b7f36434b6b1eed67df8a">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>coaches <span class="ot">&lt;-</span> <span class="fu">fetch_coaches_votes</span>(<span class="at">season =</span> <span class="dv">2021</span>, <span class="at">round_number =</span> <span class="dv">1</span>, <span class="at">team =</span> <span class="st">"Hawthorn"</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>coaches</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Season Round Home.Team Away.Team            Player.Name Coaches.Votes
+1.27   2021     1  Essendon  Hawthorn     Tom Mitchell (HAW)            10
+1.28   2021     1  Essendon  Hawthorn   Jaeger O'Meara (HAW)             8
+1.29   2021     1  Essendon  Hawthorn     Zach Merrett (ESS)             5
+1.30   2021     1  Essendon  Hawthorn   Andrew McGrath (ESS)             4
+1.31   2021     1  Essendon  Hawthorn         Will Day (HAW)             2
+1.32   2021     1  Essendon  Hawthorn Changkuoth Jiath (HAW)             1</code></pre>
+</div>
+</div>
+<p>An associated function will also calculate possible ways in which the cochaes may have voted.</p>
+<div class="cell" data-hash="2022-01-11-fitzRoy-v-1-1-0.en_cache/html/unnamed-chunk-7_9ab761f4243b2e2f66ee079822dcf607">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_coaches_vote_possibilities</span>(coaches, <span class="st">"Coach View"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+  Votes                   C1                     C2
+1     5   Tom Mitchell (HAW)     Tom Mitchell (HAW)
+2     4 Jaeger O'Meara (HAW)   Jaeger O'Meara (HAW)
+3     3   Zach Merrett (ESS)   Andrew McGrath (ESS)
+4     2       Will Day (HAW)     Zach Merrett (ESS)
+5     1 Andrew McGrath (ESS) Changkuoth Jiath (HAW)</code></pre>
+</div>
+</div>
+<p>You can read about these functions fully at the new <a href="https://jimmyday12.github.io/fitzRoy/articles/aflca-coaches-votes.html">Vignette</a></p>
+</section>
+<section id="other-changes" class="level1">
+<h1>Other changes</h1>
+<p>You can read about the rest of the bugs in the <a href="https://jimmyday12.github.io/fitzRoy/news/index.html">changelog</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
