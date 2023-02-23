@@ -25,6 +25,20 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this blog"
+    "text": "James Day is the Director of Product at Teamworks. This blog is where I host various sports analytics projects."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About",
+    "section": "Education",
+    "text": "Education\nUniversity of Queensland | Queensland, Australia PhD in Neuromechanics | 2011 - 2015\nUniversity of Queensland | Queensland, Australia Bachelor of Applied Science | 2006 - 2010\nUniversity of Queensland | Queensland, Australia Bachelor of Business Management | 2006 - 2010"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About",
+    "section": "Experience",
+    "text": "Experience\nTeamworks | Director of Product | Dec 2022 - present\nSmartabase | Head of Product | Jan 2022 - Dec 2022\nFusion Sport | Senior Product Manager | Jan 2020 - Jan 2022\nFusion Sport | Manager - Analytics | Jan 2018 - Jan 2020\nFusion Sport | Data Scientist | Jan 2015 - Jan 2018\nFusion Sport | Sports Scientist | Jan 2011 - Jan 2013"
   }
 ]

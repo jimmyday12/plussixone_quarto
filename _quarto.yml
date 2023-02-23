@@ -6,6 +6,14 @@ website:
   navbar:
     right:
       - about.qmd
+      - text: "AFLM"
+        menu:
+          - aflm-predictions.qmd
+          - current-tips.qmd
+          - model-results.qmd
+      - text: "AFLW"
+        menu: 
+          - aflw.qmd
       - icon: github
         href: https://github.com/jimmyday12
       - icon: twitter

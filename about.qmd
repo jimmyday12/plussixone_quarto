@@ -1,19 +1,43 @@
 ---
 title: "About"
-image: profile.jpg
+image: profile.png
 about:
-  template: jolla
+  template: solana
   links:
     - icon: twitter
       text: Twitter
-      href: https://twitter.com
+      href: https://twitter.com/jamesday87
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://linkedin.com/in/james-day-ab648321
     - icon: github
       text: Github
-      href: https://github.com
-
+      href: https://github.com/jimmyday12
 ---
 
-About this blog
+James Day is the Director of Product at Teamworks. This blog is where I host various sports analytics projects.
+
+## Education
+
+University of Queensland \| Queensland, Australia
+PhD in Neuromechanics \| 2011 - 2015
+
+University of Queensland \| Queensland, Australia
+Bachelor of Applied Science \| 2006 - 2010
+
+University of Queensland \| Queensland, Australia
+Bachelor of Business Management \| 2006 - 2010
+
+## Experience
+
+Teamworks \| Director of Product \| Dec 2022 - present
+
+Smartabase \| Head of Product \| Jan 2022 - Dec 2022
+
+Fusion Sport \| Senior Product Manager \| Jan 2020 - Jan 2022
+
+Fusion Sport \| Manager - Analytics \| Jan 2018 - Jan 2020
+
+Fusion Sport \| Data Scientist \| Jan 2015 - Jan 2018
+
+Fusion Sport \| Sports Scientist \| Jan 2011 - Jan 2013
