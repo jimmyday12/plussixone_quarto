@@ -103,7 +103,7 @@ team_column <- function(minWidth = 200,
       cell = function(value) {
         div(
           class = "team",
-          img(class = "flag", alt = paste(value, "flag"), src = paste0("/images/", value, ".svg")),
+          img(class = "flag", alt = paste(value, "flag"), src = paste0("/image/", value, ".svg")),
           div(class = "team-name", value)
         )
       },

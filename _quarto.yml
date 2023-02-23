@@ -1,7 +1,7 @@
 project:
   type: website
-  resources:
-    -"/images/"
+  resources: 
+    - "image"
 
 website:
   title: "plusSixOne Blog"
@@ -10,12 +10,12 @@ website:
       - about.qmd
       - text: "AFLM"
         menu:
-          - aflm-predictions.qmd
-          - aflm-games.qmd
-          - aflm-model-results.qmd
+          - pages/aflm-predictions.qmd
+          - pages/aflm-games.qmd
+          - pages/aflm-model-results.qmd
       - text: "AFLW"
         menu: 
-          - aflw-coming-soon.qmd
+          - pages/aflw-coming-soon.qmd
       - icon: github
         href: https://github.com/jimmyday12
       - icon: twitter

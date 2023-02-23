@@ -9,11 +9,9 @@ tags: []
 subtitle: '' 
 ---
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
- 
 
 ```{r prep, include=FALSE}
 library(reactable) 
@@ -77,7 +75,7 @@ if(home_away_ongoing) {
                    Wins = "desc", 
                    elo = "desc")
 }
-``` 
+```
 
 ```{r functions, include=FALSE}
 rating_column <- function(maxWidth = 55, class = NULL, ...) {
@@ -178,7 +176,7 @@ tbl <- reactable(
       cell = function(value, index) {
         div(
           class = "team",
-          img(class = "flag", alt = paste(value, "flag"), src = paste0("/images/", value, ".svg")),
+          img(class = "flag", alt = paste(value, "flag"), src = paste0("/image/", value, ".svg")),
           div(class = "team-name", value),
           div(class = "record", sprintf("%s", forecasts2[index, "Form"]))
         )
@@ -256,11 +254,9 @@ div(
 ```{r ref.label="table", echo=FALSE}
 ```
 
-
 ```{r, echo=FALSE}
 tags$link(href = "https://fonts.googleapis.com/css?family=Karla:400,700|Fira+Mono&display=fallback", rel = "stylesheet")
 ```
-
 
 ```{css, echo =FALSE}
 .standings {
@@ -375,7 +371,6 @@ tags$link(href = "https://fonts.googleapis.com/css?family=Karla:400,700|Fira+Mon
   color: hsl(350, 45%, 30%);
 }
 ```
-
 
 ```{css form-css, echo=FALSE}
 # /* rmarkdown html documents */
