@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Test">
+
+<title>plusSixOne Blog - AFLM Games</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+<script src="site_libs/core-js-2.5.3/shim.min.js"></script>
+<script src="site_libs/react-17.0.0/react.min.js"></script>
+<script src="site_libs/react-17.0.0/react-dom.min.js"></script>
+<script src="site_libs/reactwidget-1.0.0/react-tools.js"></script>
+<script src="site_libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<link href="site_libs/reactable-0.4.3/reactable.css" rel="stylesheet">
+<script src="site_libs/reactable-binding-0.4.3/reactable.js"></script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">plusSixOne Blog</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aflm" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">AFLM</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-aflm">    
+        <li>
+    <a class="dropdown-item" href="./aflm-predictions.html">
+ <span class="dropdown-text">AFLM Predictions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./aflm-games.html">
+ <span class="dropdown-text">AFLM Games</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./aflm-model-results.html">
+ <span class="dropdown-text">Model Results</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aflw" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">AFLW</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-aflw">    
+        <li>
+    <a class="dropdown-item" href="./aflw-coming-soon.html">
+ <span class="dropdown-text">AFLW - Coming soon</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jimmyday12"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/plusSixOneBlog"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">AFLM Games</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">aflm</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Test
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="standings">
+<div class="title">
+<h2 class="anchored">AFLM Premiership 2023 Match Predictions</h2>
+Predicted results based on ELO ratings for upcoming Men's AFL games.
+</div>
+Last updated Feb 24 at 09:57AM
+<div id="htmlwidget-415db950120e7742965b" class="reactable html-widget " style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-415db950120e7742965b">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Game":[16191,16192,16193,16194,16195,16196,16197,16198,16199],"Season":[2023,2023,2023,2023,2023,2023,2023,2023,2023],"Date":["Thu, Mar 16","Fri, Mar 17","Sat, Mar 18","Sat, Mar 18","Sat, Mar 18","Sat, Mar 18","Sun, Mar 19","Sun, Mar 19","Sun, Mar 19"],"Time":["00:00","00:00","00:00","00:00","00:00","00:00","00:00","00:00","00:00"],"Round.Number":[1,1,1,1,1,1,1,1,1],"Venue":["M.C.G.","M.C.G.","Docklands","Adelaide Oval","M.C.G.","Carrara","GIANTS Stadium","M.C.G.","Docklands"],"Home.Team":["Richmond","Geelong","North Melbourne","Port Adelaide","Melbourne","Gold Coast","GWS","Hawthorn","St Kilda"],"Away.Team":["Carlton","Collingwood","West Coast","Brisbane Lions","Footscray","Sydney","Adelaide","Essendon","Fremantle"],"Prediction":[8.9,18,4.3,2.3,10.4,-4.9,7.9,5.9,3.5],"Probability":[0.588,0.673,0.543,0.523,0.603,0.451,0.578,0.559,0.535],"Margin":["NA","NA","NA","NA","NA","NA","NA","NA","NA"]},"columns":[{"id":"Game","name":"Game","type":"numeric","className":"cell","headerClassName":"header","show":false},{"id":"Season","name":"Season","type":"numeric","className":"cell","headerClassName":"header","show":false,"maxWidth":70},{"id":"Date","name":"Date","type":"character","className":"cell","headerClassName":"header","show":true,"maxWidth":90},{"id":"Time","name":"Time","type":"character","className":"cell","headerClassName":"header","show":false},{"id":"Round.Number","name":"Round","type":"numeric","className":"cell","headerClassName":"header","show":true,"maxWidth":60},{"id":"Venue","name":"Venue","type":"character","className":"cell","headerClassName":"header","show":true,"maxWidth":100},{"id":"Home.Team","name":"Home","type":"character","className":"cell","headerClassName":"header","defaultSortDesc":false,"cell":[{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Richmond flag","src":"/images/Richmond.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Richmond"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Geelong flag","src":"/images/Geelong.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Geelong"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"North Melbourne flag","src":"/images/North Melbourne.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["North Melbourne"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Port Adelaide flag","src":"/images/Port Adelaide.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Port Adelaide"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Melbourne flag","src":"/images/Melbourne.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Melbourne"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Gold Coast flag","src":"/images/Gold Coast.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Gold Coast"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"GWS flag","src":"/images/GWS.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["GWS"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Hawthorn flag","src":"/images/Hawthorn.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Hawthorn"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"St Kilda flag","src":"/images/St Kilda.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["St Kilda"]}]}],"minWidth":200,"maxWidth":185,"align":"left","headerStyle":{"fontWeight":700}},{"id":"Away.Team","name":"Away","type":"character","className":"cell","headerClassName":"header","defaultSortDesc":false,"cell":[{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Carlton flag","src":"/images/Carlton.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Carlton"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Collingwood flag","src":"/images/Collingwood.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Collingwood"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"West Coast flag","src":"/images/West Coast.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["West Coast"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Brisbane Lions flag","src":"/images/Brisbane Lions.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Brisbane Lions"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Footscray flag","src":"/images/Footscray.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Footscray"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Sydney flag","src":"/images/Sydney.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Sydney"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Adelaide flag","src":"/images/Adelaide.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Adelaide"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Essendon flag","src":"/images/Essendon.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Essendon"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Fremantle flag","src":"/images/Fremantle.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Fremantle"]}]}],"minWidth":200,"maxWidth":185,"align":"left","headerStyle":{"fontWeight":700}},{"id":"Prediction","name":"Pred. Margin","type":"numeric","className":"cell","headerClassName":"header","show":true,"maxWidth":70},{"id":"Probability","name":"Prob.","type":"numeric","className":"cell number ","headerClassName":"header","show":true,"cell":[" 59%"," 67%"," 54%"," 52%"," 60%"," 45%"," 58%"," 56%"," 54%"],"maxWidth":70,"style":[{"color":"#111","background":"#D8EDD8"},{"color":"#111","background":"#B9DFB9"},{"color":"#111","background":"#E8F5E8"},{"color":"#111","background":"#EFF8EF"},{"color":"#111","background":"#D2EBD2"},{"color":"#111","background":"#F8E7DF"},{"color":"#111","background":"#DBEFDB"},{"color":"#111","background":"#E2F2E2"},{"color":"#111","background":"#EBF6EB"}]},{"id":"Margin","name":"Actual Margin","type":"numeric","className":"cell","headerClassName":"header","show":true,"maxWidth":70}],"columnGroups":[{"headerClassName":"group-header","name":"Home Team Prediction","columns":["Prediction","Probability","Margin"]}],"defaultSorted":[{"id":"Game","desc":false}],"pagination":false,"borderless":true,"showSortIcon":false,"className":"standings-table","rowClassName":"\n    function(rowInfo, state) {\n      const firstSorted = state.sorted[0]\n      if (firstSorted && firstSorted.id === 'group') {\n        const nextRow = state.pageRows[rowInfo.viewIndex + 1]\n        if (nextRow && rowInfo.row.group !== nextRow.group) {\n          return 'group-last'\n        }\n      }\n    }","width":"100%","dataKey":"4f5f989f4c97a893e8aa4fd766651297"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.rowClassName"],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<link href="https://fonts.googleapis.com/css?family=Karla:400,700|Fira+Mono&amp;display=fallback" rel="stylesheet">
+</div>
+</div>
+<div class="cell">
+
+<style type="text/css">
+.standings {
+  font-family: Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+.title {
+  margin: 18px 0;
+  font-size: 16px;
+}
+.title h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.standings-table {
+  margin-bottom: 20px;
+}
+/* Align header text to the bottom */
+.header,
+.group-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.header {
+  border-bottom-color: #555;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+/* Highlight headers when sorting */
+.header:hover,
+.header[aria-sort="ascending"],
+.header[aria-sort="descending"] {
+  background-color: #eee;
+}
+.border-left {
+  border-left: 2px solid #555;
+}
+/* Use box-shadow to create row borders that appear behind vertical borders */
+.cell {
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+}
+.group-last .cell {
+  box-shadow: inset 0 -2px 0 #555;
+}
+.team {
+  display: inline-flex;
+  align-items: baseline;
+  align-content: left;
+}
+.record {
+  margin-left: 5px;
+  color: #999;
+  font-size: 13px;
+}
+.team-name {
+  font-size: 18px;
+  font-weight: 700;
+}
+.flag {
+  margin-right: 8px;
+  height: 21px;
+  border: 0px solid #f0f0f0;
+  align-content: left;
+}
+.group {
+  font-size: 19px;
+}
+.number {
+  font-family: "Fira Mono", Consolas, Monaco, monospace;
+  font-size: 16px;
+  line-height: 30px;
+  white-space: pre;
+}
+.spi-rating {
+  width: 35px;
+  height: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  border-radius: 50%;
+  color: #000;
+  font-size: 13px;
+  letter-spacing: -2px;
+  
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 12px;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 12px;
+  vertical-align: bottom;
+}
+
+.status-up {
+  background: rgba(68,171,67,.5);
+  color: hsl(116, 30%, 25%);
+}
+
+.status-no-change {
+  background: hsl(230, 70%, 90%);
+  color: hsl(230, 45%, 30%);
+}
+
+.status-down {
+  background: rgba(255,39,0,.5);
+  color: hsl(350, 45%, 30%);
+}
+</style>
+</div>
+<div class="cell">
+<style type="text/css">
+# /* rmarkdown html documents */
+.container[role="main"] {
+  min-width: 100% !important;
+  max-width: 1054 !important;
+  width: 100%;
+} 
+
+.container {
+  min-width: 100% !important;  
+  max-width: 1054px !important;
+  width: 100%;
+}
+
+ #h1.title {
+ #  display: none;
+ #}
+# /* pkgdown articles */
+# .contents {
+#   width: 1054px;
+# }
+# .page-header {
+#   display: none;
+#}  
+</style>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

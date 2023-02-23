@@ -110,5 +110,40 @@
     "title": "fitzRoy v1.1.0",
     "section": "Coaches votes",
     "text": "Coaches votes\nA new set of functions will return coaches votes.\n\ncoaches <- fetch_coaches_votes(season = 2021, round_number = 1, team = \"Hawthorn\")\ncoaches\n\n     Season Round Home.Team Away.Team            Player.Name Coaches.Votes\n1.27   2021     1  Essendon  Hawthorn     Tom Mitchell (HAW)            10\n1.28   2021     1  Essendon  Hawthorn   Jaeger O'Meara (HAW)             8\n1.29   2021     1  Essendon  Hawthorn     Zach Merrett (ESS)             5\n1.30   2021     1  Essendon  Hawthorn   Andrew McGrath (ESS)             4\n1.31   2021     1  Essendon  Hawthorn         Will Day (HAW)             2\n1.32   2021     1  Essendon  Hawthorn Changkuoth Jiath (HAW)             1\n\n\nAn associated function will also calculate possible ways in which the cochaes may have voted.\n\ncalculate_coaches_vote_possibilities(coaches, \"Coach View\")\n\n[[1]]\n  Votes                   C1                     C2\n1     5   Tom Mitchell (HAW)     Tom Mitchell (HAW)\n2     4 Jaeger O'Meara (HAW)   Jaeger O'Meara (HAW)\n3     3   Zach Merrett (ESS)   Andrew McGrath (ESS)\n4     2       Will Day (HAW)     Zach Merrett (ESS)\n5     1 Andrew McGrath (ESS) Changkuoth Jiath (HAW)\n\n\nYou can read about these functions fully at the new Vignette"
+  },
+  {
+    "objectID": "aflm-games.html",
+    "href": "aflm-games.html",
+    "title": "AFLM Games",
+    "section": "",
+    "text": "AFLM Premiership 2023 Match Predictions\nPredicted results based on ELO ratings for upcoming Men's AFL games.\n\nLast updated Feb 24 at 09:57AM"
+  },
+  {
+    "objectID": "aflw-coming-soon.html",
+    "href": "aflw-coming-soon.html",
+    "title": "AFLW - Coming soon",
+    "section": "",
+    "text": "For those looking for AFLW content - hang tight! Unfortunately, due to the new nature of AFLW, data is hard to come by. I managed in the first season by manually adding data after each game but this is not feasible. I’m hoping, with help from anoafl, to add some data scraping into our newly released fitzRoy package. Details on that can be found here"
+  },
+  {
+    "objectID": "aflm-model-results.html",
+    "href": "aflm-model-results.html",
+    "title": "Model Results",
+    "section": "",
+    "text": "Coming soon…"
+  },
+  {
+    "objectID": "aflm-predictions.html",
+    "href": "aflm-predictions.html",
+    "title": "AFLM Predictions",
+    "section": "",
+    "text": "AFLM Premiership 2023 Season Predictions\nELO ratings and chances of making various finals for every team in the AFLM competition\n\nLast updated Feb 24 at 09:28AM"
+  },
+  {
+    "objectID": "aflm-games/aflm-games.html",
+    "href": "aflm-games/aflm-games.html",
+    "title": "AFLM Games",
+    "section": "",
+    "text": "AFLM Premiership 2023 Match Predictions\nPredicted results based on ELO ratings for upcoming Men's AFL games.\n\nLast updated Feb 24 at 09:54AM"
   }
 ]
