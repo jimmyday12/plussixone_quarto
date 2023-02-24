@@ -1,8 +1,6 @@
 ---
-title: "AFLM Games"
-description: "Test"
-categories:
-  - aflm
+title: "AFLM Predictions"
+description: "Predicted results based on ELO ratings for upcoming Men's AFL games."
 ---
 
 ```{r setup, include=FALSE}
@@ -14,11 +12,14 @@ library(reactable)
 library(htmltools) 
 library(tidyverse) 
 
-dat_list <- read_rds(here::here("data_files", "raw-data", "AFLM.rds"))
+#dat_list <- read_rds(here::here("data_files", "raw-data", "AFLM.rds"))
+data_url <- "https://raw.githubusercontent.com/jimmyday12/plussixoneblog/main/data_files/processed-data/"
 
 # Get predictions for current round and present as table
-predictions <- dat_list$predictions
-results <- dat_list$results
+#predictions <- dat_list$predictions
+predictions <- read_csv(file = paste0(data_url, "AFLM_predictions.csv"))
+#results <- dat_list$results
+results <- read_csv(file = paste0(data_url, "AFLM_results.csv"))
 
 if(!is.null(predictions)) {
  max_seas <- max(predictions$Season)
@@ -203,11 +204,11 @@ date <- lubridate::with_tz(Sys.Date(), tzone = "Australia/Melbourne") %>%
 
 div(
   class = "standings",
-  div(
-    class = "title",
-    h2(paste0("AFLM Premiership ", seas, " Match Predictions")),
-    "Predicted results based on ELO ratings for upcoming Men's AFL games."
-  ),
+  #div(
+  #  class = "title",
+  #  h2(paste0("AFLM Premiership ", seas, " Match Predictions")),
+  #  "Predicted results based on ELO ratings for upcoming Men's AFL games."
+  #),
   paste0("Last updated ", date, " at ", time),
   tbl
 )

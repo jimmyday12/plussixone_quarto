@@ -1,28 +1,30 @@
 ---
-title: AFLM Predictions
-author: James Day
-#date: '2020-08-05'
-slug: aflm-predictions
-categories:
-  - AFLM
-tags: []
-subtitle: '' 
+title: "AFLM Predictions"
+description: "ELO ratings and chances of making various finals for every team in the AFLM competition"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r prep, include=FALSE}
+```{r load, include=FALSE}
 library(reactable) 
 library(htmltools) 
 library(tidyverse)
-aflm_finals_sims <- read_rds(here::here("data_files", "raw-data", "AFLM_finals_sims.rds")) 
-dat_list <- read_rds(here::here("data_files", "raw-data", "AFLM.rds"))
-results <- dat_list$results %>% slice_tail()
 
+data_url <- "https://raw.githubusercontent.com/jimmyday12/plussixoneblog/main/data_files/processed-data/"
 
-forecasts2 <- aflm_finals_sims$sims_combined %>%
+results <- read_csv(file = paste0(data_url, "AFLM_results.csv"))
+sims_combined <- read_csv(file = paste0(data_url, "AFLM_sims_combined.csv"))
+ongoing_status <- read_csv(file = paste0(data_url, "AFLM_home_away_ongoing.csv"))
+elo <- read_csv(file = paste0(data_url, "AFLM_elo.csv"))
+
+home_away_ongoing <- ongoing_status$home_away_ongoing[1]
+```
+
+```{r prep, include=FALSE}
+
+forecasts2 <- sims_combined %>%
   mutate(
     points = Wins,
     team = Team,
@@ -33,10 +35,11 @@ forecasts2 <- aflm_finals_sims$sims_combined %>%
   )
 
 new_season <- forecasts2$Round[1] == 0
-home_away_ongoing <- aflm_finals_sims$home_away_ongoing
+
+results <- results %>% slice_tail()
 
 if (results$Round == 27 & !new_season) {
-  elo <- read_csv(here::here("data_files", "raw-data", "AFLM_elo.csv"))
+  
   elo <- elo %>% 
     filter(Date == results$Date) %>%
     select(Team, ELO, ELO_pre)
@@ -232,8 +235,8 @@ tbl <- reactable(
 ```
 
 ```{r table_display, echo = FALSE}
-rnd <- aflm_finals_sims$sims_combined$Round %>% max()
-seas <- aflm_finals_sims$sims_combined$Season %>% max()
+rnd <- sims_combined$Round %>% max()
+seas <- sims_combined$Season %>% max()
 time <- lubridate::with_tz(Sys.time(), tzone = "Australia/Melbourne") %>%
   format("%I:%M%p")
 date <- lubridate::with_tz(Sys.Date(), tzone = "Australia/Melbourne") %>% 
@@ -241,11 +244,11 @@ date <- lubridate::with_tz(Sys.Date(), tzone = "Australia/Melbourne") %>%
 
 div(
   class = "standings",
-  div(
-    class = "title",
-    h2(paste0("AFLM Premiership ", seas, " Season Predictions")),
-    "ELO ratings and chances of making various finals for every team in the AFLM competition"
-  ),
+  #div(
+  #  class = "title",
+  #  h2(paste0("AFLM Premiership ", seas, " Season Predictions")),
+  #  "ELO ratings and chances of making various finals for every team in the AFLM competition"
+  #),
   paste0("Last updated ", date, " at ", time),
   tbl
 )
