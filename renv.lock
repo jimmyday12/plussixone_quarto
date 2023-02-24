@@ -118,16 +118,6 @@
       "Hash": "45f0398006e83a5b10b72a90663d8d8c",
       "Requirements": []
     },
-    "RCurl": {
-      "Package": "RCurl",
-      "Version": "1.98-1.10",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "35136c52e39f2679ebbe7bf448e3bd5a",
-      "Requirements": [
-        "bitops"
-      ]
-    },
     "Rcpp": {
       "Package": "Rcpp",
       "Version": "1.0.10",
@@ -1292,7 +1282,6 @@
       "Repository": "CRAN",
       "Hash": "267c99ff60ca7fd6c623a5285e40102c",
       "Requirements": [
-        "RCurl",
         "XML"
       ]
     },
