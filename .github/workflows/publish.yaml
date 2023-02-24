@@ -23,10 +23,16 @@ jobs:
         with:
           r-version: '4.2.0'
           
-      - name: Install libcurl
+      - name: Install system Dependencies
         run: >
           sudo apt-get update && sudo apt-get install --yes
           libcurl4-openssl-dev
+          libharfbuzz-dev
+          libfribidi-dev
+          libfreetype6-dev
+          libpng-dev
+          libtiff5-dev
+          libjpeg-dev
 
       - name: Install R Dependencies
         uses: r-lib/actions/setup-renv@v2
