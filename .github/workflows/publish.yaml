@@ -24,8 +24,10 @@ jobs:
           r-version: '4.2.0'
           
       - name: Install libcurl
-          run: |
-            sudo apt-get install libcurl4-openssl-dev
+        run: |
+          sudo apt-get update
+          sudo apt-get install libcurl4-openssl-dev libssl-dev
+          make requirements
 
       - name: Install R Dependencies
         uses: r-lib/actions/setup-renv@v2
