@@ -28,7 +28,7 @@ jobs:
         with:
           cache-version: 1
           extra-packages: |
-            curl
+            RCurl
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
