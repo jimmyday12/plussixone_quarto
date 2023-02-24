@@ -1,10 +1,15 @@
 ---
-title: "Welcome To My Blog"
+title: "Welcome To My (new) Blog"
 author: "James Day"
 date: "2023-02-24"
-categories: [news]
 ---
 
-I've migrated my old blog to Quarto. The old blogdown/hugo setup had broken and rather than try to fix it, I've decided to just move things over. This will be a bit of a work in progress as I figure things out. But for now, Welcome!
+I've migrated my old blog to Quarto. The old blogdown/hugo setup had broken the various themes and versions of tools I was using were very out of date. Rather than try to fix it, I've decided to just move things over to the more modern Quarto. This will be a bit of a work in progress as I figure things out but I've got the important stuff across.
 
-![](thumbnail.jpg)
+For those new here - I don't do a lot of writing anymore. Mostly, I write about major [fitzRoy](https://github.com/jimmyday12/fitzRoy) updates, which you can see in the blog post feed.
+
+I also keep my [AFLM Tips](../../pages/aflm-games.qmd) and [Season Predictions](../../pages/aflm-predictions.qmd) up to date, and am hoping to finally do the same thing for AFLW.
+
+Enjoy!
+
+![](table.png)

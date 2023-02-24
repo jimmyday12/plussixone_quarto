@@ -1,10 +1,12 @@
 project:
   type: website
   resources: 
-    - "image"
+    - "img"
 
 website:
   title: "plusSixOne Blog"
+  favicon: "favicon.ico"
+  image: "profile.png"
   navbar:
     right:
       - about.qmd
@@ -22,7 +24,7 @@ website:
         href: https://twitter.com/plusSixOneBlog
 format:
   html:
-    theme: flatly
+    theme: minty
     css: styles.css
 
 editor: visual

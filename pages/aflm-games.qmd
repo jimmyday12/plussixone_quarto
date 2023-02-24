@@ -1,5 +1,5 @@
 ---
-title: "AFLM Predictions"
+title: "AFLM Tips"
 description: "Predicted results based on ELO ratings for upcoming Men's AFL games."
 ---
 
@@ -104,7 +104,7 @@ team_column <- function(minWidth = 200,
       cell = function(value) {
         div(
           class = "team",
-          img(class = "flag", alt = paste(value, "flag"), src = paste0("/image/", value, ".svg")),
+          img(class = "flag", alt = paste(value, "flag"), src = paste0("../img/", value, ".svg")),
           div(class = "team-name", value)
         )
       },

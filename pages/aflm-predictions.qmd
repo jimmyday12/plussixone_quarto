@@ -1,5 +1,5 @@
 ---
-title: "AFLM Predictions"
+title: "AFLM Season Predictions"
 description: "ELO ratings and chances of making various finals for every team in the AFLM competition"
 ---
 
@@ -179,7 +179,7 @@ tbl <- reactable(
       cell = function(value, index) {
         div(
           class = "team",
-          img(class = "flag", alt = paste(value, "flag"), src = paste0("/image/", value, ".svg")),
+          img(class = "flag", alt = paste(value, "flag"), src = paste0("../img/", value, ".svg")),
           div(class = "team-name", value),
           div(class = "record", sprintf("%s", forecasts2[index, "Form"]))
         )
