@@ -37,9 +37,9 @@
   {
     "objectID": "posts/2023-02-24-welcome/index.html",
     "href": "posts/2023-02-24-welcome/index.html",
-    "title": "Welcome To My Blog",
+    "title": "Welcome To My (new) Blog",
     "section": "",
-    "text": "I’ve migrated my old blog to Quarto. The old blogdown/hugo setup had broken and rather than try to fix it, I’ve decided to just move things over. This will be a bit of a work in progress as I figure things out. But for now, Welcome!"
+    "text": "I’ve migrated my old blog to Quarto. The old blogdown/hugo setup had broken the various themes and versions of tools I was using were very out of date. Rather than try to fix it, I’ve decided to just move things over to the more modern Quarto. This will be a bit of a work in progress as I figure things out but I’ve got the important stuff across.\nFor those new here - I don’t do a lot of writing anymore. Mostly, I write about major fitzRoy updates, which you can see in the blog post feed.\nI also keep my AFLM Tips and Season Predictions up to date, and am hoping to finally do the same thing for AFLW.\nEnjoy!"
   },
   {
     "objectID": "posts/2022-01-11-fitzRoy-v-1-1-0.en.html",
@@ -86,9 +86,9 @@
   {
     "objectID": "pages/aflm-games.html",
     "href": "pages/aflm-games.html",
-    "title": "AFLM Predictions",
+    "title": "AFLM Tips",
     "section": "",
-    "text": "Last updated Feb 24 at 04:06PM"
+    "text": "Last updated Feb 24 at 04:56PM"
   },
   {
     "objectID": "pages/aflw-coming-soon.html",
@@ -100,9 +100,9 @@
   {
     "objectID": "pages/aflm-predictions.html",
     "href": "pages/aflm-predictions.html",
-    "title": "AFLM Predictions",
+    "title": "AFLM Season Predictions",
     "section": "",
-    "text": "Last updated Feb 24 at 04:06PM"
+    "text": "Last updated Feb 24 at 04:56PM"
   },
   {
     "objectID": "pages/aflm-model-results.html",
@@ -116,6 +116,6 @@
     "href": "index.html",
     "title": "plusSixOne Blog",
     "section": "",
-    "text": "Welcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nFeb 24, 2023\n\n\nJames Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfitzRoy v1.2.0\n\n\n\n\n\n\n\nfitzRoy\n\n\n\n\nfitzRoy v1.2.0 is now on CRAN\n\n\n\n\n\n\nSep 29, 2022\n\n\nJames Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfitzRoy v1.1.0\n\n\n\n\n\n\n\nfitzRoy\n\n\n\n\nfitzRoy v1.1.0 is now on CRAN\n\n\n\n\n\n\nJan 11, 2022\n\n\nJames Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew fitzRoy functions\n\n\n\n\n\n\n\nfitzRoy\n\n\n\n\nA new set of functions to make fitzRoy a lot more consistent\n\n\n\n\n\n\nAug 3, 2020\n\n\nJames Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfitzRoy is now on CRAN!\n\n\n\n\n\n\n\nfitzRoy\n\n\n\n\nfitzRoy package is now officially on CRAN\n\n\n\n\n\n\nDec 2, 2019\n\n\nJames Day\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome To My (new) Blog\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 24, 2023\n\n\nJames Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfitzRoy v1.2.0\n\n\n\n\n\n\n\nfitzRoy\n\n\n\n\nfitzRoy v1.2.0 is now on CRAN\n\n\n\n\n\n\nSep 29, 2022\n\n\nJames Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfitzRoy v1.1.0\n\n\n\n\n\n\n\nfitzRoy\n\n\n\n\nfitzRoy v1.1.0 is now on CRAN\n\n\n\n\n\n\nJan 11, 2022\n\n\nJames Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew fitzRoy functions\n\n\n\n\n\n\n\nfitzRoy\n\n\n\n\nA new set of functions to make fitzRoy a lot more consistent\n\n\n\n\n\n\nAug 3, 2020\n\n\nJames Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfitzRoy is now on CRAN!\n\n\n\n\n\n\n\nfitzRoy\n\n\n\n\nfitzRoy package is now officially on CRAN\n\n\n\n\n\n\nDec 2, 2019\n\n\nJames Day\n\n\n\n\n\n\nNo matching items"
   }
 ]
