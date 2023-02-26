@@ -1,6 +1,8 @@
 ---
 title: "AFLM Tips"
 description: "Predicted results based on ELO ratings for upcoming Men's AFL games."
+execute:
+  freeze: false
 ---
 
 ```{r setup, include=FALSE}
