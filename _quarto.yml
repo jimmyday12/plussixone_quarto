@@ -7,6 +7,13 @@ website:
   title: "plusSixOne"
   favicon: "favicon.ico"
   image: "profile.png"
+  repo-url: "github.com/jimmyday_12/plussixone_quarto"
+  cookie-consent: true
+  google-analytics: "UA-77406420-1"
+  twitter-card: 
+    image: profile.png
+    card-style: summary_large_image
+    creator: "@jamesday87"
   navbar:
     logo: "profile.png"
     left:
@@ -18,12 +25,16 @@ website:
       - text: "AFLW"
         menu: 
           - pages/aflw-coming-soon.qmd
+      - text: "fitzRoy"
+        href: https://jimmyday12.github.io/fitzRoy
     right:
       - about.qmd
       - icon: github
         href: https://github.com/jimmyday12
       - icon: twitter
         href: https://twitter.com/plusSixOneBlog
+      - icon: linkedin
+        href: https://linkedin.com/in/james-day-ab648321
 format:
   html:
     theme:
