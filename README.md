@@ -2,7 +2,7 @@
 
 # plussixone_quarto
 
-This repo houses the static site code for https://plussixoneblog.com, built using Quarto. 
+This repo houses the static site code for [plusSixOne Blog](https://plussixoneblog.com), built using the Quarto framework. 
 
-The data for the various calculations is houses over at https://github.com/jimmyday12/plussixoneblog.
+The data for the various calculations is houses over at [jimmyday_12](https://github.com/jimmyday12/plussixoneblog).
 
