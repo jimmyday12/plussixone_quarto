@@ -4,12 +4,12 @@ project:
     - "img"
 
 website:
-  title: "plusSixOne Blog"
+  title: "plusSixOne"
   favicon: "favicon.ico"
   image: "profile.png"
   navbar:
-    right:
-      - about.qmd
+    logo: "profile.png"
+    left:
       - text: "AFLM"
         menu:
           - pages/aflm-predictions.qmd
@@ -18,13 +18,17 @@ website:
       - text: "AFLW"
         menu: 
           - pages/aflw-coming-soon.qmd
+    right:
+      - about.qmd
       - icon: github
         href: https://github.com/jimmyday12
       - icon: twitter
         href: https://twitter.com/plusSixOneBlog
 format:
   html:
-    theme: minty
+    theme:
+      light: minty
+      dark: darkly
     css: styles.css
 
 editor: visual
