@@ -8,8 +8,9 @@
 
 <meta name="author" content="James Day">
 <meta name="dcterms.date" content="2021-03-17">
+<meta name="description" content="fitzRoy v1.0.0 is now on CRAN">
 
-<title>plusSixOne - fitzRoy v1.0.0</title>
+<title>plusSixOne - fitzRoy v1.1.0</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -161,8 +162,8 @@ cookieconsent.run({
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta name="twitter:title" content="plusSixOne - fitzRoy v1.0.0">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="plusSixOne - fitzRoy v1.1.0">
+<meta name="twitter:description" content="fitzRoy v1.0.0 is now on CRAN">
 <meta name="twitter:image" content="https://github.com/jimmyday12/plussixone_quarto/profile.png">
 <meta name="twitter:creator" content="@jamesday87">
 <meta name="twitter:card" content="summary_large_image">
@@ -257,9 +258,14 @@ cookieconsent.run({
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">fitzRoy v1.0.0</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">fitzroy</div>
+      <h1 class="title">fitzRoy v1.1.0</h1>
+                  <div>
+        <div class="description">
+          fitzRoy v1.0.0 is now on CRAN
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">fitzRoy</div>
               </div>
                   </div>
   </div>
@@ -312,7 +318,7 @@ cookieconsent.run({
 <p>This new family of functions provides a simple and consistent API to the common types of AFL data. It also allows you to use the same interface to access data from any data source, meaning that it should require much less effort to switch between data sources or start a new analysis.</p>
 <p>The basic structure of the <code>fetch_*</code> functions is that you specify the <code>season</code>, <code>round_number</code>, <code>source</code> and <code>comp</code>. Some examples are below but read through the extensive <a href="https://jimmyday12.github.io/fitzRoy/articles/main-fetch-functions.html">Main Fetch Functions vignette</a> for a detailed run through.</p>
 <p>An example with the fixture dataset.</p>
-<div class="cell">
+<div class="cell" data-hash="2021-03-15-fitzRoy-v-1-0-0.en_cache/html/unnamed-chunk-1_436d8efb32fd21f6a0fd3ac44ced516a">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_fixture</span>(<span class="at">season =</span> <span class="dv">2021</span>, <span class="at">source =</span> <span class="st">"AFL"</span>, <span class="at">comp =</span> <span class="st">"AFLM"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 207 × 56
@@ -338,7 +344,7 @@ cookieconsent.run({
 </div>
 </div>
 <p>The other functions are below.</p>
-<div class="cell">
+<div class="cell" data-hash="2021-03-15-fitzRoy-v-1-0-0.en_cache/html/unnamed-chunk-2_ae0b5003e652ebc642299fbc5ed3c675">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lineup <span class="ot">&lt;-</span> <span class="fu">fetch_lineup</span>(<span class="at">season =</span> <span class="dv">2021</span>, <span class="at">round_number =</span> <span class="dv">7</span>, <span class="at">comp =</span> <span class="st">"AFLW"</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">fetch_results</span>(<span class="at">season =</span> <span class="dv">2020</span>, <span class="at">source =</span> <span class="st">"afltables"</span>, <span class="at">comp =</span> <span class="st">"AFLW"</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ladder <span class="ot">&lt;-</span> <span class="fu">fetch_ladder</span>(<span class="at">season =</span> <span class="dv">2020</span>, <span class="at">source =</span> <span class="st">"squiggle"</span>)</span>
@@ -349,7 +355,7 @@ cookieconsent.run({
 <h3 class="anchored" data-anchor-id="new-data-source">New data source</h3>
 <p>The official AFL website has been added as a new data source for fitzRoy. This provides access to official statistics and generally includes a lot more data than other sources. It is the default <code>source</code> in any of the <code>fetch_*</code> family of functions.</p>
 <p>Some good examples are shown in the new <a href="https://jimmyday12.github.io/fitzRoy/articles/fitzRoy.html">Getting started vignette</a></p>
-<div class="cell">
+<div class="cell" data-hash="2021-03-15-fitzRoy-v-1-0-0.en_cache/html/unnamed-chunk-3_e0d28b75abfeae30f5dbe623a2f5242e">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The following will return the same. </span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_results</span>(<span class="at">season =</span> <span class="dv">2021</span>, <span class="at">round_number =</span> <span class="dv">1</span>, <span class="at">source =</span> <span class="st">"AFL"</span>, <span class="at">comp =</span> <span class="st">"AFLM"</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_results_afl</span>(<span class="at">season =</span> <span class="dv">2021</span>, <span class="at">round_number =</span> <span class="dv">1</span>, <span class="at">comp =</span> <span class="st">"AFLM"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -358,7 +364,7 @@ cookieconsent.run({
 <section id="aflw-data" class="level3">
 <h3 class="anchored" data-anchor-id="aflw-data">AFLW data</h3>
 <p>All data from the source “AFL” will also contain AFLW data for the first time. This includes fixtures, results, ladders, lineups and player stats. It is as simple as changing the <code>comp</code> argument to “AFLW” when using any of the <code>fetch_*</code> family of functions.</p>
-<div class="cell">
+<div class="cell" data-hash="2021-03-15-fitzRoy-v-1-0-0.en_cache/html/unnamed-chunk-4_5cc2c029f9c52eac5aa59f57f18ebd68">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_player_stats</span>(<span class="at">season =</span> <span class="dv">2021</span>, <span class="at">round_number =</span> <span class="dv">1</span>, <span class="at">source =</span> <span class="st">"AFL"</span>, <span class="at">comp =</span> <span class="st">"AFLW"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 294 × 70
