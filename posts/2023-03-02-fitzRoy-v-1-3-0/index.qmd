@@ -1,0 +1,48 @@
+---
+title: "fitzRoy v1.3.0 on CRAN"
+author: "James Day"
+date: "2023-03-02"
+---
+
+I'm pleased to announce that `fitzRoy` v1.3.0 has just been accepted to CRAN!
+
+This update mostly contains bug fixes. You can read about them below.
+
+### Deprecated functions
+
+All of the `get_` family of functions are now formally following the deprecation lifecycle used in the [{lifecycle} package](https://lifecycle.r-lib.org/articles/stages.html). That is, there is now a formal warning for using these functions. The next version of `fitzRoy` will hard deprecate these functions, where calling them will return an error. Given these have been technically deprecated since v1.0.0, this is plenty of warning.
+
+```{r}
+# install.packages("fitzRoy")
+library(fitzRoy)
+
+fitzRoy:::get_fixture(2020)
+```
+
+### `fetch_player_stats_afl`
+
+Fixed an issue with `fetch_player_stats_afl` where an error was being returned for the new season. It now returns NULL if there is no data for the specified season
+
+```{r}
+fetch_player_stats_afl(2023, round_number = 1)
+
+```
+
+### Debut players in `fetch_player_stats_afltables`
+
+Fixed an annoying bug where players who debuted in 2023 were getting assigned an ID of 0 in AFL Tables Data. This is now resolved and all ID's should be correctly assigned for new players
+
+```{r}
+df <- fetch_player_stats_afltables(2022)
+
+df |> 
+  dplyr::filter(ID == 0)
+```
+
+### Smaller Bug Fixes
+
+-   Fixed a range of unhelpful messages and warnings
+
+-   Fixed a bug in `fetch_player_stats_footywire` that was caused by an update to the website
+
+Enjoy!
