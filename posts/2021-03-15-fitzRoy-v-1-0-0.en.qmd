@@ -1,5 +1,5 @@
 ---
-title: "fitzRoy v1.1.0"
+title: "fitzRoy v1.0.0"
 description: "fitzRoy v1.0.0 is now on CRAN"
 author: James Day
 date: '2021-03-17'
