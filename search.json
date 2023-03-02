@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "posts/2023-03-02-fitzRoy-v-1-3-0/index.html",
+    "href": "posts/2023-03-02-fitzRoy-v-1-3-0/index.html",
+    "title": "fitzRoy v1.3.0 on CRAN",
+    "section": "",
+    "text": "I’m pleased to announce that fitzRoy v1.3.0 has just been accepted to CRAN!\nThis update mostly contains bug fixes. You can read about them below.\n\nDeprecated functions\nAll of the get_ family of functions are now formally following the deprecation lifecycle used in the {lifecycle} package. That is, there is now a formal warning for using these functions. The next version of fitzRoy will hard deprecate these functions, where calling them will return an error. Given these have been technically deprecated since v1.0.0, this is plenty of warning.\n\n# install.packages(\"fitzRoy\")\nlibrary(fitzRoy)\n\nfitzRoy:::get_fixture(2020)\n\nWarning: `get_fixture()` was deprecated in fitzRoy 1.0.0.\nℹ Please use `fetch_fixture()` instead.\n\n\n# A tibble: 162 × 7\n   Date                Season Season.Game Round Home.Team       Away.Team  Venue\n   <dttm>               <dbl>       <int> <dbl> <chr>           <chr>      <chr>\n 1 2020-03-19 19:40:00   2020           1     1 Richmond        Carlton    M.C.…\n 2 2020-03-20 19:50:00   2020           2     1 Footscray       Collingwo… Dock…\n 3 2020-03-21 14:10:00   2020           3     1 Essendon        Fremantle  Dock…\n 4 2020-03-21 16:35:00   2020           4     1 Adelaide        Sydney     Adel…\n 5 2020-03-21 18:40:00   2020           5     1 Gold Coast      Port Adel… Carr…\n 6 2020-03-21 19:40:00   2020           6     1 GWS             Geelong    Sydn…\n 7 2020-03-22 13:05:00   2020           7     1 North Melbourne St Kilda   Dock…\n 8 2020-03-22 15:35:00   2020           8     1 Hawthorn        Brisbane … M.C.…\n 9 2020-03-22 15:40:00   2020           9     1 West Coast      Melbourne  Pert…\n10 2020-06-11 19:40:00   2020          10     2 Collingwood     Richmond   M.C.…\n# … with 152 more rows\n\n\n\n\nfetch_player_stats_afl\nFixed an issue with fetch_player_stats_afl where an error was being returned for the new season. It now returns NULL if there is no data for the specified season\n\nfetch_player_stats_afl(2023, round_number = 1)\n\nℹ Fetching match ids\n\n\n✔ Fetching match ids ... done\n\n\n\n\n\nℹ Finding player stats for 9 matches.\n\n\n✔ Finding player stats for 9 matches. ... done\n\n\n\n\n\nℹ No completed matches found\n\n\nNULL\n\n\n\n\nDebut players in fetch_player_stats_afltables\nFixed an annoying bug where players who debuted in 2023 were getting assigned an ID of 0 in AFL Tables Data. This is now resolved and all ID’s should be correctly assigned for new players\n\ndf <- fetch_player_stats_afltables(2022)\n\nℹ Looking for data from 2022-01-01 to 2022-12-31\n\n\nℹ fetching cached data from <\u001b]8;;github.com\u0007github.com\u001b]8;;\u0007>\n\n\n✔ fetching cached data from <\u001b]8;;github.com\u0007github.com\u001b]8;;\u0007> ... done\n\n\n\n\n\nFinished getting afltables data\n\ndf |> \n  dplyr::filter(ID == 0)\n\n# A tibble: 0 × 59\n# … with 59 variables: Season <dbl>, Round <chr>, Date <date>,\n#   Local.start.time <int>, Venue <chr>, Attendance <dbl>, Home.team <chr>,\n#   HQ1G <int>, HQ1B <int>, HQ2G <int>, HQ2B <int>, HQ3G <int>, HQ3B <int>,\n#   HQ4G <int>, HQ4B <int>, Home.score <int>, Away.team <chr>, AQ1G <int>,\n#   AQ1B <int>, AQ2G <int>, AQ2B <int>, AQ3G <int>, AQ3B <int>, AQ4G <int>,\n#   AQ4B <int>, Away.score <int>, First.name <chr>, Surname <chr>, ID <dbl>,\n#   Jumper.No. <chr>, Playing.for <chr>, Kicks <dbl>, Marks <dbl>, …\n\n\n\n\nSmaller Bug Fixes\n\nFixed a range of unhelpful messages and warnings\nFixed a bug in fetch_player_stats_footywire that was caused by an update to the website\n\nEnjoy!"
+  },
+  {
     "objectID": "posts/2022-09-29-fitzRoy-v-1-2-0.en.html",
     "href": "posts/2022-09-29-fitzRoy-v-1-2-0.en.html",
     "title": "fitzRoy v1.2.0",
@@ -88,7 +95,7 @@
     "href": "pages/aflm-games.html",
     "title": "AFLM Tips",
     "section": "",
-    "text": "Last updated Feb 26 at 09:42AM"
+    "text": "Last updated Mar 02 at 04:51PM"
   },
   {
     "objectID": "pages/aflw-coming-soon.html",
@@ -102,7 +109,7 @@
     "href": "pages/aflm-predictions.html",
     "title": "AFLM Season Predictions",
     "section": "",
-    "text": "Last updated Feb 26 at 09:42AM"
+    "text": "Last updated Mar 02 at 04:51PM"
   },
   {
     "objectID": "pages/aflm-model-results.html",
@@ -116,6 +123,6 @@
     "href": "index.html",
     "title": "plusSixOne Blog",
     "section": "",
-    "text": "Welcome To My (new) Blog\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 24, 2023\n\n\nJames Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfitzRoy v1.2.0\n\n\n\n\n\n\n\nfitzRoy\n\n\n\n\nfitzRoy v1.2.0 is now on CRAN\n\n\n\n\n\n\nSep 29, 2022\n\n\nJames Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfitzRoy v1.1.0\n\n\n\n\n\n\n\nfitzRoy\n\n\n\n\nfitzRoy v1.1.0 is now on CRAN\n\n\n\n\n\n\nJan 11, 2022\n\n\nJames Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew fitzRoy functions\n\n\n\n\n\n\n\nfitzRoy\n\n\n\n\nA new set of functions to make fitzRoy a lot more consistent\n\n\n\n\n\n\nAug 3, 2020\n\n\nJames Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfitzRoy is now on CRAN!\n\n\n\n\n\n\n\nfitzRoy\n\n\n\n\nfitzRoy package is now officially on CRAN\n\n\n\n\n\n\nDec 2, 2019\n\n\nJames Day\n\n\n\n\n\n\nNo matching items"
+    "text": "fitzRoy v1.3.0 on CRAN\n\n\n\n\n\n\n\n\n\n\n\n\nMar 2, 2023\n\n\nJames Day\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My (new) Blog\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 24, 2023\n\n\nJames Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfitzRoy v1.2.0\n\n\n\n\n\n\n\nfitzRoy\n\n\n\n\nfitzRoy v1.2.0 is now on CRAN\n\n\n\n\n\n\nSep 29, 2022\n\n\nJames Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfitzRoy v1.1.0\n\n\n\n\n\n\n\nfitzRoy\n\n\n\n\nfitzRoy v1.1.0 is now on CRAN\n\n\n\n\n\n\nJan 11, 2022\n\n\nJames Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNew fitzRoy functions\n\n\n\n\n\n\n\nfitzRoy\n\n\n\n\nA new set of functions to make fitzRoy a lot more consistent\n\n\n\n\n\n\nAug 3, 2020\n\n\nJames Day\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfitzRoy is now on CRAN!\n\n\n\n\n\n\n\nfitzRoy\n\n\n\n\nfitzRoy package is now officially on CRAN\n\n\n\n\n\n\nDec 2, 2019\n\n\nJames Day\n\n\n\n\n\n\nNo matching items"
   }
 ]
