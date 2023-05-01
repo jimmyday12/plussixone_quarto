@@ -1,1 +1,1 @@
-Sitemap: https://github.com/jimmyday12/plussixone_quarto/sitemap.xml
+Sitemap: https://www.plussixoneblog.com/sitemap.xml
