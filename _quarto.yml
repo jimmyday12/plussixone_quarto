@@ -2,6 +2,7 @@ project:
   type: website
   resources: 
     - "img"
+    - CNAME
 
 website:
   title: "plusSixOne"
