@@ -36,8 +36,8 @@ jobs:
           libtiff5-dev
           libjpeg-dev
 
-      - name: Install R Dependencies
-        uses: r-lib/actions/setup-r-dependencies@v2
+      - name: Install R Dependencies from R env
+        uses: r-lib/actions/setup-renv@v2
         with:
           cache-version: 2
 
