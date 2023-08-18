@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.plussixoneblog.com/about.html</loc>
-    <lastmod>2023-08-18T14:13:55.299Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.plussixoneblog.com/posts/2022-09-29-fitzRoy-v-1-2-0.en.html</loc>
-    <lastmod>2023-08-18T14:13:54.031Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.plussixoneblog.com/posts/2019-12-02-fitzroy-is-now-on-cran.en.html</loc>
-    <lastmod>2023-08-18T14:13:52.411Z</lastmod>
+    <loc>https://www.plussixoneblog.com/posts/2023-03-02-fitzRoy-v-1-3-0/index.html</loc>
+    <lastmod>2023-08-18T22:21:21.377Z</lastmod>
   </url>
   <url>
     <loc>https://www.plussixoneblog.com/posts/2023-02-24-welcome/index.html</loc>
-    <lastmod>2023-08-18T14:13:51.171Z</lastmod>
+    <lastmod>2023-08-18T22:21:20.081Z</lastmod>
   </url>
   <url>
-    <loc>https://www.plussixoneblog.com/posts/2023-03-02-fitzRoy-v-1-3-0/index.html</loc>
-    <lastmod>2023-08-18T14:13:49.759Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.plussixoneblog.com/pages/aflw-coming-soon.html</loc>
-    <lastmod>2023-08-18T14:13:48.487Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.plussixoneblog.com/pages/aflm-games.html</loc>
-    <lastmod>2023-08-18T14:13:17.131Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.plussixoneblog.com/index.html</loc>
-    <lastmod>2023-08-18T14:12:45.760Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.plussixoneblog.com/pages/aflm-predictions.html</loc>
-    <lastmod>2023-08-18T14:13:47.947Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.plussixoneblog.com/pages/aflm-model-results.html</loc>
-    <lastmod>2023-08-18T14:13:48.919Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.plussixoneblog.com/posts/2022-01-11-fitzRoy-v-1-1-0.en.html</loc>
-    <lastmod>2023-08-18T14:13:51.955Z</lastmod>
+    <loc>https://www.plussixoneblog.com/posts/2022-09-29-fitzRoy-v-1-2-0.en.html</loc>
+    <lastmod>2023-08-18T22:21:19.033Z</lastmod>
   </url>
   <url>
     <loc>https://www.plussixoneblog.com/posts/2021-03-15-fitzRoy-v-1-0-0.en.html</loc>
-    <lastmod>2023-08-18T14:13:53.239Z</lastmod>
+    <lastmod>2023-08-18T22:21:18.037Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.plussixoneblog.com/about.html</loc>
+    <lastmod>2023-08-18T22:21:16.581Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.plussixoneblog.com/pages/aflm-model-results.html</loc>
+    <lastmod>2023-08-18T22:21:15.289Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.plussixoneblog.com/pages/aflw-coming-soon.html</loc>
+    <lastmod>2023-08-18T22:20:46.924Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.plussixoneblog.com/pages/aflm-games.html</loc>
+    <lastmod>2023-08-18T22:20:45.844Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.plussixoneblog.com/pages/aflm-predictions.html</loc>
+    <lastmod>2023-08-18T22:21:14.921Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.plussixoneblog.com/index.html</loc>
+    <lastmod>2023-08-18T22:21:16.181Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.plussixoneblog.com/posts/2019-12-02-fitzroy-is-now-on-cran.en.html</loc>
+    <lastmod>2023-08-18T22:21:18.397Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.plussixoneblog.com/posts/2022-01-11-fitzRoy-v-1-1-0.en.html</loc>
+    <lastmod>2023-08-18T22:21:19.681Z</lastmod>
   </url>
   <url>
     <loc>https://www.plussixoneblog.com/posts/2020-08-03-new-fitzroy-functions.en.html</loc>
-    <lastmod>2023-08-18T14:13:54.859Z</lastmod>
+    <lastmod>2023-08-18T22:21:20.729Z</lastmod>
   </url>
 </urlset>
