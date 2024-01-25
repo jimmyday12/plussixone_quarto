@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -51,7 +51,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -60,6 +66,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -91,11 +98,12 @@ cookieconsent.run({
   "notice_banner_reject_button_hide":false,
   "preferences_center_close_button_hide":false,
   "website_name":""
+  ,
+"language":"en"
   });
 });
 </script> 
   
-
 <script src="../site_libs/core-js-2.5.3/shim.min.js"></script>
 <script src="../site_libs/react-17.0.0/react.min.js"></script>
 <script src="../site_libs/react-17.0.0/react-dom.min.js"></script>
@@ -117,9 +125,9 @@ cookieconsent.run({
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../profile.png" alt="" class="navbar-logo">
     </a>
@@ -134,65 +142,65 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aflm" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aflm" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">AFLM</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-aflm">    
         <li>
-    <a class="dropdown-item" href="../pages/aflm-predictions.html" rel="" target="">
+    <a class="dropdown-item" href="../pages/aflm-predictions.html">
  <span class="dropdown-text">AFLM Season Predictions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../pages/aflm-games.html" rel="" target="">
+    <a class="dropdown-item" href="../pages/aflm-games.html">
  <span class="dropdown-text">AFLM Tips</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../pages/aflm-model-results.html" rel="" target="">
+    <a class="dropdown-item" href="../pages/aflm-model-results.html">
  <span class="dropdown-text">Model Results</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aflw" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aflw" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">AFLW</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-aflw">    
         <li>
-    <a class="dropdown-item" href="../pages/aflw-coming-soon.html" rel="" target="">
+    <a class="dropdown-item" href="../pages/aflw-coming-soon.html">
  <span class="dropdown-text">AFLW - Coming soon</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="https://jimmyday12.github.io/fitzRoy" rel="" target="">
- <span class="menu-text">fitzRoy</span></a>
+    <a class="nav-link" href="https://jimmyday12.github.io/fitzRoy"> 
+<span class="menu-text">fitzRoy</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/jimmyday12" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/jimmyday12"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/plusSixOneBlog" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/plusSixOneBlog"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://linkedin.com/in/james-day-ab648321" rel="" target=""><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://linkedin.com/in/james-day-ab648321"> <i class="bi bi-linkedin" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -224,15 +232,16 @@ cookieconsent.run({
   </div>
   
 
+
 </header>
+
 
 <div class="cell">
 <div class="cell-output-display">
-
 <div class="standings">
-Last updated Jan 22 at 01:14AM
-<div id="htmlwidget-8c8d1dc44d2709fd9c98" class="reactable html-widget " style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-8c8d1dc44d2709fd9c98">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Game":[16407,16408,16409,16410],"Season":[2024,2024,2024,2024],"Date":["Thu, Mar 07","Fri, Mar 08","Sat, Mar 09","Sat, Mar 09"],"Time":["00:00:00","00:00:00","00:00:00","00:00:00"],"Round.Number":[0,0,0,0],"Venue":["S.C.G.","Gabba","Heritage Bank Stadium","GIANTS Stadium"],"Home.Team":["Sydney","Brisbane Lions","Gold Coast","GWS"],"Away.Team":["Melbourne","Carlton","Richmond","Collingwood"],"Prediction":[1.4,14.1,-1.3,-4],"Probability":[0.514,0.637,0.487,0.46],"Margin":["NA","NA","NA","NA"]},"columns":[{"id":"Game","name":"Game","type":"numeric","className":"cell","headerClassName":"header","show":false},{"id":"Season","name":"Season","type":"numeric","className":"cell","headerClassName":"header","show":false,"maxWidth":70},{"id":"Date","name":"Date","type":"character","className":"cell","headerClassName":"header","show":true,"maxWidth":90},{"id":"Time","name":"Time","type":["hms","difftime"],"className":"cell","headerClassName":"header","show":false},{"id":"Round.Number","name":"Round","type":"numeric","className":"cell","headerClassName":"header","show":true,"maxWidth":60},{"id":"Venue","name":"Venue","type":"character","className":"cell","headerClassName":"header","show":true,"maxWidth":100},{"id":"Home.Team","name":"Home","type":"character","className":"cell","headerClassName":"header","defaultSortDesc":false,"cell":[{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Sydney flag","src":"../img/Sydney.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Sydney"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Brisbane Lions flag","src":"../img/Brisbane Lions.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Brisbane Lions"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Gold Coast flag","src":"../img/Gold Coast.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Gold Coast"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"GWS flag","src":"../img/GWS.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["GWS"]}]}],"minWidth":200,"maxWidth":185,"align":"left","headerStyle":{"fontWeight":700}},{"id":"Away.Team","name":"Away","type":"character","className":"cell","headerClassName":"header","defaultSortDesc":false,"cell":[{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Melbourne flag","src":"../img/Melbourne.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Melbourne"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Carlton flag","src":"../img/Carlton.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Carlton"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Richmond flag","src":"../img/Richmond.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Richmond"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Collingwood flag","src":"../img/Collingwood.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Collingwood"]}]}],"minWidth":200,"maxWidth":185,"align":"left","headerStyle":{"fontWeight":700}},{"id":"Prediction","name":"Pred. Margin","type":"numeric","className":"cell","headerClassName":"header","show":true,"maxWidth":70},{"id":"Probability","name":"Prob.","type":"numeric","className":"cell number ","headerClassName":"header","show":true,"cell":[" 51%"," 64%"," 49%"," 46%"],"maxWidth":70,"style":[{"color":"#111","background":"#F2F9F2"},{"color":"#111","background":"#C6E5C6"},{"color":"#111","background":"#F8F6F1"},{"color":"#111","background":"#F8EAE4"}]},{"id":"Margin","name":"Actual Margin","type":"numeric","className":"cell","headerClassName":"header","show":true,"maxWidth":70}],"columnGroups":[{"headerClassName":"group-header","name":"Home Team Prediction","columns":["Prediction","Probability","Margin"]}],"defaultSorted":[{"id":"Game","desc":false}],"pagination":false,"borderless":true,"showSortIcon":false,"className":"standings-table","rowClassName":"\n    function(rowInfo, state) {\n      const firstSorted = state.sorted[0]\n      if (firstSorted && firstSorted.id === 'group') {\n        const nextRow = state.pageRows[rowInfo.viewIndex + 1]\n        if (nextRow && rowInfo.row.group !== nextRow.group) {\n          return 'group-last'\n        }\n      }\n    }","width":"100%","dataKey":"775be9ac9627d74e0c3d3481ce57b22a"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.rowClassName"],"jsHooks":[]}</script>
+Last updated Jan 25 at 04:14PM
+<div id="htmlwidget-58a18582140e3170e650" class="reactable html-widget " style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-58a18582140e3170e650">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Game":[16407,16408,16409,16410],"Season":[2024,2024,2024,2024],"Date":["Thu, Mar 07","Fri, Mar 08","Sat, Mar 09","Sat, Mar 09"],"Time":["00:00:00","00:00:00","00:00:00","00:00:00"],"Round.Number":[0,0,0,0],"Venue":["S.C.G.","Gabba","Heritage Bank Stadium","GIANTS Stadium"],"Home.Team":["Sydney","Brisbane Lions","Gold Coast","GWS"],"Away.Team":["Melbourne","Carlton","Richmond","Collingwood"],"Prediction":[1.4,14.1,-1.3,-4],"Probability":[0.514,0.637,0.487,0.46],"Margin":["NA","NA","NA","NA"]},"columns":[{"id":"Game","name":"Game","type":"numeric","className":"cell","headerClassName":"header","show":false},{"id":"Season","name":"Season","type":"numeric","className":"cell","headerClassName":"header","show":false,"maxWidth":70},{"id":"Date","name":"Date","type":"character","className":"cell","headerClassName":"header","show":true,"maxWidth":90},{"id":"Time","name":"Time","type":["hms","difftime"],"className":"cell","headerClassName":"header","show":false},{"id":"Round.Number","name":"Round","type":"numeric","className":"cell","headerClassName":"header","show":true,"maxWidth":60},{"id":"Venue","name":"Venue","type":"character","className":"cell","headerClassName":"header","show":true,"maxWidth":100},{"id":"Home.Team","name":"Home","type":"character","className":"cell","headerClassName":"header","defaultSortDesc":false,"cell":[{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Sydney flag","src":"../img/Sydney.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Sydney"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Brisbane Lions flag","src":"../img/Brisbane Lions.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Brisbane Lions"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Gold Coast flag","src":"../img/Gold Coast.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Gold Coast"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"GWS flag","src":"../img/GWS.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["GWS"]}]}],"minWidth":200,"maxWidth":185,"align":"left","headerStyle":{"fontWeight":700}},{"id":"Away.Team","name":"Away","type":"character","className":"cell","headerClassName":"header","defaultSortDesc":false,"cell":[{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Melbourne flag","src":"../img/Melbourne.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Melbourne"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Carlton flag","src":"../img/Carlton.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Carlton"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Richmond flag","src":"../img/Richmond.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Richmond"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Collingwood flag","src":"../img/Collingwood.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Collingwood"]}]}],"minWidth":200,"maxWidth":185,"align":"left","headerStyle":{"fontWeight":700}},{"id":"Prediction","name":"Pred. Margin","type":"numeric","className":"cell","headerClassName":"header","show":true,"maxWidth":70},{"id":"Probability","name":"Prob.","type":"numeric","className":"cell number ","headerClassName":"header","show":true,"cell":[" 51%"," 64%"," 49%"," 46%"],"maxWidth":70,"style":[{"color":"#111","background":"#F2F9F2"},{"color":"#111","background":"#C6E5C6"},{"color":"#111","background":"#F8F6F1"},{"color":"#111","background":"#F8EAE4"}]},{"id":"Margin","name":"Actual Margin","type":"numeric","className":"cell","headerClassName":"header","show":true,"maxWidth":70}],"columnGroups":[{"headerClassName":"group-header","name":"Home Team Prediction","columns":["Prediction","Probability","Margin"]}],"defaultSorted":[{"id":"Game","desc":false}],"pagination":false,"borderless":true,"showSortIcon":false,"className":"standings-table","rowClassName":"\n    function(rowInfo, state) {\n      const firstSorted = state.sorted[0]\n      if (firstSorted && firstSorted.id === 'group') {\n        const nextRow = state.pageRows[rowInfo.viewIndex + 1]\n        if (nextRow && rowInfo.row.group !== nextRow.group) {\n          return 'group-last'\n        }\n      }\n    }","width":"100%","dataKey":"775be9ac9627d74e0c3d3481ce57b22a"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.rowClassName"],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -242,7 +251,6 @@ Last updated Jan 22 at 01:14AM
 </div>
 </div>
 <div class="cell">
-
 <style type="text/css">
 .standings {
   font-family: Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -427,6 +435,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -493,13 +528,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -578,10 +615,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -591,8 +627,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -605,6 +650,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -648,6 +812,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -673,6 +838,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -738,12 +929,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 
