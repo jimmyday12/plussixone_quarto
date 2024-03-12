@@ -12,7 +12,7 @@ website:
   cookie-consent: true
   google-analytics: "UA-77406420-1"
   twitter-card: 
-    image: profile.png
+    image: profile.png 
     card-style: summary_large_image
     creator: "@jamesday87"
   navbar:

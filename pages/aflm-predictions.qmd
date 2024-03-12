@@ -2,7 +2,7 @@
 title: "AFLM Season Predictions"
 description: "ELO ratings and chances of making various finals for every team in the AFLM competition"
 execute:
-  freeze: false
+  freeze: false 
 ---
 
 ```{r setup, include=FALSE}
