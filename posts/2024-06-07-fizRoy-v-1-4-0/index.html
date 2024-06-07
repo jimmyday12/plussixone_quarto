@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Predicted results based on ELO ratings for upcoming Men’s AFL games.">
+<meta name="author" content="James Day">
+<meta name="dcterms.date" content="2024-06-07">
 
-<title>plusSixOne - AFLM Tips</title>
+<title>plusSixOne - fitzRoy v1.4.0 on CRAN</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,30 +22,64 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../favicon.ico" rel="icon">
-<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.ico" rel="icon">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -104,19 +139,12 @@ cookieconsent.run({
 });
 </script> 
   
-<script src="../site_libs/core-js-2.5.3/shim.min.js"></script>
-<script src="../site_libs/react-17.0.0/react.min.js"></script>
-<script src="../site_libs/react-17.0.0/react-dom.min.js"></script>
-<script src="../site_libs/reactwidget-1.0.0/react-tools.js"></script>
-<script src="../site_libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-<link href="../site_libs/reactable-0.4.3/reactable.css" rel="stylesheet">
-<script src="../site_libs/reactable-binding-0.4.3/reactable.js"></script>
 
 
-<link rel="stylesheet" href="../styles.css">
-<meta name="twitter:title" content="plusSixOne - AFLM Tips">
-<meta name="twitter:description" content="Predicted results based on ELO ratings for upcoming Men’s AFL games.">
-<meta name="twitter:image" content="https://www.plussixoneblog.com/pages/profile.png">
+<link rel="stylesheet" href="../../styles.css">
+<meta name="twitter:title" content="plusSixOne - fitzRoy v1.4.0 on CRAN">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://www.plussixoneblog.com/posts/2024-06-07-fizRoy-v-1-4-0/profile.png">
 <meta name="twitter:creator" content="@jamesday87">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -124,14 +152,14 @@ cookieconsent.run({
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../profile.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../profile.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">plusSixOne</span>
     </a>
   </div>
@@ -147,15 +175,15 @@ cookieconsent.run({
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-aflm">    
         <li>
-    <a class="dropdown-item" href="../pages/aflm-predictions.html">
+    <a class="dropdown-item" href="../../pages/aflm-predictions.html">
  <span class="dropdown-text">AFLM Season Predictions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../pages/aflm-games.html">
+    <a class="dropdown-item" href="../../pages/aflm-games.html">
  <span class="dropdown-text">AFLM Tips</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../pages/aflm-model-results.html">
+    <a class="dropdown-item" href="../../pages/aflm-model-results.html">
  <span class="dropdown-text">Model Results</span></a>
   </li>  
     </ul>
@@ -166,7 +194,7 @@ cookieconsent.run({
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-aflw">    
         <li>
-    <a class="dropdown-item" href="../pages/aflw-coming-soon.html">
+    <a class="dropdown-item" href="../../pages/aflw-coming-soon.html">
  <span class="dropdown-text">AFLW - Coming soon</span></a>
   </li>  
     </ul>
@@ -178,7 +206,7 @@ cookieconsent.run({
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -205,191 +233,174 @@ cookieconsent.run({
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">fitzRoy v1.4.0 on CRAN</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>James Day </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 7, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">AFLM Tips</h1>
+
+
+
+
+<p>I’m pleased to announce that <code>fitzRoy</code> v1.4.0 has just been accepted to CRAN!</p>
+<p>This update mostly contains bug fixes. You can read about them below.</p>
+<section id="new-features" class="level2">
+<h2 class="anchored" data-anchor-id="new-features">New Features</h2>
+<section id="squiggle-api-is-now-more-flexible" class="level3">
+<h3 class="anchored" data-anchor-id="squiggle-api-is-now-more-flexible">Squiggle API is now more flexible</h3>
+<p>The function to call the Squiggle API is now more flexible and should allow for any new queries that are added to the Squiggle API to be used. Previously many of the queries and optional arguments were hardcode but these are now simply sent to the API as is, and the API will return data accordingly. You can read about the API <a href="https://api.squiggle.com.au/">here</a> and provide any of the main “query” types to the first argument, with additional optional parameters being named arguments you can supply.</p>
+<p>As a general rule</p>
+<ul>
+<li><p>Invalid query types will return an error</p></li>
+<li><p>Invalid optional argument types will be ignored and API data returned based on other arguments</p></li>
+<li><p>Optional arguments with nonsensical values will generally return an empty data frame</p></li>
+</ul>
+<p>Previously all of these situations returned an unhelpful error.</p>
+<div class="cell" data-hash="index_cache/html/unnamed-chunk-1_a218fcbbd837c7d31d840f2f5a26a699">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Return a list of the sources, with ID's</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>fitzRoy<span class="sc">::</span><span class="fu">fetch_squiggle_data</span>(<span class="st">"sources"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ Getting data from https://api.squiggle.com.au?q=sources&amp;format=JSON</code></pre>
 </div>
-
-<div>
-  <div class="description">
-    Predicted results based on ELO ratings for upcoming Men’s AFL games.
-  </div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ Getting data from https://api.squiggle.com.au?q=sources&amp;format=JSON [1.3s]</code></pre>
 </div>
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<div class="cell">
-<div class="cell-output-display">
-<div class="standings">
-Last updated Jun 07 at 12:37PM
-<div id="htmlwidget-1bf0edb68e31bdd85429" class="reactable html-widget " style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-1bf0edb68e31bdd85429">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Game":[16513,16514,16515,16516,16517,16518,16519,16520],"Season":[2024,2024,2024,2024,2024,2024,2024,2024],"Date":["Thu, Jun 06","Fri, Jun 07","Sat, Jun 08","Sat, Jun 08","Sat, Jun 08","Sun, Jun 09","Sun, Jun 09","Mon, Jun 10"],"Time":["00:00:00","00:00:00","00:00:00","00:00:00","00:00:00","00:00:00","00:00:00","00:00:00"],"Round.Number":[13,13,13,13,13,13,13,13],"Venue":["Adelaide Oval","Docklands","York Park","Perth Stadium","Docklands","S.C.G.","M.C.G.","M.C.G."],"Home.Team":["Adelaide","Footscray","Hawthorn","West Coast","St Kilda","Sydney","Essendon","Collingwood"],"Away.Team":["Richmond","Brisbane Lions","GWS","North Melbourne","Gold Coast","Geelong","Carlton","Melbourne"],"Prediction":[17.8,8.1,-4,11.6,7.5,12.8,-1.7,1.8],"Probability":[0.671,0.58,0.46,0.614,0.574,0.625,0.483,0.518],"Margin":["NA","NA","NA","NA","NA","NA","NA","NA"]},"columns":[{"id":"Game","name":"Game","type":"numeric","className":"cell","headerClassName":"header","show":false},{"id":"Season","name":"Season","type":"numeric","className":"cell","headerClassName":"header","show":false,"maxWidth":70},{"id":"Date","name":"Date","type":"character","className":"cell","headerClassName":"header","show":true,"maxWidth":90},{"id":"Time","name":"Time","type":["hms","difftime"],"className":"cell","headerClassName":"header","show":false},{"id":"Round.Number","name":"Round","type":"numeric","className":"cell","headerClassName":"header","show":true,"maxWidth":60},{"id":"Venue","name":"Venue","type":"character","className":"cell","headerClassName":"header","show":true,"maxWidth":100},{"id":"Home.Team","name":"Home","type":"character","className":"cell","headerClassName":"header","defaultSortDesc":false,"cell":[{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Adelaide flag","src":"../img/Adelaide.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Adelaide"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Footscray flag","src":"../img/Footscray.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Footscray"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Hawthorn flag","src":"../img/Hawthorn.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Hawthorn"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"West Coast flag","src":"../img/West Coast.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["West Coast"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"St Kilda flag","src":"../img/St Kilda.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["St Kilda"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Sydney flag","src":"../img/Sydney.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Sydney"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Essendon flag","src":"../img/Essendon.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Essendon"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Collingwood flag","src":"../img/Collingwood.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Collingwood"]}]}],"minWidth":200,"maxWidth":185,"align":"left","headerStyle":{"fontWeight":700}},{"id":"Away.Team","name":"Away","type":"character","className":"cell","headerClassName":"header","defaultSortDesc":false,"cell":[{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Richmond flag","src":"../img/Richmond.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Richmond"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Brisbane Lions flag","src":"../img/Brisbane Lions.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Brisbane Lions"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"GWS flag","src":"../img/GWS.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["GWS"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"North Melbourne flag","src":"../img/North Melbourne.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["North Melbourne"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Gold Coast flag","src":"../img/Gold Coast.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Gold Coast"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Geelong flag","src":"../img/Geelong.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Geelong"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Carlton flag","src":"../img/Carlton.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Carlton"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Melbourne flag","src":"../img/Melbourne.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Melbourne"]}]}],"minWidth":200,"maxWidth":185,"align":"left","headerStyle":{"fontWeight":700}},{"id":"Prediction","name":"Pred. Margin","type":"numeric","className":"cell","headerClassName":"header","show":true,"maxWidth":70},{"id":"Probability","name":"Prob.","type":"numeric","className":"cell number ","headerClassName":"header","show":true,"cell":[" 67%"," 58%"," 46%"," 61%"," 57%"," 62%"," 48%"," 52%"],"maxWidth":70,"style":[{"color":"#111","background":"#BAE0BA"},{"color":"#111","background":"#DBEFDB"},{"color":"#111","background":"#F8EAE4"},{"color":"#111","background":"#CEE9CE"},{"color":"#111","background":"#DDF0DD"},{"color":"#111","background":"#CBE7CA"},{"color":"#111","background":"#F8F4EF"},{"color":"#111","background":"#F1F9F1"}]},{"id":"Margin","name":"Actual Margin","type":"numeric","className":"cell","headerClassName":"header","show":true,"maxWidth":70}],"columnGroups":[{"headerClassName":"group-header","name":"Home Team Prediction","columns":["Prediction","Probability","Margin"]}],"defaultSorted":[{"id":"Game","desc":false}],"pagination":false,"borderless":true,"showSortIcon":false,"className":"standings-table","rowClassName":"\n    function(rowInfo, state) {\n      const firstSorted = state.sorted[0]\n      if (firstSorted && firstSorted.id === 'group') {\n        const nextRow = state.pageRows[rowInfo.viewIndex + 1]\n        if (nextRow && rowInfo.row.group !== nextRow.group) {\n          return 'group-last'\n        }\n      }\n    }","width":"100%","dataKey":"f91e520d1c1368dfa992a5d531fd5493"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.rowClassName"],"jsHooks":[]}</script>
+<div class="cell-output cell-output-stderr">
+<pre><code></code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 38 × 4
+   name            icon                                                 id url  
+   &lt;chr&gt;           &lt;chr&gt;                                             &lt;int&gt; &lt;chr&gt;
+ 1 Squiggle        "/wp-content/themes/squiggle/assets/images/Squig…     1 "htt…
+ 2 The Arc         "/wp-content/themes/squiggle/assets/images/TheAr…     2 "htt…
+ 3 Figuring Footy  "/wp-content/themes/squiggle/assets/images/Figur…     3 "htt…
+ 4 Matter of Stats "/wp-content/themes/squiggle/assets/images/MoS.p…     4 "htt…
+ 5 Punters         ""                                                    5 ""   
+ 6 FMI             "/wp-content/themes/squiggle/assets/images/FMI.p…     6 "htt…
+ 7 PlusSixOne      "/wp-content/themes/squiggle/assets/images/p61.p…     7 "htt…
+ 8 Aggregate       ""                                                    8 "/in…
+ 9 Graft           "/wp-content/themes/squiggle/assets/images/Graft…     9 "htt…
+10 Stattraction    "/wp-content/themes/squiggle/assets/images/statt…    10 "htt…
+# … with 28 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Provide an incorrect query</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>fitzRoy<span class="sc">::</span><span class="fu">fetch_squiggle_data</span>(<span class="at">query =</span> <span class="st">"fitzRoy"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ Getting data from https://api.squiggle.com.au?q=fitzRoy&amp;format=JSON</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `fitzRoy::fetch_squiggle_data()`:
+! API did not return any data
+ℹ Did you check that the queries provided are valid?
+✖ You've supplied the following queries: "q"</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✖ Getting data from https://api.squiggle.com.au?q=fitzRoy&amp;format=JSON [447ms]</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Provide an invalid optional argument</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>fitzRoy<span class="sc">::</span><span class="fu">fetch_squiggle_data</span>(<span class="at">query =</span> <span class="st">"tips"</span>, <span class="at">fitzRoy =</span> <span class="cn">TRUE</span>, <span class="at">source =</span> <span class="dv">1</span>, <span class="at">year =</span> <span class="dv">2024</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ Getting data from https://api.squiggle.com.au?q=tips&amp;fitzRoy=TRUE&amp;source=1&amp;ye…</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ Getting data from https://api.squiggle.com.au?q=tips&amp;fitzRoy=TRUE&amp;source=1&amp;ye…</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code></code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 207 × 21
+   date    margin tipte…¹ tip   confi…² round gameid hmargin ateam ateamid bits 
+   &lt;chr&gt;   &lt;chr&gt;    &lt;int&gt; &lt;chr&gt; &lt;chr&gt;   &lt;int&gt;  &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;
+ 1 2024-0… 12.52        2 Bris… 63.05       0  35701 12.52   Carl…       3 -0.4…
+ 2 2024-0… 5.90         8 Gold… 55.92       0  35702 5.90    Rich…      14 0.16…
+ 3 2024-0… 9.12         9 Grea… 59.36       0  35703 9.12    Coll…       4 0.24…
+ 4 2024-0… 2.34        11 Melb… 52.27       0  35700 -2.34   Melb…      11 -0.0…
+ 5 2024-0… 0.01         3 Carl… 50.01       1  35704 0.01    Rich…      14 0.00…
+ 6 2024-0… 8.44         4 Coll… 58.62       1  35705 8.44    Sydn…      16 -0.2…
+ 7 2024-0… 0.01         5 Esse… 50.01       1  35706 0.01    Hawt…      10 0.00…
+ 8 2024-0… 7.08         2 Bris… 57.16       1  35712 -7.08   Bris…       2 -0.2…
+ 9 2024-0… 19.85        7 Geel… 70.65       1  35708 19.85   St K…      15 0.49…
+10 2024-0… 0.01         1 Adel… 50.01       1  35709 -0.01   Adel…       1 -0.0…
+# … with 197 more rows, 10 more variables: hconfidence &lt;chr&gt;, correct &lt;int&gt;,
+#   sourceid &lt;int&gt;, venue &lt;chr&gt;, hteam &lt;chr&gt;, hteamid &lt;int&gt;, year &lt;int&gt;,
+#   updated &lt;chr&gt;, err &lt;chr&gt;, source &lt;chr&gt;, and abbreviated variable names
+#   ¹​tipteamid, ²​confidence</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Provide an incorrect optional argument value</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>fitzRoy<span class="sc">::</span><span class="fu">fetch_squiggle_data</span>(<span class="at">query =</span> <span class="st">"tips"</span>, <span class="at">fitzRoy =</span> <span class="cn">TRUE</span>, <span class="at">source =</span> <span class="dv">1</span>, <span class="at">year =</span> <span class="dv">2030</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ Getting data from https://api.squiggle.com.au?q=tips&amp;fitzRoy=TRUE&amp;source=1&amp;ye…</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ Getting data from https://api.squiggle.com.au?q=tips&amp;fitzRoy=TRUE&amp;source=1&amp;ye…</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code></code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 0 × 0</code></pre>
 </div>
 </div>
+</section>
+<section id="replace_teams-now-handle-indigenous-names" class="level3">
+<h3 class="anchored" data-anchor-id="replace_teams-now-handle-indigenous-names"><code>replace_teams</code> now handle indigenous names</h3>
+<p>With teams starting to use indigenous names during Sir Doug Nicholls rounds, the AFL API was returning these names over the traditional team names, which was causing errors in places. Most people were handling this in their own code, or using teamIds, but where the package was using <code>replace_names</code> function, we’ve added a check to ensure we can match the indigenous and traditional name together.</p>
+<div class="cell" data-hash="index_cache/html/unnamed-chunk-2_71d7e64d3b53010703b58d7af0a22487">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>fitzRoy<span class="sc">::</span><span class="fu">replace_teams</span>(<span class="st">"Narrm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Melbourne"</code></pre>
 </div>
-<div class="cell">
-<div class="cell-output-display">
-<link href="https://fonts.googleapis.com/css?family=Karla:400,700|Fira+Mono&amp;display=fallback" rel="stylesheet">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>fitzRoy<span class="sc">::</span><span class="fu">replace_teams</span>(<span class="st">"Walyalup"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Fremantle"</code></pre>
 </div>
 </div>
-<div class="cell">
-<style type="text/css">
-.standings {
-  font-family: Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-}
-.title {
-  margin: 18px 0;
-  font-size: 16px;
-}
-.title h2 {
-  font-size: 20px;
-  font-weight: 600;
-}
-.standings-table {
-  margin-bottom: 20px;
-}
-/* Align header text to the bottom */
-.header,
-.group-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-.header {
-  border-bottom-color: #555;
-  font-size: 13px;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-/* Highlight headers when sorting */
-.header:hover,
-.header[aria-sort="ascending"],
-.header[aria-sort="descending"] {
-  background-color: #eee;
-}
-.border-left {
-  border-left: 2px solid #555;
-}
-/* Use box-shadow to create row borders that appear behind vertical borders */
-.cell {
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-}
-.group-last .cell {
-  box-shadow: inset 0 -2px 0 #555;
-}
-.team {
-  display: inline-flex;
-  align-items: baseline;
-  align-content: left;
-}
-.record {
-  margin-left: 5px;
-  color: #999;
-  font-size: 13px;
-}
-.team-name {
-  font-size: 18px;
-  font-weight: 700;
-}
-.flag {
-  margin-right: 8px;
-  height: 21px;
-  border: 0px solid #f0f0f0;
-  align-content: left;
-}
-.group {
-  font-size: 19px;
-}
-.number {
-  font-family: "Fira Mono", Consolas, Monaco, monospace;
-  font-size: 16px;
-  line-height: 30px;
-  white-space: pre;
-}
-.spi-rating {
-  width: 35px;
-  height: 35px;
-  border: 1px solid rgba(0, 0, 0, 0.03);
-  border-radius: 50%;
-  color: #000;
-  font-size: 13px;
-  letter-spacing: -2px;
-  
-}
-
-.tag {
-  display: inline-block;
-  padding: 2px 12px;
-  border-radius: 15px;
-  font-weight: 600;
-  font-size: 12px;
-  vertical-align: bottom;
-}
-
-.status-up {
-  background: rgba(68,171,67,.5);
-  color: hsl(116, 30%, 25%);
-}
-
-.status-no-change {
-  background: hsl(230, 70%, 90%);
-  color: hsl(230, 45%, 30%);
-}
-
-.status-down {
-  background: rgba(255,39,0,.5);
-  color: hsl(350, 45%, 30%);
-}
-</style>
-</div>
-<div class="cell">
-<style type="text/css">
-# /* rmarkdown html documents */
-.container[role="main"] {
-  min-width: 100% !important;
-  max-width: 1054 !important;
-  width: 100%;
-} 
-
-.container {
-  min-width: 100% !important;  
-  max-width: 1054px !important;
-  width: 100%;
-}
-
- #h1.title {
- #  display: none;
- #}
-# /* pkgdown articles */
-# .contents {
-#   width: 1054px;
-# }
-# .page-header {
-#   display: none;
-#}  
-</style>
-</div>
+</section>
+</section>
+<section id="bug-fixes" class="level2">
+<h2 class="anchored" data-anchor-id="bug-fixes">Bug Fixes</h2>
+<ul>
+<li><p>Handle “Opening Round” fixtures for a bunch of functions that were breaking</p></li>
+<li><p>Fixed a bug where <code>fetch_player_details</code> was failing for certain teams</p></li>
+<li><p>Handled situations where an ‘unused sub’ was causing issues on various Footywire functions</p></li>
+<li><p>Removed some failing tests that were overkill</p></li>
+</ul>
+<p>Enjoy!</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
