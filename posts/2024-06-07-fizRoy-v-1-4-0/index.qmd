@@ -1,0 +1,65 @@
+---
+title: "fitzRoy v1.4.0 on CRAN"
+author: "James Day"
+date: "2024-06-07"
+execute:
+  error: TRUE
+---
+
+I'm pleased to announce that `fitzRoy` v1.4.0 has just been accepted to CRAN!
+
+This update mostly contains bug fixes. You can read about them below.
+
+## New Features
+
+### Squiggle API is now more flexible
+
+The function to call the Squiggle API is now more flexible and should allow for any new queries that are added to the Squiggle API to be used. Previously many of the queries and optional arguments were hardcode but these are now simply sent to the API as is, and the API will return data accordingly. You can read about the API [here](https://api.squiggle.com.au/) and provide any of the main "query" types to the first argument, with additional optional parameters being named arguments you can supply.
+
+As a general rule
+
+-   Invalid query types will return an error
+
+-   Invalid optional argument types will be ignored and API data returned based on other arguments
+
+-   Optional arguments with nonsensical values will generally return an empty data frame
+
+Previously all of these situations returned an unhelpful error.
+
+```{r}
+
+# Return a list of the sources, with ID's
+fitzRoy::fetch_squiggle_data("sources")
+
+# Provide an incorrect query
+fitzRoy::fetch_squiggle_data(query = "fitzRoy")
+
+# Provide an invalid optional argument
+fitzRoy::fetch_squiggle_data(query = "tips", fitzRoy = TRUE, source = 1, year = 2024)
+
+# Provide an incorrect optional argument value
+fitzRoy::fetch_squiggle_data(query = "tips", fitzRoy = TRUE, source = 1, year = 2030)
+
+
+```
+
+### `replace_teams` now handle indigenous names
+
+With teams starting to use indigenous names during Sir Doug Nicholls rounds, the AFL API was returning these names over the traditional team names, which was causing errors in places. Most people were handling this in their own code, or using teamIds, but where the package was using `replace_names` function, we've added a check to ensure we can match the indigenous and traditional name together.
+
+```{r}
+fitzRoy::replace_teams("Narrm")
+fitzRoy::replace_teams("Walyalup")
+```
+
+## Bug Fixes
+
+-   Handle "Opening Round" fixtures for a bunch of functions that were breaking
+
+-   Fixed a bug where `fetch_player_details` was failing for certain teams
+
+-   Handled situations where an 'unused sub' was causing issues on various Footywire functions
+
+-   Removed some failing tests that were overkill
+
+Enjoy!
