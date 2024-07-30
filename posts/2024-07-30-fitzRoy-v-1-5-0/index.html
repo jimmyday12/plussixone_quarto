@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Predicted results based on ELO ratings for upcoming Men’s AFL games.">
+<meta name="author" content="James Day">
+<meta name="dcterms.date" content="2024-07-30">
 
-<title>AFLM Tips – plusSixOne</title>
+<title>fitzRoy v1.5.0 on CRAN – plusSixOne</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,27 +25,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../favicon.ico" rel="icon">
-<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.ico" rel="icon">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -104,19 +105,12 @@ cookieconsent.run({
 });
 </script> 
   
-<script src="../site_libs/core-js-2.5.3/shim.min.js"></script>
-<script src="../site_libs/react-17.0.0/react.min.js"></script>
-<script src="../site_libs/react-17.0.0/react-dom.min.js"></script>
-<script src="../site_libs/reactwidget-1.0.0/react-tools.js"></script>
-<script src="../site_libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-<link href="../site_libs/reactable-0.4.3/reactable.css" rel="stylesheet">
-<script src="../site_libs/reactable-binding-0.4.3/reactable.js"></script>
 
 
-<link rel="stylesheet" href="../styles.css">
-<meta name="twitter:title" content="AFLM Tips – plusSixOne">
-<meta name="twitter:description" content="Predicted results based on ELO ratings for upcoming Men’s AFL games.">
-<meta name="twitter:image" content="https://www.plussixoneblog.com/pages/profile.png">
+<link rel="stylesheet" href="../../styles.css">
+<meta name="twitter:title" content="fitzRoy v1.5.0 on CRAN – plusSixOne">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://www.plussixoneblog.com/posts/2024-07-30-fitzRoy-v-1-5-0/profile.png">
 <meta name="twitter:creator" content="@jamesday87">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -124,14 +118,14 @@ cookieconsent.run({
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../profile.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../profile.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">plusSixOne</span>
     </a>
   </div>
@@ -147,15 +141,15 @@ cookieconsent.run({
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-aflm">    
         <li>
-    <a class="dropdown-item" href="../pages/aflm-predictions.html">
+    <a class="dropdown-item" href="../../pages/aflm-predictions.html">
  <span class="dropdown-text">AFLM Season Predictions</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../pages/aflm-games.html">
+    <a class="dropdown-item" href="../../pages/aflm-games.html">
  <span class="dropdown-text">AFLM Tips</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../pages/aflm-model-results.html">
+    <a class="dropdown-item" href="../../pages/aflm-model-results.html">
  <span class="dropdown-text">Model Results</span></a>
   </li>  
     </ul>
@@ -166,7 +160,7 @@ cookieconsent.run({
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-aflw">    
         <li>
-    <a class="dropdown-item" href="../pages/aflw-coming-soon.html">
+    <a class="dropdown-item" href="../../pages/aflw-coming-soon.html">
  <span class="dropdown-text">AFLW - Coming soon</span></a>
   </li>  
     </ul>
@@ -178,7 +172,7 @@ cookieconsent.run({
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -205,191 +199,74 @@ cookieconsent.run({
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">fitzRoy v1.5.0 on CRAN</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>James Day </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 30, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">AFLM Tips</h1>
-</div>
-
-<div>
-  <div class="description">
-    Predicted results based on ELO ratings for upcoming Men’s AFL games.
-  </div>
-</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
+
+<p>I’m pleased to announce that <code>fitzRoy</code> v1.5.0 has just been accepted to CRAN! Many thanks to <a href="https://github.com/peteowen1">Pete Owen</a> for most of the heavy lifting.</p>
+<p>You can read about all the changes below.</p>
+<section id="new-features" class="level2">
+<h2 class="anchored" data-anchor-id="new-features">New Features</h2>
+<section id="included-extra-information-in-fetch_player_stats_afltables" class="level3">
+<h3 class="anchored" data-anchor-id="included-extra-information-in-fetch_player_stats_afltables">Included extra information in <code>fetch_player_stats_afltables</code></h3>
+<p>We’ve updated this function to include data that wasn’t being returned correctly. This function should now return</p>
+<ul>
+<li><p>Extra-Time scores for any games that went to extra-time</p></li>
+<li><p>Age and Career games for each player</p></li>
+<li><p>Coach</p></li>
+</ul>
+</section>
+</section>
+<section id="bug-fixes" class="level2">
+<h2 class="anchored" data-anchor-id="bug-fixes">Bug Fixes</h2>
+<ul>
+<li><p>Corrected date parsing issues for AFL tables data, ensuring accurate date <a href="https://github.com/jimmyday12/fitzRoy/issues/136">#136</a></p></li>
+<li><p>Change way of fetching umpire names to avoid occasionally grabbing the wrong field from AFL tables <a href="https://github.com/jimmyday12/fitzRoy/issues/170">#170</a></p></li>
+<li><p>Fix substitute column - now contains on and off for all available games</p></li>
+<li><p>Fixes for players with incorrect AFL tables player ids - mainly due to player name changes.</p></li>
+<li><p>Fixed an issue where `find_season_id` was only returning the last 10 seasons <a href="https://github.com/jimmyday12/fitzRoy/issues/225">#225</a></p></li>
+<li><p>Updating some deprecated CLI messaging functions</p></li>
+<li><p>Updated `replace_venues` to handle different data source naming conventions <a href="https://github.com/jimmyday12/fitzRoy/issues/164">#164</a>)</p></li>
+</ul>
+<p>Enjoy!</p>
 
 
-<div class="cell">
-<div class="cell-output-display">
-<div class="standings">
-Last updated Jul 30 at 05:56PM
-<div id="htmlwidget-fd2c29fa8bd21e9f9af7" class="reactable html-widget " style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-fd2c29fa8bd21e9f9af7">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Game":[16578,16579,16580,16581,16582,16583,16584,16585,16586],"Season":[2024,2024,2024,2024,2024,2024,2024,2024,2024],"Date":["Fri, Aug 02","Fri, Aug 02","Sat, Aug 03","Sat, Aug 03","Sat, Aug 03","Sat, Aug 03","Sun, Aug 04","Sun, Aug 04","Sun, Aug 04"],"Time":["00:00:00","00:00:00","00:00:00","00:00:00","00:00:00","00:00:00","00:00:00","00:00:00","00:00:00"],"Round.Number":[21,21,21,21,21,21,21,21,21],"Venue":["Docklands","Perth Stadium","Docklands","Kardinia Park","M.C.G.","Adelaide Oval","Manuka Oval","M.C.G.","Docklands"],"Home.Team":["Footscray","West Coast","North Melbourne","Geelong","Collingwood","Port Adelaide","GWS","Essendon","St Kilda"],"Away.Team":["Melbourne","Gold Coast","Richmond","Adelaide","Carlton","Sydney","Hawthorn","Fremantle","Brisbane Lions"],"Prediction":[6.8,-5.7,-0.4,13.2,-0.9,0.6,6.7,0.7,0.5],"Probability":[0.568,0.443,0.496,0.629,0.491,0.506,0.567,0.507,0.505],"Margin":["NA","NA","NA","NA","NA","NA","NA","NA","NA"]},"columns":[{"id":"Game","name":"Game","type":"numeric","className":"cell","headerClassName":"header","show":false},{"id":"Season","name":"Season","type":"numeric","className":"cell","headerClassName":"header","show":false,"maxWidth":70},{"id":"Date","name":"Date","type":"character","className":"cell","headerClassName":"header","show":true,"maxWidth":90},{"id":"Time","name":"Time","type":["hms","difftime"],"className":"cell","headerClassName":"header","show":false},{"id":"Round.Number","name":"Round","type":"numeric","className":"cell","headerClassName":"header","show":true,"maxWidth":60},{"id":"Venue","name":"Venue","type":"character","className":"cell","headerClassName":"header","show":true,"maxWidth":100},{"id":"Home.Team","name":"Home","type":"character","className":"cell","headerClassName":"header","defaultSortDesc":false,"cell":[{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Footscray flag","src":"../img/Footscray.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Footscray"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"West Coast flag","src":"../img/West Coast.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["West Coast"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"North Melbourne flag","src":"../img/North Melbourne.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["North Melbourne"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Geelong flag","src":"../img/Geelong.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Geelong"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Collingwood flag","src":"../img/Collingwood.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Collingwood"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Port Adelaide flag","src":"../img/Port Adelaide.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Port Adelaide"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"GWS flag","src":"../img/GWS.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["GWS"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Essendon flag","src":"../img/Essendon.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Essendon"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"St Kilda flag","src":"../img/St Kilda.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["St Kilda"]}]}],"minWidth":200,"maxWidth":185,"align":"left","headerStyle":{"fontWeight":700}},{"id":"Away.Team","name":"Away","type":"character","className":"cell","headerClassName":"header","defaultSortDesc":false,"cell":[{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Melbourne flag","src":"../img/Melbourne.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Melbourne"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Gold Coast flag","src":"../img/Gold Coast.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Gold Coast"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Richmond flag","src":"../img/Richmond.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Richmond"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Adelaide flag","src":"../img/Adelaide.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Adelaide"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Carlton flag","src":"../img/Carlton.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Carlton"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Sydney flag","src":"../img/Sydney.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Sydney"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Hawthorn flag","src":"../img/Hawthorn.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Hawthorn"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Fremantle flag","src":"../img/Fremantle.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Fremantle"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Brisbane Lions flag","src":"../img/Brisbane Lions.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Brisbane Lions"]}]}],"minWidth":200,"maxWidth":185,"align":"left","headerStyle":{"fontWeight":700}},{"id":"Prediction","name":"Pred. Margin","type":"numeric","className":"cell","headerClassName":"header","show":true,"maxWidth":70},{"id":"Probability","name":"Prob.","type":"numeric","className":"cell number ","headerClassName":"header","show":true,"cell":[" 57%"," 44%"," 50%"," 63%"," 49%"," 51%"," 57%"," 51%"," 50%"],"maxWidth":70,"style":[{"color":"#111","background":"#DFF0DF"},{"color":"#111","background":"#F8E3DB"},{"color":"#111","background":"#F8FAF6"},{"color":"#111","background":"#C9E7C9"},{"color":"#111","background":"#F8F8F3"},{"color":"#111","background":"#F5FBF5"},{"color":"#111","background":"#DFF1DF"},{"color":"#111","background":"#F5FAF5"},{"color":"#111","background":"#F6FBF6"}]},{"id":"Margin","name":"Actual Margin","type":"numeric","className":"cell","headerClassName":"header","show":true,"maxWidth":70}],"columnGroups":[{"headerClassName":"group-header","name":"Home Team Prediction","columns":["Prediction","Probability","Margin"]}],"defaultSorted":[{"id":"Game","desc":false}],"pagination":false,"borderless":true,"showSortIcon":false,"className":"standings-table","rowClassName":"\n    function(rowInfo, state) {\n      const firstSorted = state.sorted[0]\n      if (firstSorted && firstSorted.id === 'group') {\n        const nextRow = state.pageRows[rowInfo.viewIndex + 1]\n        if (nextRow && rowInfo.row.group !== nextRow.group) {\n          return 'group-last'\n        }\n      }\n    }","width":"100%","dataKey":"f2ed32f00f87868b070cba1b8ae2b798"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.rowClassName"],"jsHooks":[]}</script>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<link href="https://fonts.googleapis.com/css?family=Karla:400,700|Fira+Mono&amp;display=fallback" rel="stylesheet">
-</div>
-</div>
-<div class="cell">
-<style type="text/css">
-.standings {
-  font-family: Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-}
-.title {
-  margin: 18px 0;
-  font-size: 16px;
-}
-.title h2 {
-  font-size: 20px;
-  font-weight: 600;
-}
-.standings-table {
-  margin-bottom: 20px;
-}
-/* Align header text to the bottom */
-.header,
-.group-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-.header {
-  border-bottom-color: #555;
-  font-size: 13px;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-/* Highlight headers when sorting */
-.header:hover,
-.header[aria-sort="ascending"],
-.header[aria-sort="descending"] {
-  background-color: #eee;
-}
-.border-left {
-  border-left: 2px solid #555;
-}
-/* Use box-shadow to create row borders that appear behind vertical borders */
-.cell {
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-}
-.group-last .cell {
-  box-shadow: inset 0 -2px 0 #555;
-}
-.team {
-  display: inline-flex;
-  align-items: baseline;
-  align-content: left;
-}
-.record {
-  margin-left: 5px;
-  color: #999;
-  font-size: 13px;
-}
-.team-name {
-  font-size: 18px;
-  font-weight: 700;
-}
-.flag {
-  margin-right: 8px;
-  height: 21px;
-  border: 0px solid #f0f0f0;
-  align-content: left;
-}
-.group {
-  font-size: 19px;
-}
-.number {
-  font-family: "Fira Mono", Consolas, Monaco, monospace;
-  font-size: 16px;
-  line-height: 30px;
-  white-space: pre;
-}
-.spi-rating {
-  width: 35px;
-  height: 35px;
-  border: 1px solid rgba(0, 0, 0, 0.03);
-  border-radius: 50%;
-  color: #000;
-  font-size: 13px;
-  letter-spacing: -2px;
-  
-}
-
-.tag {
-  display: inline-block;
-  padding: 2px 12px;
-  border-radius: 15px;
-  font-weight: 600;
-  font-size: 12px;
-  vertical-align: bottom;
-}
-
-.status-up {
-  background: rgba(68,171,67,.5);
-  color: hsl(116, 30%, 25%);
-}
-
-.status-no-change {
-  background: hsl(230, 70%, 90%);
-  color: hsl(230, 45%, 30%);
-}
-
-.status-down {
-  background: rgba(255,39,0,.5);
-  color: hsl(350, 45%, 30%);
-}
-</style>
-</div>
-<div class="cell">
-<style type="text/css">
-# /* rmarkdown html documents */
-.container[role="main"] {
-  min-width: 100% !important;
-  max-width: 1054 !important;
-  width: 100%;
-} 
-
-.container {
-  min-width: 100% !important;  
-  max-width: 1054px !important;
-  width: 100%;
-}
-
- #h1.title {
- #  display: none;
- #}
-# /* pkgdown articles */
-# .contents {
-#   width: 1054px;
-# }
-# .page-header {
-#   display: none;
-#}  
-</style>
-</div>
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
