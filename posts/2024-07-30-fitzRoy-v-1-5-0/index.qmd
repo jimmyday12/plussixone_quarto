@@ -1,0 +1,41 @@
+---
+title: "fitzRoy v1.5.0 on CRAN"
+author: "James Day"
+date: "2024-07-30"
+execute:
+  error: TRUE
+---
+
+I'm pleased to announce that `fitzRoy` v1.5.0 has just been accepted to CRAN! Many thanks to [Pete Owen](https://github.com/peteowen1) for most of the heavy lifting.
+
+You can read about all the changes below.
+
+## New Features
+
+### Included extra information in `fetch_player_stats_afltables`
+
+We've updated this function to include data that wasn't being returned correctly. This function should now return
+
+-   Extra-Time scores for any games that went to extra-time
+
+-   Age and Career games for each player
+
+-   Coach
+
+## Bug Fixes
+
+-   Corrected date parsing issues for AFL tables data, ensuring accurate date [#136](https://github.com/jimmyday12/fitzRoy/issues/136)
+
+-   Change way of fetching umpire names to avoid occasionally grabbing the wrong field from AFL tables [#170](https://github.com/jimmyday12/fitzRoy/issues/170)
+
+-   Fix substitute column - now contains on and off for all available games
+
+-   Fixes for players with incorrect AFL tables player ids - mainly due to player name changes.
+
+-   Fixed an issue where \`find_season_id\` was only returning the last 10 seasons [#225](https://github.com/jimmyday12/fitzRoy/issues/225)
+
+-   Updating some deprecated CLI messaging functions
+
+-   Updated \`replace_venues\` to handle different data source naming conventions [#164](https://github.com/jimmyday12/fitzRoy/issues/164))
+
+Enjoy!
