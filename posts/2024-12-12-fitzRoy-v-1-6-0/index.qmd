@@ -1,0 +1,37 @@
+---
+title: "fitzRoy v1.6.0 on CRAN"
+author: "James Day"
+date: "2024-12-06"
+execute:
+  error: TRUE
+---
+
+I'm pleased to announce that `fitzRoy` v1.6.0 has just been accepted to CRAN!
+
+You can read about all the changes below.
+
+## New Features
+
+### Score Worms
+
+Functions have been added to fitzRoy to plot and analyse AFL score worms
+
+-   `plot_score_worm` - Plots the score difference between two teams throughout a given match.
+-   `plot_score_worm_totals` - Plots the total scores of both teams throughout a given match.
+-   `fetch_score_worm_data` - Returns score data used to plot score worms for a given match
+
+```{r plot_score_worm, eval=TRUE, include=TRUE}
+fitzRoy::plot_score_worm('CD_M20240142004') 
+```
+
+See [Vignette](https://jimmyday12.github.io/fitzRoy/articles/score-worms.html) for more details
+
+## Bug Fixes
+
+-   Fixed age for players playing on birthday in `fetch_player_stats_afltables()` ([#240](https://github.com/jimmyday12/fitzRoy/issues/240))
+-   Remove dupes for players drafted twice in `fetch_player_details_footywire()` ([#242](https://github.com/jimmyday12/fitzRoy/issues/242))
+-   Fixed bug where round 25 was returning NA in `fetch_results_afltables`
+-   Fixed a bug where certain games weren't getting rescraped automatically in `fetch_player_stats_afltables` ([#243](https://github.com/jimmyday12/fitzRoy/issues/243))
+-   Removed Fryzigg tests that were failing
+
+Enjoy!

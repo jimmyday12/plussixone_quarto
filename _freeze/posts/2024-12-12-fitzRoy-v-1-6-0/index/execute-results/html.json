@@ -1,0 +1,15 @@
+{
+  "hash": "3272d232659ae9a75b68d1c29ad33b8f",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"fitzRoy v1.6.0 on CRAN\"\nauthor: \"James Day\"\ndate: \"2024-12-06\"\nexecute:\n  error: TRUE\n---\n\n\n\nI'm pleased to announce that `fitzRoy` v1.6.0 has just been accepted to CRAN!\n\nYou can read about all the changes below.\n\n## New Features\n\n### Score Worms\n\nFunctions have been added to fitzRoy to plot and analyse AFL score worms\n\n-   `plot_score_worm` - Plots the score difference between two teams throughout a given match.\n-   `plot_score_worm_totals` - Plots the total scores of both teams throughout a given match.\n-   `fetch_score_worm_data` - Returns score data used to plot score worms for a given match\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nfitzRoy::plot_score_worm('CD_M20240142004') \n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/plot_score_worm-1.png){width=672}\n:::\n:::\n\n\n\nSee [Vignette](https://jimmyday12.github.io/fitzRoy/articles/score-worms.html) for more details\n\n## Bug Fixes\n\n-   Fixed age for players playing on birthday in `fetch_player_stats_afltables()` ([#240](https://github.com/jimmyday12/fitzRoy/issues/240))\n-   Remove dupes for players drafted twice in `fetch_player_details_footywire()` ([#242](https://github.com/jimmyday12/fitzRoy/issues/242))\n-   Fixed bug where round 25 was returning NA in `fetch_results_afltables`\n-   Fixed a bug where certain games weren't getting rescraped automatically in `fetch_player_stats_afltables` ([#243](https://github.com/jimmyday12/fitzRoy/issues/243))\n-   Removed Fryzigg tests that were failing\n\nEnjoy!\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
