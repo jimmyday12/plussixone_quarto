@@ -35,6 +35,7 @@ jobs:
           libpng-dev
           libtiff5-dev
           libjpeg-dev
+          libfontconfig1-dev
 
       - name: Install R Dependencies from R env
         uses: r-lib/actions/setup-renv@v2
