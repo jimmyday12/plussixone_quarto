@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.43">
+<meta name="generator" content="quarto-1.7.29">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,17 +34,20 @@ ul.task-list li input[type="checkbox"] {
 <link href="../favicon.ico" rel="icon">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4379b0ccadffce622b03caf4c46266b3.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-78c0569dc510383b7d3ee33a4dba67ab.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-eff5e7c350bd88b162c43986e7ef7b06.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-8baed627e397929b39067b72de942774.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-39017ca276f174ce8ea5a4ccd8dd1b5a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-8baed627e397929b39067b72de942774.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -121,7 +124,168 @@ cookieconsent.run({
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -212,6 +376,7 @@ cookieconsent.run({
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">AFLM Season Predictions</h1>
@@ -239,9 +404,9 @@ cookieconsent.run({
 <div class="cell">
 <div class="cell-output-display">
 <div class="standings">
-Last updated Apr 28 at 09:37PM
-<div id="htmlwidget-7384bfa0e5083f8f1262" class="reactable html-widget " style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-7384bfa0e5083f8f1262">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"team":["Adelaide","Brisbane Lions","Carlton","Collingwood","Essendon","Footscray","Fremantle","GWS","Geelong","Gold Coast","Hawthorn","Melbourne","North Melbourne","Port Adelaide","Richmond","St Kilda","Sydney","West Coast"],"elo":[1515.096710631,1542.27546100094,1519.18370486051,1537.31187049395,1478.23228203067,1531.05443092325,1515.22549948629,1522.40319434615,1534.26151601064,1519.33695565274,1531.43642886081,1476.33815707717,1426.46494985849,1507.07501027662,1431.13862970947,1487.07189292763,1514.11303978088,1411.98026640197],"elo.change":[-1.96126387043364,7.58994034740954,3.49098569779699,4.74291841307968,-4.74291841307968,6.41103932596479,1.96126387043364,-6.41103932596479,-3.49098569779699,6.03218866688417,3.18417560839862,2.05750457586714,2.06469516952575,-2.06469516952575,-2.05750457586714,-7.58994034740954,-6.03218866688417,-3.18417560839862],"Form":["4-3","6-1","3-4","6-1","3-3","4-3","4-3","4-3","4-3","5-1","5-2","2-5","1-6","4-3","2-5","3-4","2-5","0-7"],"spi":[1515.096710631,1542.27546100094,1519.18370486051,1537.31187049395,1478.23228203067,1531.05443092325,1515.22549948629,1522.40319434615,1534.26151601064,1519.33695565274,1531.43642886081,1476.33815707717,1426.46494985849,1507.07501027662,1431.13862970947,1487.07189292763,1514.11303978088,1411.98026640197],"global_o":[1515.096710631,1542.27546100094,1519.18370486051,1537.31187049395,1478.23228203067,1531.05443092325,1515.22549948629,1522.40319434615,1534.26151601064,1519.33695565274,1531.43642886081,1476.33815707717,1426.46494985849,1507.07501027662,1431.13862970947,1487.07189292763,1514.11303978088,1411.98026640197],"global_d":[1515.096710631,1542.27546100094,1519.18370486051,1537.31187049395,1478.23228203067,1531.05443092325,1515.22549948629,1522.40319434615,1534.26151601064,1519.33695565274,1531.43642886081,1476.33815707717,1426.46494985849,1507.07501027662,1431.13862970947,1487.07189292763,1514.11303978088,1411.98026640197],"Wins":[13.0165499999998,15.5225000000006,11.9153500000005,16.0841,10.1325999999994,13.9988500000001,12.8626999999998,12.4924499999996,14.29705,13.4129000000005,14.0065500000006,8.39360000000039,5.50689999999974,11.8414500000001,7.34804999999968,10.6698000000003,11.0018499999996,4.4967499999998],"Top.1":[0.0552,0.1656,0.0163,0.2486,0.0124,0.0703,0.0442,0.0395,0.0946,0.1118,0.1069,0.001,0,0.0218,0.0005,0.0072,0.0041,0],"Top.4":[0.2811,0.4512,0.2083,0.528,0.1166,0.351,0.2415,0.2428,0.4002,0.3162,0.3425,0.0472,0.0088,0.1712,0.0259,0.1278,0.1373,0.0024],"make_finals":[0.5632,0.7281,0.4837,0.7673,0.3092,0.6417,0.5321,0.5099,0.6784,0.5605,0.6116,0.1867,0.0698,0.4331,0.1281,0.3574,0.4002,0.039],"make_semis":[0.4246,0.598,0.3494,0.6559,0.204,0.498,0.3846,0.3844,0.548,0.4388,0.4836,0.1101,0.0314,0.3028,0.0671,0.2344,0.2691,0.0158],"make_prelim":[0.2805,0.4278,0.2307,0.4794,0.1194,0.3386,0.2488,0.2539,0.3848,0.3036,0.3273,0.0598,0.0134,0.1894,0.0321,0.1424,0.1613,0.0068],"make_gf":[0.1368,0.2286,0.1156,0.245,0.0542,0.1745,0.1205,0.1266,0.1994,0.1511,0.1639,0.0277,0.006,0.0931,0.013,0.063,0.0787,0.0023],"win_league":[0.0662,0.1185,0.0573,0.1266,0.0224,0.0882,0.0609,0.0634,0.099,0.0778,0.0859,0.0133,0.0022,0.0434,0.0062,0.0297,0.0378,0.0012]},"columns":[{"id":"team","name":"team","type":"character","className":"cell","headerClassName":"header","defaultSortDesc":false,"cell":[{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Adelaide flag","src":"../img/Adelaide.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Adelaide"]},{"name":"div","attribs":{"className":"record"},"children":["4-3"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Brisbane Lions flag","src":"../img/Brisbane Lions.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Brisbane Lions"]},{"name":"div","attribs":{"className":"record"},"children":["6-1"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Carlton flag","src":"../img/Carlton.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Carlton"]},{"name":"div","attribs":{"className":"record"},"children":["3-4"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Collingwood flag","src":"../img/Collingwood.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Collingwood"]},{"name":"div","attribs":{"className":"record"},"children":["6-1"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Essendon flag","src":"../img/Essendon.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Essendon"]},{"name":"div","attribs":{"className":"record"},"children":["3-3"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Footscray flag","src":"../img/Footscray.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Footscray"]},{"name":"div","attribs":{"className":"record"},"children":["4-3"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Fremantle flag","src":"../img/Fremantle.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Fremantle"]},{"name":"div","attribs":{"className":"record"},"children":["4-3"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"GWS flag","src":"../img/GWS.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["GWS"]},{"name":"div","attribs":{"className":"record"},"children":["4-3"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Geelong flag","src":"../img/Geelong.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Geelong"]},{"name":"div","attribs":{"className":"record"},"children":["4-3"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Gold Coast flag","src":"../img/Gold Coast.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Gold Coast"]},{"name":"div","attribs":{"className":"record"},"children":["5-1"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Hawthorn flag","src":"../img/Hawthorn.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Hawthorn"]},{"name":"div","attribs":{"className":"record"},"children":["5-2"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Melbourne flag","src":"../img/Melbourne.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Melbourne"]},{"name":"div","attribs":{"className":"record"},"children":["2-5"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"North Melbourne flag","src":"../img/North Melbourne.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["North Melbourne"]},{"name":"div","attribs":{"className":"record"},"children":["1-6"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Port Adelaide flag","src":"../img/Port Adelaide.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Port Adelaide"]},{"name":"div","attribs":{"className":"record"},"children":["4-3"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Richmond flag","src":"../img/Richmond.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Richmond"]},{"name":"div","attribs":{"className":"record"},"children":["2-5"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"St Kilda flag","src":"../img/St Kilda.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["St Kilda"]},{"name":"div","attribs":{"className":"record"},"children":["3-4"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Sydney flag","src":"../img/Sydney.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Sydney"]},{"name":"div","attribs":{"className":"record"},"children":["2-5"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"West Coast flag","src":"../img/West Coast.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["West Coast"]},{"name":"div","attribs":{"className":"record"},"children":["0-7"]}]}],"minWidth":200,"align":"left","headerStyle":{"fontWeight":700}},{"id":"elo","name":"ELO","type":"numeric","className":"cell number ","headerClassName":"header","show":true,"format":{"cell":{"digits":0},"aggregated":{"digits":0}},"maxWidth":55,"align":"center"},{"id":"elo.change","name":"change","type":"numeric","className":"cell","headerClassName":"header","show":true,"format":{"cell":{"digits":0},"aggregated":{"digits":0}},"cell":[{"name":"div","attribs":{"className":"tag status-down"},"children":["-2"]},{"name":"div","attribs":{"className":"tag status-up"},"children":["+8"]},{"name":"div","attribs":{"className":"tag status-up"},"children":["+3"]},{"name":"div","attribs":{"className":"tag status-up"},"children":["+5"]},{"name":"div","attribs":{"className":"tag status-down"},"children":["-5"]},{"name":"div","attribs":{"className":"tag status-up"},"children":["+6"]},{"name":"div","attribs":{"className":"tag status-up"},"children":["+2"]},{"name":"div","attribs":{"className":"tag status-down"},"children":["-6"]},{"name":"div","attribs":{"className":"tag status-down"},"children":["-3"]},{"name":"div","attribs":{"className":"tag status-up"},"children":["+6"]},{"name":"div","attribs":{"className":"tag status-up"},"children":["+3"]},{"name":"div","attribs":{"className":"tag status-up"},"children":["+2"]},{"name":"div","attribs":{"className":"tag status-up"},"children":["+2"]},{"name":"div","attribs":{"className":"tag status-down"},"children":["-2"]},{"name":"div","attribs":{"className":"tag status-down"},"children":["-2"]},{"name":"div","attribs":{"className":"tag status-down"},"children":["-8"]},{"name":"div","attribs":{"className":"tag status-down"},"children":["-6"]},{"name":"div","attribs":{"className":"tag status-down"},"children":["-3"]}],"maxWidth":70,"align":"center"},{"id":"Form","name":"Form","type":"character","className":"cell","headerClassName":"header","show":false},{"id":"spi","name":"ELO","type":"numeric","className":"cell number ","headerClassName":"header","show":false,"format":{"cell":{"digits":1},"aggregated":{"digits":1}},"maxWidth":55,"align":"center"},{"id":"global_o","name":"global_o","type":"numeric","className":"cell","headerClassName":"header","show":false},{"id":"global_d","name":"global_d","type":"numeric","className":"cell","headerClassName":"header","show":false},{"id":"Wins","name":"Proj. Wins","type":"numeric","className":"cell number border-left","headerClassName":"header","cell":[{"name":"div","attribs":{"style":{"background":"#94CF93"},"className":"spi-rating"},"children":["13.0"]},{"name":"div","attribs":{"style":{"background":"#52B151"},"className":"spi-rating"},"children":["15.5"]},{"name":"div","attribs":{"style":{"background":"#B1DCB0"},"className":"spi-rating"},"children":["11.9"]},{"name":"div","attribs":{"style":{"background":"#44AB43"},"className":"spi-rating"},"children":["16.1"]},{"name":"div","attribs":{"style":{"background":"#DFF1DF"},"className":"spi-rating"},"children":["10.1"]},{"name":"div","attribs":{"style":{"background":"#7AC379"},"className":"spi-rating"},"children":["14.0"]},{"name":"div","attribs":{"style":{"background":"#98D097"},"className":"spi-rating"},"children":["12.9"]},{"name":"div","attribs":{"style":{"background":"#A1D5A1"},"className":"spi-rating"},"children":["12.5"]},{"name":"div","attribs":{"style":{"background":"#72C072"},"className":"spi-rating"},"children":["14.3"]},{"name":"div","attribs":{"style":{"background":"#89CA89"},"className":"spi-rating"},"children":["13.4"]},{"name":"div","attribs":{"style":{"background":"#7AC379"},"className":"spi-rating"},"children":["14.0"]},{"name":"div","attribs":{"style":{"background":"#F9D7CD"},"className":"spi-rating"},"children":["8.4"]},{"name":"div","attribs":{"style":{"background":"#FD5435"},"className":"spi-rating"},"children":["5.5"]},{"name":"div","attribs":{"style":{"background":"#B2DCB2"},"className":"spi-rating"},"children":["11.8"]},{"name":"div","attribs":{"style":{"background":"#FAA896"},"className":"spi-rating"},"children":["7.3"]},{"name":"div","attribs":{"style":{"background":"#D1EAD1"},"className":"spi-rating"},"children":["10.7"]},{"name":"div","attribs":{"style":{"background":"#C8E6C8"},"className":"spi-rating"},"children":["11.0"]},{"name":"div","attribs":{"style":{"background":"#FF2700"},"className":"spi-rating"},"children":["4.5"]}],"maxWidth":55,"align":"center"},{"id":"Top.1","name":"1st","type":"numeric","className":"cell number ","headerClassName":"header","cell":["  6%"," 17%","  2%"," 25%","  1%","  7%","  4%","  4%","  9%"," 11%"," 11%"," <1%","  – ","  2%"," <1%"," <1%"," <1%","  – "],"maxWidth":70,"align":"center"},{"id":"Top.4","name":"Top 4","type":"numeric","className":"cell number ","headerClassName":"header","cell":[" 28%"," 45%"," 21%"," 53%"," 12%"," 35%"," 24%"," 24%"," 40%"," 32%"," 34%","  5%"," <1%"," 17%","  3%"," 13%"," 14%"," <1%"],"maxWidth":70,"align":"center"},{"id":"make_finals","name":"Make Finals","type":"numeric","className":"cell number ","headerClassName":"header","cell":[" 56%"," 73%"," 48%"," 77%"," 31%"," 64%"," 53%"," 51%"," 68%"," 56%"," 61%"," 19%","  7%"," 43%"," 13%"," 36%"," 40%","  4%"],"maxWidth":70,"style":[{"color":"#111","background":"#92D2AB"},{"color":"#111","background":"#6FC5AB"},{"color":"#111","background":"#A0D9AD"},{"color":"#111","background":"#66C2AB"},{"color":"#111","background":"#BEE7B2"},{"color":"#111","background":"#81CCAB"},{"color":"#111","background":"#98D5AB"},{"color":"#111","background":"#9CD7AC"},{"color":"#111","background":"#7AC9AB"},{"color":"#111","background":"#93D3AB"},{"color":"#111","background":"#88CFAB"},{"color":"#111","background":"#D6F1BE"},{"color":"#111","background":"#F0FAD0"},{"color":"#111","background":"#A9DDAE"},{"color":"#111","background":"#E3F5C7"},{"color":"#111","background":"#B6E3B0"},{"color":"#111","background":"#AFDFAF"},{"color":"#111","background":"#F6FCE2"}]},{"id":"make_semis","name":"Make Semis","type":"numeric","className":"cell number border-left","headerClassName":"header","cell":[" 42%"," 60%"," 35%"," 66%"," 20%"," 50%"," 38%"," 38%"," 55%"," 44%"," 48%"," 11%","  3%"," 30%","  7%"," 23%"," 27%","  2%"],"maxWidth":90,"style":[{"color":"#111","background":"#AADEAE"},{"color":"#111","background":"#8BD0AB"},{"color":"#111","background":"#B7E4B1"},{"color":"#111","background":"#7ECBAB"},{"color":"#111","background":"#D3EFBB"},{"color":"#111","background":"#9ED8AC"},{"color":"#111","background":"#B1E1B0"},{"color":"#111","background":"#B1E1B0"},{"color":"#111","background":"#95D4AB"},{"color":"#111","background":"#A8DCAE"},{"color":"#111","background":"#A0D9AD"},{"color":"#111","background":"#E7F7CA"},{"color":"#111","background":"#F8FCE8"},{"color":"#111","background":"#BFE7B2"},{"color":"#111","background":"#F0FAD1"},{"color":"#111","background":"#CCEDB6"},{"color":"#111","background":"#C5EAB3"},{"color":"#111","background":"#FBFDF3"}]},{"id":"make_prelim","name":"Make Prelim","type":"numeric","className":"cell number ","headerClassName":"header","cell":[" 28%"," 43%"," 23%"," 48%"," 12%"," 34%"," 25%"," 25%"," 38%"," 30%"," 33%","  6%","  1%"," 19%","  3%"," 14%"," 16%"," <1%"],"maxWidth":70,"style":[{"color":"#111","background":"#C3E9B3"},{"color":"#111","background":"#AADDAE"},{"color":"#111","background":"#CDEDB7"},{"color":"#111","background":"#A1D9AD"},{"color":"#111","background":"#E5F6C8"},{"color":"#111","background":"#B9E4B1"},{"color":"#111","background":"#C9ECB4"},{"color":"#111","background":"#C8EBB3"},{"color":"#111","background":"#B1E1B0"},{"color":"#111","background":"#BFE7B2"},{"color":"#111","background":"#BBE5B1"},{"color":"#111","background":"#F2FBD3"},{"color":"#111","background":"#FCFEF5"},{"color":"#111","background":"#D6F0BD"},{"color":"#111","background":"#F8FCE7"},{"color":"#111","background":"#E0F4C5"},{"color":"#111","background":"#DCF3C2"},{"color":"#aaa"}]},{"id":"make_gf","name":"Make GF","type":"numeric","className":"cell number ","headerClassName":"header","cell":[" 14%"," 23%"," 12%"," 24%","  5%"," 17%"," 12%"," 13%"," 20%"," 15%"," 16%","  3%"," <1%","  9%","  1%","  6%","  8%"," <1%"],"maxWidth":70,"style":[{"color":"#111","background":"#E1F5C6"},{"color":"#111","background":"#CDEDB7"},{"color":"#111","background":"#E6F6C9"},{"color":"#111","background":"#CAECB4"},{"color":"#111","background":"#F3FBD7"},{"color":"#111","background":"#D9F2C0"},{"color":"#111","background":"#E5F6C8"},{"color":"#111","background":"#E3F5C7"},{"color":"#111","background":"#D4F0BC"},{"color":"#111","background":"#DEF3C3"},{"color":"#111","background":"#DBF2C1"},{"color":"#111","background":"#F9FDEB"},{"color":"#aaa"},{"color":"#111","background":"#EBF8CD"},{"color":"#111","background":"#FCFEF5"},{"color":"#111","background":"#F1FAD1"},{"color":"#111","background":"#EEF9CF"},{"color":"#aaa"}]},{"id":"win_league","name":"Premier","type":"numeric","className":"cell number ","headerClassName":"header","cell":["  7%"," 12%","  6%"," 13%","  2%","  9%","  6%","  6%"," 10%","  8%","  9%","  1%"," <1%","  4%"," <1%","  3%","  4%"," <1%"],"maxWidth":70,"style":[{"color":"#111","background":"#F1FAD1"},{"color":"#111","background":"#E5F6C9"},{"color":"#111","background":"#F3FBD5"},{"color":"#111","background":"#E3F5C7"},{"color":"#111","background":"#FAFDEE"},{"color":"#111","background":"#ECF8CD"},{"color":"#111","background":"#F2FBD3"},{"color":"#111","background":"#F1FAD1"},{"color":"#111","background":"#EAF8CC"},{"color":"#111","background":"#EEF9CF"},{"color":"#111","background":"#ECF9CE"},{"color":"#111","background":"#FCFEF5"},{"color":"#aaa"},{"color":"#111","background":"#F5FCDF"},{"color":"#aaa"},{"color":"#111","background":"#F8FDE9"},{"color":"#111","background":"#F7FCE3"},{"color":"#aaa"}]}],"columnGroups":[{"headerClassName":"group-header","name":"Team Rating","columns":["spi","global_o","global_d"]},{"headerClassName":"group-header","name":"Home and Away Season","columns":["Wins","Top.1","Top.4","make_finals"]},{"headerClassName":"group-header","name":"Finals Chances","columns":["make_semis","make_prelim","make_gf","win_league"]}],"defaultSorted":[{"id":"Wins","desc":true},{"id":"win_league","desc":true}],"pagination":false,"borderless":true,"showSortIcon":false,"className":"standings-table","rowClassName":"\n    function(rowInfo, state) {\n      const firstSorted = state.sorted[0]\n      if (firstSorted && firstSorted.id === 'group') {\n        const nextRow = state.pageRows[rowInfo.viewIndex + 1]\n        if (nextRow && rowInfo.row.group !== nextRow.group) {\n          return 'group-last'\n        }\n      }\n    }","width":"100%","dataKey":"18ddf8bca0db3e5db5428ae2d793b816"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.rowClassName"],"jsHooks":[]}</script>
+Last updated Apr 28 at 12:20AM
+<div id="htmlwidget-59aa5b3e37035b8c1b8c" class="reactable html-widget " style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-59aa5b3e37035b8c1b8c">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"team":["Adelaide","Brisbane Lions","Carlton","Collingwood","Essendon","Footscray","Fremantle","GWS","Geelong","Gold Coast","Hawthorn","Melbourne","North Melbourne","Port Adelaide","Richmond","St Kilda","Sydney","West Coast"],"elo":[1515.096710631,1542.27546100094,1519.18370486051,1537.31187049395,1478.23228203067,1531.05443092325,1515.22549948629,1522.40319434615,1534.26151601064,1519.33695565274,1531.43642886081,1476.33815707717,1426.46494985849,1507.07501027662,1431.13862970947,1487.07189292763,1514.11303978088,1411.98026640197],"elo.change":[-1.96126387043364,7.58994034740954,3.49098569779699,4.74291841307968,-4.74291841307968,6.41103932596479,1.96126387043364,-6.41103932596479,-3.49098569779699,6.03218866688417,3.18417560839862,2.05750457586714,2.06469516952575,-2.06469516952575,-2.05750457586714,-7.58994034740954,-6.03218866688417,-3.18417560839862],"Form":["4-3","6-1","3-4","6-1","3-3","4-3","4-3","4-3","4-3","5-1","5-2","2-5","1-6","4-3","2-5","3-4","2-5","0-7"],"spi":[1515.096710631,1542.27546100094,1519.18370486051,1537.31187049395,1478.23228203067,1531.05443092325,1515.22549948629,1522.40319434615,1534.26151601064,1519.33695565274,1531.43642886081,1476.33815707717,1426.46494985849,1507.07501027662,1431.13862970947,1487.07189292763,1514.11303978088,1411.98026640197],"global_o":[1515.096710631,1542.27546100094,1519.18370486051,1537.31187049395,1478.23228203067,1531.05443092325,1515.22549948629,1522.40319434615,1534.26151601064,1519.33695565274,1531.43642886081,1476.33815707717,1426.46494985849,1507.07501027662,1431.13862970947,1487.07189292763,1514.11303978088,1411.98026640197],"global_d":[1515.096710631,1542.27546100094,1519.18370486051,1537.31187049395,1478.23228203067,1531.05443092325,1515.22549948629,1522.40319434615,1534.26151601064,1519.33695565274,1531.43642886081,1476.33815707717,1426.46494985849,1507.07501027662,1431.13862970947,1487.07189292763,1514.11303978088,1411.98026640197],"Wins":[13.0165499999998,15.5225000000006,11.9153500000005,16.0841,10.1325999999994,13.9988500000001,12.8626999999998,12.4924499999996,14.29705,13.4129000000005,14.0065500000006,8.39360000000039,5.50689999999974,11.8414500000001,7.34804999999968,10.6698000000003,11.0018499999996,4.4967499999998],"Top.1":[0.0552,0.1656,0.0163,0.2486,0.0124,0.0703,0.0442,0.0395,0.0946,0.1118,0.1069,0.001,0,0.0218,0.0005,0.0072,0.0041,0],"Top.4":[0.2811,0.4512,0.2083,0.528,0.1166,0.351,0.2415,0.2428,0.4002,0.3162,0.3425,0.0472,0.0088,0.1712,0.0259,0.1278,0.1373,0.0024],"make_finals":[0.5632,0.7281,0.4837,0.7673,0.3092,0.6417,0.5321,0.5099,0.6784,0.5605,0.6116,0.1867,0.0698,0.4331,0.1281,0.3574,0.4002,0.039],"make_semis":[0.4246,0.598,0.3494,0.6559,0.204,0.498,0.3846,0.3844,0.548,0.4388,0.4836,0.1101,0.0314,0.3028,0.0671,0.2344,0.2691,0.0158],"make_prelim":[0.2805,0.4278,0.2307,0.4794,0.1194,0.3386,0.2488,0.2539,0.3848,0.3036,0.3273,0.0598,0.0134,0.1894,0.0321,0.1424,0.1613,0.0068],"make_gf":[0.1368,0.2286,0.1156,0.245,0.0542,0.1745,0.1205,0.1266,0.1994,0.1511,0.1639,0.0277,0.006,0.0931,0.013,0.063,0.0787,0.0023],"win_league":[0.0662,0.1185,0.0573,0.1266,0.0224,0.0882,0.0609,0.0634,0.099,0.0778,0.0859,0.0133,0.0022,0.0434,0.0062,0.0297,0.0378,0.0012]},"columns":[{"id":"team","name":"team","type":"character","className":"cell","headerClassName":"header","defaultSortDesc":false,"cell":[{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Adelaide flag","src":"../img/Adelaide.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Adelaide"]},{"name":"div","attribs":{"className":"record"},"children":["4-3"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Brisbane Lions flag","src":"../img/Brisbane Lions.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Brisbane Lions"]},{"name":"div","attribs":{"className":"record"},"children":["6-1"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Carlton flag","src":"../img/Carlton.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Carlton"]},{"name":"div","attribs":{"className":"record"},"children":["3-4"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Collingwood flag","src":"../img/Collingwood.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Collingwood"]},{"name":"div","attribs":{"className":"record"},"children":["6-1"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Essendon flag","src":"../img/Essendon.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Essendon"]},{"name":"div","attribs":{"className":"record"},"children":["3-3"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Footscray flag","src":"../img/Footscray.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Footscray"]},{"name":"div","attribs":{"className":"record"},"children":["4-3"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Fremantle flag","src":"../img/Fremantle.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Fremantle"]},{"name":"div","attribs":{"className":"record"},"children":["4-3"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"GWS flag","src":"../img/GWS.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["GWS"]},{"name":"div","attribs":{"className":"record"},"children":["4-3"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Geelong flag","src":"../img/Geelong.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Geelong"]},{"name":"div","attribs":{"className":"record"},"children":["4-3"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Gold Coast flag","src":"../img/Gold Coast.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Gold Coast"]},{"name":"div","attribs":{"className":"record"},"children":["5-1"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Hawthorn flag","src":"../img/Hawthorn.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Hawthorn"]},{"name":"div","attribs":{"className":"record"},"children":["5-2"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Melbourne flag","src":"../img/Melbourne.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Melbourne"]},{"name":"div","attribs":{"className":"record"},"children":["2-5"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"North Melbourne flag","src":"../img/North Melbourne.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["North Melbourne"]},{"name":"div","attribs":{"className":"record"},"children":["1-6"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Port Adelaide flag","src":"../img/Port Adelaide.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Port Adelaide"]},{"name":"div","attribs":{"className":"record"},"children":["4-3"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Richmond flag","src":"../img/Richmond.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Richmond"]},{"name":"div","attribs":{"className":"record"},"children":["2-5"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"St Kilda flag","src":"../img/St Kilda.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["St Kilda"]},{"name":"div","attribs":{"className":"record"},"children":["3-4"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"Sydney flag","src":"../img/Sydney.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["Sydney"]},{"name":"div","attribs":{"className":"record"},"children":["2-5"]}]},{"name":"div","attribs":{"className":"team"},"children":[{"name":"img","attribs":{"alt":"West Coast flag","src":"../img/West Coast.svg","className":"flag"},"children":[]},{"name":"div","attribs":{"className":"team-name"},"children":["West Coast"]},{"name":"div","attribs":{"className":"record"},"children":["0-7"]}]}],"minWidth":200,"align":"left","headerStyle":{"fontWeight":700}},{"id":"elo","name":"ELO","type":"numeric","className":"cell number ","headerClassName":"header","show":true,"format":{"cell":{"digits":0},"aggregated":{"digits":0}},"maxWidth":55,"align":"center"},{"id":"elo.change","name":"change","type":"numeric","className":"cell","headerClassName":"header","show":true,"format":{"cell":{"digits":0},"aggregated":{"digits":0}},"cell":[{"name":"div","attribs":{"className":"tag status-down"},"children":["-2"]},{"name":"div","attribs":{"className":"tag status-up"},"children":["+8"]},{"name":"div","attribs":{"className":"tag status-up"},"children":["+3"]},{"name":"div","attribs":{"className":"tag status-up"},"children":["+5"]},{"name":"div","attribs":{"className":"tag status-down"},"children":["-5"]},{"name":"div","attribs":{"className":"tag status-up"},"children":["+6"]},{"name":"div","attribs":{"className":"tag status-up"},"children":["+2"]},{"name":"div","attribs":{"className":"tag status-down"},"children":["-6"]},{"name":"div","attribs":{"className":"tag status-down"},"children":["-3"]},{"name":"div","attribs":{"className":"tag status-up"},"children":["+6"]},{"name":"div","attribs":{"className":"tag status-up"},"children":["+3"]},{"name":"div","attribs":{"className":"tag status-up"},"children":["+2"]},{"name":"div","attribs":{"className":"tag status-up"},"children":["+2"]},{"name":"div","attribs":{"className":"tag status-down"},"children":["-2"]},{"name":"div","attribs":{"className":"tag status-down"},"children":["-2"]},{"name":"div","attribs":{"className":"tag status-down"},"children":["-8"]},{"name":"div","attribs":{"className":"tag status-down"},"children":["-6"]},{"name":"div","attribs":{"className":"tag status-down"},"children":["-3"]}],"maxWidth":70,"align":"center"},{"id":"Form","name":"Form","type":"character","className":"cell","headerClassName":"header","show":false},{"id":"spi","name":"ELO","type":"numeric","className":"cell number ","headerClassName":"header","show":false,"format":{"cell":{"digits":1},"aggregated":{"digits":1}},"maxWidth":55,"align":"center"},{"id":"global_o","name":"global_o","type":"numeric","className":"cell","headerClassName":"header","show":false},{"id":"global_d","name":"global_d","type":"numeric","className":"cell","headerClassName":"header","show":false},{"id":"Wins","name":"Proj. Wins","type":"numeric","className":"cell number border-left","headerClassName":"header","cell":[{"name":"div","attribs":{"style":{"background":"#94CF93"},"className":"spi-rating"},"children":["13.0"]},{"name":"div","attribs":{"style":{"background":"#52B151"},"className":"spi-rating"},"children":["15.5"]},{"name":"div","attribs":{"style":{"background":"#B1DCB0"},"className":"spi-rating"},"children":["11.9"]},{"name":"div","attribs":{"style":{"background":"#44AB43"},"className":"spi-rating"},"children":["16.1"]},{"name":"div","attribs":{"style":{"background":"#DFF1DF"},"className":"spi-rating"},"children":["10.1"]},{"name":"div","attribs":{"style":{"background":"#7AC379"},"className":"spi-rating"},"children":["14.0"]},{"name":"div","attribs":{"style":{"background":"#98D097"},"className":"spi-rating"},"children":["12.9"]},{"name":"div","attribs":{"style":{"background":"#A1D5A1"},"className":"spi-rating"},"children":["12.5"]},{"name":"div","attribs":{"style":{"background":"#72C072"},"className":"spi-rating"},"children":["14.3"]},{"name":"div","attribs":{"style":{"background":"#89CA89"},"className":"spi-rating"},"children":["13.4"]},{"name":"div","attribs":{"style":{"background":"#7AC379"},"className":"spi-rating"},"children":["14.0"]},{"name":"div","attribs":{"style":{"background":"#F9D7CD"},"className":"spi-rating"},"children":["8.4"]},{"name":"div","attribs":{"style":{"background":"#FD5435"},"className":"spi-rating"},"children":["5.5"]},{"name":"div","attribs":{"style":{"background":"#B2DCB2"},"className":"spi-rating"},"children":["11.8"]},{"name":"div","attribs":{"style":{"background":"#FAA896"},"className":"spi-rating"},"children":["7.3"]},{"name":"div","attribs":{"style":{"background":"#D1EAD1"},"className":"spi-rating"},"children":["10.7"]},{"name":"div","attribs":{"style":{"background":"#C8E6C8"},"className":"spi-rating"},"children":["11.0"]},{"name":"div","attribs":{"style":{"background":"#FF2700"},"className":"spi-rating"},"children":["4.5"]}],"maxWidth":55,"align":"center"},{"id":"Top.1","name":"1st","type":"numeric","className":"cell number ","headerClassName":"header","cell":["  6%"," 17%","  2%"," 25%","  1%","  7%","  4%","  4%","  9%"," 11%"," 11%"," <1%","  – ","  2%"," <1%"," <1%"," <1%","  – "],"maxWidth":70,"align":"center"},{"id":"Top.4","name":"Top 4","type":"numeric","className":"cell number ","headerClassName":"header","cell":[" 28%"," 45%"," 21%"," 53%"," 12%"," 35%"," 24%"," 24%"," 40%"," 32%"," 34%","  5%"," <1%"," 17%","  3%"," 13%"," 14%"," <1%"],"maxWidth":70,"align":"center"},{"id":"make_finals","name":"Make Finals","type":"numeric","className":"cell number ","headerClassName":"header","cell":[" 56%"," 73%"," 48%"," 77%"," 31%"," 64%"," 53%"," 51%"," 68%"," 56%"," 61%"," 19%","  7%"," 43%"," 13%"," 36%"," 40%","  4%"],"maxWidth":70,"style":[{"color":"#111","background":"#92D2AB"},{"color":"#111","background":"#6FC5AB"},{"color":"#111","background":"#A0D9AD"},{"color":"#111","background":"#66C2AB"},{"color":"#111","background":"#BEE7B2"},{"color":"#111","background":"#81CCAB"},{"color":"#111","background":"#98D5AB"},{"color":"#111","background":"#9CD7AC"},{"color":"#111","background":"#7AC9AB"},{"color":"#111","background":"#93D3AB"},{"color":"#111","background":"#88CFAB"},{"color":"#111","background":"#D6F1BE"},{"color":"#111","background":"#F0FAD0"},{"color":"#111","background":"#A9DDAE"},{"color":"#111","background":"#E3F5C7"},{"color":"#111","background":"#B6E3B0"},{"color":"#111","background":"#AFDFAF"},{"color":"#111","background":"#F6FCE2"}]},{"id":"make_semis","name":"Make Semis","type":"numeric","className":"cell number border-left","headerClassName":"header","cell":[" 42%"," 60%"," 35%"," 66%"," 20%"," 50%"," 38%"," 38%"," 55%"," 44%"," 48%"," 11%","  3%"," 30%","  7%"," 23%"," 27%","  2%"],"maxWidth":90,"style":[{"color":"#111","background":"#AADEAE"},{"color":"#111","background":"#8BD0AB"},{"color":"#111","background":"#B7E4B1"},{"color":"#111","background":"#7ECBAB"},{"color":"#111","background":"#D3EFBB"},{"color":"#111","background":"#9ED8AC"},{"color":"#111","background":"#B1E1B0"},{"color":"#111","background":"#B1E1B0"},{"color":"#111","background":"#95D4AB"},{"color":"#111","background":"#A8DCAE"},{"color":"#111","background":"#A0D9AD"},{"color":"#111","background":"#E7F7CA"},{"color":"#111","background":"#F8FCE8"},{"color":"#111","background":"#BFE7B2"},{"color":"#111","background":"#F0FAD1"},{"color":"#111","background":"#CCEDB6"},{"color":"#111","background":"#C5EAB3"},{"color":"#111","background":"#FBFDF3"}]},{"id":"make_prelim","name":"Make Prelim","type":"numeric","className":"cell number ","headerClassName":"header","cell":[" 28%"," 43%"," 23%"," 48%"," 12%"," 34%"," 25%"," 25%"," 38%"," 30%"," 33%","  6%","  1%"," 19%","  3%"," 14%"," 16%"," <1%"],"maxWidth":70,"style":[{"color":"#111","background":"#C3E9B3"},{"color":"#111","background":"#AADDAE"},{"color":"#111","background":"#CDEDB7"},{"color":"#111","background":"#A1D9AD"},{"color":"#111","background":"#E5F6C8"},{"color":"#111","background":"#B9E4B1"},{"color":"#111","background":"#C9ECB4"},{"color":"#111","background":"#C8EBB3"},{"color":"#111","background":"#B1E1B0"},{"color":"#111","background":"#BFE7B2"},{"color":"#111","background":"#BBE5B1"},{"color":"#111","background":"#F2FBD3"},{"color":"#111","background":"#FCFEF5"},{"color":"#111","background":"#D6F0BD"},{"color":"#111","background":"#F8FCE7"},{"color":"#111","background":"#E0F4C5"},{"color":"#111","background":"#DCF3C2"},{"color":"#aaa"}]},{"id":"make_gf","name":"Make GF","type":"numeric","className":"cell number ","headerClassName":"header","cell":[" 14%"," 23%"," 12%"," 24%","  5%"," 17%"," 12%"," 13%"," 20%"," 15%"," 16%","  3%"," <1%","  9%","  1%","  6%","  8%"," <1%"],"maxWidth":70,"style":[{"color":"#111","background":"#E1F5C6"},{"color":"#111","background":"#CDEDB7"},{"color":"#111","background":"#E6F6C9"},{"color":"#111","background":"#CAECB4"},{"color":"#111","background":"#F3FBD7"},{"color":"#111","background":"#D9F2C0"},{"color":"#111","background":"#E5F6C8"},{"color":"#111","background":"#E3F5C7"},{"color":"#111","background":"#D4F0BC"},{"color":"#111","background":"#DEF3C3"},{"color":"#111","background":"#DBF2C1"},{"color":"#111","background":"#F9FDEB"},{"color":"#aaa"},{"color":"#111","background":"#EBF8CD"},{"color":"#111","background":"#FCFEF5"},{"color":"#111","background":"#F1FAD1"},{"color":"#111","background":"#EEF9CF"},{"color":"#aaa"}]},{"id":"win_league","name":"Premier","type":"numeric","className":"cell number ","headerClassName":"header","cell":["  7%"," 12%","  6%"," 13%","  2%","  9%","  6%","  6%"," 10%","  8%","  9%","  1%"," <1%","  4%"," <1%","  3%","  4%"," <1%"],"maxWidth":70,"style":[{"color":"#111","background":"#F1FAD1"},{"color":"#111","background":"#E5F6C9"},{"color":"#111","background":"#F3FBD5"},{"color":"#111","background":"#E3F5C7"},{"color":"#111","background":"#FAFDEE"},{"color":"#111","background":"#ECF8CD"},{"color":"#111","background":"#F2FBD3"},{"color":"#111","background":"#F1FAD1"},{"color":"#111","background":"#EAF8CC"},{"color":"#111","background":"#EEF9CF"},{"color":"#111","background":"#ECF9CE"},{"color":"#111","background":"#FCFEF5"},{"color":"#aaa"},{"color":"#111","background":"#F5FCDF"},{"color":"#aaa"},{"color":"#111","background":"#F8FDE9"},{"color":"#111","background":"#F7FCE3"},{"color":"#aaa"}]}],"columnGroups":[{"headerClassName":"group-header","name":"Team Rating","columns":["spi","global_o","global_d"]},{"headerClassName":"group-header","name":"Home and Away Season","columns":["Wins","Top.1","Top.4","make_finals"]},{"headerClassName":"group-header","name":"Finals Chances","columns":["make_semis","make_prelim","make_gf","win_league"]}],"defaultSorted":[{"id":"Wins","desc":true},{"id":"win_league","desc":true}],"pagination":false,"borderless":true,"showSortIcon":false,"className":"standings-table","rowClassName":"\n    function(rowInfo, state) {\n      const firstSorted = state.sorted[0]\n      if (firstSorted && firstSorted.id === 'group') {\n        const nextRow = state.pageRows[rowInfo.viewIndex + 1]\n        if (nextRow && rowInfo.row.group !== nextRow.group) {\n          return 'group-last'\n        }\n      }\n    }","width":"100%","dataKey":"18ddf8bca0db3e5db5428ae2d793b816"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.rowClassName"],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -397,380 +562,255 @@ Last updated Apr 28 at 09:37PM
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/www\.plussixoneblog\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/www\.plussixoneblog\.com");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -778,185 +818,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
