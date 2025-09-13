@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,18 +72,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-befe23ebd2f54d8af2c8a89d1a1611f1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-659c7feacb21ed7817736f79a2afe1a2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-3824aa816de5134366ccfe78104cf7a8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-659c7feacb21ed7817736f79a2afe1a2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dc797a86ed2ad7be54980078017504d0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-746b12677a866d60fe2edb41c4d5323b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-dc797a86ed2ad7be54980078017504d0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -323,7 +324,8 @@ cookieconsent.run({
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../profile.png" alt="" class="navbar-logo">
+    <img src="../../profile.png" alt="" class="navbar-logo light-content">
+    <img src="../../profile.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">plusSixOne</span>
@@ -454,8 +456,8 @@ cookieconsent.run({
 </ul>
 <p>Previously all of these situations returned an unhelpful error.</p>
 <div class="cell" data-hash="index_cache/html/unnamed-chunk-1_a218fcbbd837c7d31d840f2f5a26a699">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Return a list of the sources, with ID's</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>fitzRoy<span class="sc">::</span><span class="fu">fetch_squiggle_data</span>(<span class="st">"sources"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Return a list of the sources, with ID's</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>fitzRoy<span class="sc">::</span><span class="fu">fetch_squiggle_data</span>(<span class="st">"sources"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>ℹ Getting data from https://api.squiggle.com.au?q=sources&amp;format=JSON</code></pre>
 </div>
@@ -481,8 +483,8 @@ cookieconsent.run({
 10 Stattraction    "/wp-content/themes/squiggle/assets/images/statt…    10 "htt…
 # … with 28 more rows</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Provide an incorrect query</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>fitzRoy<span class="sc">::</span><span class="fu">fetch_squiggle_data</span>(<span class="at">query =</span> <span class="st">"fitzRoy"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Provide an incorrect query</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>fitzRoy<span class="sc">::</span><span class="fu">fetch_squiggle_data</span>(<span class="at">query =</span> <span class="st">"fitzRoy"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>ℹ Getting data from https://api.squiggle.com.au?q=fitzRoy&amp;format=JSON</code></pre>
 </div>
@@ -495,8 +497,8 @@ cookieconsent.run({
 <div class="cell-output cell-output-stderr">
 <pre><code>✖ Getting data from https://api.squiggle.com.au?q=fitzRoy&amp;format=JSON [447ms]</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Provide an invalid optional argument</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>fitzRoy<span class="sc">::</span><span class="fu">fetch_squiggle_data</span>(<span class="at">query =</span> <span class="st">"tips"</span>, <span class="at">fitzRoy =</span> <span class="cn">TRUE</span>, <span class="at">source =</span> <span class="dv">1</span>, <span class="at">year =</span> <span class="dv">2024</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Provide an invalid optional argument</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>fitzRoy<span class="sc">::</span><span class="fu">fetch_squiggle_data</span>(<span class="at">query =</span> <span class="st">"tips"</span>, <span class="at">fitzRoy =</span> <span class="cn">TRUE</span>, <span class="at">source =</span> <span class="dv">1</span>, <span class="at">year =</span> <span class="dv">2024</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>ℹ Getting data from https://api.squiggle.com.au?q=tips&amp;fitzRoy=TRUE&amp;source=1&amp;ye…</code></pre>
 </div>
@@ -525,8 +527,8 @@ cookieconsent.run({
 #   updated &lt;chr&gt;, err &lt;chr&gt;, source &lt;chr&gt;, and abbreviated variable names
 #   ¹​tipteamid, ²​confidence</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Provide an incorrect optional argument value</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>fitzRoy<span class="sc">::</span><span class="fu">fetch_squiggle_data</span>(<span class="at">query =</span> <span class="st">"tips"</span>, <span class="at">fitzRoy =</span> <span class="cn">TRUE</span>, <span class="at">source =</span> <span class="dv">1</span>, <span class="at">year =</span> <span class="dv">2030</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Provide an incorrect optional argument value</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>fitzRoy<span class="sc">::</span><span class="fu">fetch_squiggle_data</span>(<span class="at">query =</span> <span class="st">"tips"</span>, <span class="at">fitzRoy =</span> <span class="cn">TRUE</span>, <span class="at">source =</span> <span class="dv">1</span>, <span class="at">year =</span> <span class="dv">2030</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>ℹ Getting data from https://api.squiggle.com.au?q=tips&amp;fitzRoy=TRUE&amp;source=1&amp;ye…</code></pre>
 </div>
@@ -545,11 +547,11 @@ cookieconsent.run({
 <h3 class="anchored" data-anchor-id="replace_teams-now-handle-indigenous-names"><code>replace_teams</code> now handle indigenous names</h3>
 <p>With teams starting to use indigenous names during Sir Doug Nicholls rounds, the AFL API was returning these names over the traditional team names, which was causing errors in places. Most people were handling this in their own code, or using teamIds, but where the package was using <code>replace_names</code> function, we’ve added a check to ensure we can match the indigenous and traditional name together.</p>
 <div class="cell" data-hash="index_cache/html/unnamed-chunk-2_71d7e64d3b53010703b58d7af0a22487">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>fitzRoy<span class="sc">::</span><span class="fu">replace_teams</span>(<span class="st">"Narrm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>fitzRoy<span class="sc">::</span><span class="fu">replace_teams</span>(<span class="st">"Narrm"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Melbourne"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>fitzRoy<span class="sc">::</span><span class="fu">replace_teams</span>(<span class="st">"Walyalup"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>fitzRoy<span class="sc">::</span><span class="fu">replace_teams</span>(<span class="st">"Walyalup"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Fremantle"</code></pre>
 </div>
@@ -634,13 +636,14 @@ cookieconsent.run({
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

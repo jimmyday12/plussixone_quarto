@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -73,18 +73,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-befe23ebd2f54d8af2c8a89d1a1611f1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-659c7feacb21ed7817736f79a2afe1a2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-3824aa816de5134366ccfe78104cf7a8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-659c7feacb21ed7817736f79a2afe1a2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dc797a86ed2ad7be54980078017504d0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-746b12677a866d60fe2edb41c4d5323b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dc797a86ed2ad7be54980078017504d0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -324,7 +325,8 @@ cookieconsent.run({
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../profile.png" alt="" class="navbar-logo">
+    <img src="../profile.png" alt="" class="navbar-logo light-content">
+    <img src="../profile.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">plusSixOne</span>
@@ -466,7 +468,7 @@ cookieconsent.run({
 <p>The basic structure of the <code>fetch_*</code> functions is that you specify the <code>season</code>, <code>round_number</code>, <code>source</code> and <code>comp</code>. Some examples are below but read through the extensive <a href="https://jimmyday12.github.io/fitzRoy/articles/main-fetch-functions.html">Main Fetch Functions vignette</a> for a detailed run through.</p>
 <p>An example with the fixture dataset.</p>
 <div class="cell" data-hash="2021-03-15-fitzRoy-v-1-0-0.en_cache/html/unnamed-chunk-1_436d8efb32fd21f6a0fd3ac44ced516a">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_fixture</span>(<span class="at">season =</span> <span class="dv">2021</span>, <span class="at">source =</span> <span class="st">"AFL"</span>, <span class="at">comp =</span> <span class="st">"AFLM"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_fixture</span>(<span class="at">season =</span> <span class="dv">2021</span>, <span class="at">source =</span> <span class="st">"AFL"</span>, <span class="at">comp =</span> <span class="st">"AFLM"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 207 × 58
       id provid…¹ utcSt…² status compS…³ compS…⁴ compS…⁵ compS…⁶ compS…⁷ round…⁸
@@ -492,10 +494,10 @@ cookieconsent.run({
 </div>
 <p>The other functions are below.</p>
 <div class="cell" data-hash="2021-03-15-fitzRoy-v-1-0-0.en_cache/html/unnamed-chunk-2_ae0b5003e652ebc642299fbc5ed3c675">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lineup <span class="ot">&lt;-</span> <span class="fu">fetch_lineup</span>(<span class="at">season =</span> <span class="dv">2021</span>, <span class="at">round_number =</span> <span class="dv">7</span>, <span class="at">comp =</span> <span class="st">"AFLW"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lineup <span class="ot">&lt;-</span> <span class="fu">fetch_lineup</span>(<span class="at">season =</span> <span class="dv">2021</span>, <span class="at">round_number =</span> <span class="dv">7</span>, <span class="at">comp =</span> <span class="st">"AFLW"</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">fetch_results</span>(<span class="at">season =</span> <span class="dv">2020</span>, <span class="at">source =</span> <span class="st">"afltables"</span>, <span class="at">comp =</span> <span class="st">"AFLW"</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ladder <span class="ot">&lt;-</span> <span class="fu">fetch_ladder</span>(<span class="at">season =</span> <span class="dv">2020</span>, <span class="at">source =</span> <span class="st">"squiggle"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>stats <span class="ot">&lt;-</span> <span class="fu">fetch_player_stats</span>(<span class="at">season =</span> <span class="dv">2020</span>, <span class="at">source =</span> <span class="st">"fryzigg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>stats <span class="ot">&lt;-</span> <span class="fu">fetch_player_stats</span>(<span class="at">season =</span> <span class="dv">2020</span>, <span class="at">source =</span> <span class="st">"fryzigg"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="new-data-source" class="level3">
@@ -503,16 +505,16 @@ cookieconsent.run({
 <p>The official AFL website has been added as a new data source for fitzRoy. This provides access to official statistics and generally includes a lot more data than other sources. It is the default <code>source</code> in any of the <code>fetch_*</code> family of functions.</p>
 <p>Some good examples are shown in the new <a href="https://jimmyday12.github.io/fitzRoy/articles/fitzRoy.html">Getting started vignette</a></p>
 <div class="cell" data-hash="2021-03-15-fitzRoy-v-1-0-0.en_cache/html/unnamed-chunk-3_e0d28b75abfeae30f5dbe623a2f5242e">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The following will return the same. </span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The following will return the same. </span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_results</span>(<span class="at">season =</span> <span class="dv">2021</span>, <span class="at">round_number =</span> <span class="dv">1</span>, <span class="at">source =</span> <span class="st">"AFL"</span>, <span class="at">comp =</span> <span class="st">"AFLM"</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_results_afl</span>(<span class="at">season =</span> <span class="dv">2021</span>, <span class="at">round_number =</span> <span class="dv">1</span>, <span class="at">comp =</span> <span class="st">"AFLM"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_results_afl</span>(<span class="at">season =</span> <span class="dv">2021</span>, <span class="at">round_number =</span> <span class="dv">1</span>, <span class="at">comp =</span> <span class="st">"AFLM"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="aflw-data" class="level3">
 <h3 class="anchored" data-anchor-id="aflw-data">AFLW data</h3>
 <p>All data from the source “AFL” will also contain AFLW data for the first time. This includes fixtures, results, ladders, lineups and player stats. It is as simple as changing the <code>comp</code> argument to “AFLW” when using any of the <code>fetch_*</code> family of functions.</p>
 <div class="cell" data-hash="2021-03-15-fitzRoy-v-1-0-0.en_cache/html/unnamed-chunk-4_5cc2c029f9c52eac5aa59f57f18ebd68">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_player_stats</span>(<span class="at">season =</span> <span class="dv">2021</span>, <span class="at">round_number =</span> <span class="dv">1</span>, <span class="at">source =</span> <span class="st">"AFL"</span>, <span class="at">comp =</span> <span class="st">"AFLW"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_player_stats</span>(<span class="at">season =</span> <span class="dv">2021</span>, <span class="at">round_number =</span> <span class="dv">1</span>, <span class="at">source =</span> <span class="st">"AFL"</span>, <span class="at">comp =</span> <span class="st">"AFLW"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 294 × 70
    providerId     utcSt…¹ status compS…² round…³ round…⁴ venue…⁵ home.…⁶ home.…⁷
@@ -620,13 +622,14 @@ cookieconsent.run({
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

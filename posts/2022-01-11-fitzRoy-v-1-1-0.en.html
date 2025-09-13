@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -73,18 +73,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-befe23ebd2f54d8af2c8a89d1a1611f1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-659c7feacb21ed7817736f79a2afe1a2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-3824aa816de5134366ccfe78104cf7a8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-659c7feacb21ed7817736f79a2afe1a2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dc797a86ed2ad7be54980078017504d0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-746b12677a866d60fe2edb41c4d5323b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dc797a86ed2ad7be54980078017504d0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -324,7 +325,8 @@ cookieconsent.run({
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../profile.png" alt="" class="navbar-logo">
+    <img src="../profile.png" alt="" class="navbar-logo light-content">
+    <img src="../profile.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">plusSixOne</span>
@@ -456,9 +458,9 @@ cookieconsent.run({
 <p>You can use <code>fetch_player_details</code> to return a list of player details for a given club and source. The source will determine exactly what details are returned. The default is the AFL.com.au website.</p>
 <p>The AFL website will return AFLW or AFLM data, while other sources only include AFLM data.</p>
 <div class="cell" data-hash="2022-01-11-fitzRoy-v-1-1-0.en_cache/html/unnamed-chunk-1_7087f30d2921eff194b0eaee36c12f43">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>aflw_players <span class="ot">&lt;-</span> <span class="fu">fetch_player_details</span>(<span class="at">team =</span> <span class="st">"Western Bulldogs"</span>, <span class="at">current =</span> <span class="cn">TRUE</span>, <span class="at">comp =</span> <span class="st">"AFLW"</span>, <span class="at">source =</span> <span class="st">"AFL"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>aflw_players <span class="ot">&lt;-</span> <span class="fu">fetch_player_details</span>(<span class="at">team =</span> <span class="st">"Western Bulldogs"</span>, <span class="at">current =</span> <span class="cn">TRUE</span>, <span class="at">comp =</span> <span class="st">"AFLW"</span>, <span class="at">source =</span> <span class="st">"AFL"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(aflw_players)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(aflw_players)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 0 × 1
 # … with 1 variable: data_accessed &lt;date&gt;</code></pre>
@@ -466,7 +468,7 @@ cookieconsent.run({
 </div>
 <p>The list of details for AFL.com.au website is below.</p>
 <div class="cell" data-hash="2022-01-11-fitzRoy-v-1-1-0.en_cache/html/unnamed-chunk-2_547c3f6ce41eb039c4458d30dc44edc1">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(aflw_players)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(aflw_players)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 0
 Columns: 1
@@ -475,7 +477,7 @@ $ data_accessed &lt;date&gt; </code></pre>
 </div>
 <p>The AFLTables.com source will return all players who have played for the specified team over time.</p>
 <div class="cell" data-hash="2022-01-11-fitzRoy-v-1-1-0.en_cache/html/unnamed-chunk-3_14c5360f1d32b030642d85332494ab8f">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_player_details</span>(<span class="st">"Hawthorn"</span>, <span class="at">source =</span> <span class="st">"afltables"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_player_details</span>(<span class="st">"Hawthorn"</span>, <span class="at">source =</span> <span class="st">"afltables"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 957 × 15
    Player   Team    Cap `#`   HT    WT    Games  Wins Draws Losses Goals Seasons
@@ -496,7 +498,7 @@ $ data_accessed &lt;date&gt; </code></pre>
 </div>
 <p>The Footywire.com source allows you to specify just the current list of players, which is fairly quick, or all players over time which can be a little slow.</p>
 <div class="cell" data-hash="2022-01-11-fitzRoy-v-1-1-0.en_cache/html/unnamed-chunk-4_446d2ce1422a5962f6a024fa1086e2df">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_player_details</span>(<span class="st">"Richmond"</span>, <span class="at">source =</span> <span class="st">"footywire"</span>, <span class="at">current =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_player_details</span>(<span class="st">"Richmond"</span>, <span class="at">source =</span> <span class="st">"footywire"</span>, <span class="at">current =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 43 × 11
    No    surname  first_name Games Age      Date …¹ Height Weight Origin Posit…²
@@ -518,7 +520,7 @@ $ data_accessed &lt;date&gt; </code></pre>
 <p>One challenge is that each source accepts different values for the <code>team</code> argument. There is a helper function that will return an error if the wrong team is supplied and provide a list of acceptable values for that specific source.</p>
 <p>You can read full details on the <a href="https://jimmyday12.github.io/fitzRoy/articles/player-details.html">Player Details Vignette</a></p>
 <div class="cell" data-hash="2022-01-11-fitzRoy-v-1-1-0.en_cache/html/unnamed-chunk-5_e73479bcf61283f9ee55310afa895362">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_player_details</span>(<span class="st">"Greater Western Sydney"</span>, <span class="at">source =</span> <span class="st">"afltables"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch_player_details</span>(<span class="st">"Greater Western Sydney"</span>, <span class="at">source =</span> <span class="st">"afltables"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in `team_check_afltables()`:
 ! Greater Western Sydney is not a valid input for afltables teams.
@@ -530,8 +532,8 @@ Should be one of Adelaide, Brisbane Lions, Brisbane Bears, Carlton, Collingwood,
 <h2 class="anchored" data-anchor-id="coaches-votes">Coaches votes</h2>
 <p>A new set of functions will return coaches votes.</p>
 <div class="cell" data-hash="2022-01-11-fitzRoy-v-1-1-0.en_cache/html/unnamed-chunk-6_145b70b2136b7f36434b6b1eed67df8a">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>coaches <span class="ot">&lt;-</span> <span class="fu">fetch_coaches_votes</span>(<span class="at">season =</span> <span class="dv">2021</span>, <span class="at">round_number =</span> <span class="dv">1</span>, <span class="at">team =</span> <span class="st">"Hawthorn"</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>coaches</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>coaches <span class="ot">&lt;-</span> <span class="fu">fetch_coaches_votes</span>(<span class="at">season =</span> <span class="dv">2021</span>, <span class="at">round_number =</span> <span class="dv">1</span>, <span class="at">team =</span> <span class="st">"Hawthorn"</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>coaches</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     Season Round Home.Team Away.Team            Player.Name Coaches.Votes
 1.27   2021     1  Essendon  Hawthorn     Tom Mitchell (HAW)            10
@@ -544,7 +546,7 @@ Should be one of Adelaide, Brisbane Lions, Brisbane Bears, Carlton, Collingwood,
 </div>
 <p>An associated function will also calculate possible ways in which the cochaes may have voted.</p>
 <div class="cell" data-hash="2022-01-11-fitzRoy-v-1-1-0.en_cache/html/unnamed-chunk-7_9ab761f4243b2e2f66ee079822dcf607">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_coaches_vote_possibilities</span>(coaches, <span class="st">"Coach View"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_coaches_vote_possibilities</span>(coaches, <span class="st">"Coach View"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
   Votes                   C1                     C2
@@ -629,13 +631,14 @@ Should be one of Adelaide, Brisbane Lions, Brisbane Bears, Carlton, Collingwood,
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
