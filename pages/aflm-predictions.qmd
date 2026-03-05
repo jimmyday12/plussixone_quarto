@@ -35,7 +35,7 @@ forecasts2 <- sims_combined %>%
     global_d = elo
   )
 
-new_season <- forecasts2$Round[1] == 0
+new_season <- forecasts2$Round[1] == 0 | forecasts2$Round[1] == 28
 
 results <- results %>% slice_tail()
 
@@ -62,7 +62,7 @@ forecasts2 <- forecasts2 %>%
 
 rating_cols <- c("spi", "global_o", "global_d")
 
-group_cols <- c("Wins", "Top.1", "Top.4", "make_finals")
+group_cols <- c("Wins", "Top.1", "Top.4", "Top.10")
 
 # CHANGED: added make_elim as the first Finals Chances column
 knockout_cols <- c("make_qf_ef", "make_semis", "make_prelim", "make_gf", "win_league")
@@ -233,7 +233,7 @@ tbl <- reactable(
     Top.1 = group_column(name = "1st"),
 
     # CHANGED: "Make Finals" → "Top 10" to reflect new meaning (making wildcard round)
-    make_finals = knockout_column(name = "Top 10"),
+    Top.10 = knockout_column(name = "Top 10"),
 
     # CHANGED: make_elim is new first column in Finals Chances, gets the border-left
     make_qf_ef = knockout_column(name = "Make QF/EF", maxWidth = 90, class = "border-left"),
