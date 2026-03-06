@@ -1,11 +1,386 @@
 ---
-title: Model Results
-author: James Day
-date: '2018-03-27'
-slug: aflm-model-results
-categories:
-  - AFLM
-tags: []
+title: "AFLM Model Performance"
+description: "Historical tipping performance of the plusSixOne ELO model, sourced from Squiggle."
+execute:
+  freeze: false
 ---
 
-Coming soon...
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r load, include=FALSE}
+library(tidyverse)
+library(reactable)
+library(htmltools)
+
+# ── Squiggle API ──────────────────────────────────────────────────────────────
+squiggle_tips <- function(year) {
+  url <- paste0(
+    "https://api.squiggle.com.au/?q=tips;source=7;complete=100;year=", year
+  )
+  resp <- tryCatch(
+    jsonlite::fromJSON(url, flatten = TRUE),
+    error = function(e) NULL
+  )
+  if (is.null(resp) || length(resp$tips) == 0) return(NULL)
+  as_tibble(resp$tips)
+}
+
+current_year <- as.integer(format(Sys.Date(), "%Y"))
+years        <- 2018:current_year
+
+raw <- map(years, squiggle_tips) %>%
+  compact() %>%
+  bind_rows()
+
+# ── Tidy up ───────────────────────────────────────────────────────────────────
+tips <- raw %>%
+  mutate(
+    year    = as.integer(year),
+    round   = as.integer(round),
+    correct = as.integer(correct),
+    err     = as.numeric(err),
+    bits    = as.numeric(bits)
+  ) %>%
+  select(year, round, gameid, hteam, ateam, correct, err, bits)
+
+# ── Season-level summary ──────────────────────────────────────────────────────
+season_summary <- tips %>%
+  group_by(year) %>%
+  summarise(
+    games         = n(),
+    tips_correct  = sum(correct, na.rm = TRUE),
+    tip_pct       = tips_correct / games,
+    mae           = mean(err, na.rm = TRUE),
+    total_bits    = sum(bits, na.rm = TRUE),
+    bits_per_game = mean(bits, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+# ── Round-level summary ───────────────────────────────────────────────────────
+round_summary <- tips %>%
+  group_by(year, round) %>%
+  summarise(
+    games        = n(),
+    tips_correct = sum(correct, na.rm = TRUE),
+    tip_pct      = tips_correct / games,
+    mae          = mean(err, na.rm = TRUE),
+    bits         = sum(bits, na.rm = TRUE),
+    .groups = "drop"
+  )
+```
+
+```{r kpi, include=FALSE}
+# ── Colour helpers ────────────────────────────────────────────────────────────
+make_color_pal <- function(colors, bias = 1) {
+  get_color <- colorRamp(colors, bias = bias)
+  function(x) rgb(get_color(x), maxColorValue = 255)
+}
+
+pct_color  <- make_color_pal(c("#ff2700", "#f8fcf8", "#44ab43"), bias = 1.3)
+mae_color  <- make_color_pal(c("#44ab43", "#f8fcf8", "#ff2700"), bias = 1)
+bits_color <- make_color_pal(c("#ff2700", "#f8fcf8", "#44ab43"), bias = 1.3)
+
+colour_cell <- function(value, pal, range_vals, fmt_fn = identity) {
+  if (is.na(value)) return("\u2013")
+  rng    <- max(range_vals, na.rm = TRUE) - min(range_vals, na.rm = TRUE)
+  scaled <- if (rng == 0) 0.5 else (value - min(range_vals, na.rm = TRUE)) / rng
+  scaled <- max(0, min(1, scaled))
+  div(
+    style = list(
+      background   = pal(scaled),
+      borderRadius = "4px",
+      padding      = "2px 6px",
+      display      = "inline-block",
+      minWidth     = "52px",
+      textAlign    = "center"
+    ),
+    fmt_fn(value)
+  )
+}
+
+# ── All-time KPIs ─────────────────────────────────────────────────────────────
+all_correct <- sum(season_summary$tips_correct)
+all_games   <- sum(season_summary$games)
+all_pct     <- all_correct / all_games
+all_mae     <- mean(tips$err, na.rm = TRUE) %>% round(1)
+all_bits    <- sum(season_summary$total_bits) %>% round(1)
+
+card <- function(value, label, sub = NULL) {
+  div(
+    class = "kpi-card",
+    div(class = "kpi-value", value),
+    div(class = "kpi-label", label),
+    if (!is.null(sub)) div(class = "kpi-sub", sub)
+  )
+}
+```
+
+```{r kpi_display, echo=FALSE}
+div(
+  class = "kpi-strip",
+  card(
+    paste0(all_correct, " / ", all_games),
+    "Tips Correct (all time)",
+    paste0(round(all_pct * 100, 1), "%")
+  ),
+  card(
+    all_mae,
+    "Avg Margin Error (pts)",
+    "Mean absolute error"
+  ),
+  card(
+    all_bits,
+    "Total Bits (all time)",
+    "Squiggle log\u2082 score"
+  )
+)
+```
+
+```{r season_table, echo=FALSE}
+season_tbl <- reactable(
+  season_summary %>%
+    select(year, games, tips_correct, tip_pct, mae, bits_per_game, total_bits),
+  pagination    = FALSE,
+  width         = "100%",
+  defaultSorted = list(year = "desc"),
+  borderless    = TRUE,
+  class         = "standings-table",
+  defaultColDef = colDef(class = "cell", headerClass = "header"),
+  columns = list(
+    year = colDef(
+      name     = "Season",
+      maxWidth = 80,
+      align    = "center",
+      cell     = function(value) div(style = "font-weight:700", value)
+    ),
+    games = colDef(name = "Games", maxWidth = 70, align = "center"),
+    tips_correct = colDef(
+      name     = "Tips Correct",
+      maxWidth = 110,
+      align    = "center",
+      cell     = function(value, index) {
+        div(paste0(value, " / ", season_summary$games[index]))
+      }
+    ),
+    tip_pct = colDef(
+      name     = "Tip %",
+      maxWidth = 90,
+      align    = "center",
+      cell     = function(value) {
+        colour_cell(value, pct_color, season_summary$tip_pct,
+                    function(v) paste0(round(v * 100, 1), "%"))
+      }
+    ),
+    mae = colDef(
+      name  = "Avg Margin Error",
+      align = "center",
+      cell  = function(value) {
+        colour_cell(value, mae_color, season_summary$mae,
+                    function(v) round(v, 1))
+      }
+    ),
+    bits_per_game = colDef(
+      name  = "Bits / Game",
+      align = "center",
+      cell  = function(value) {
+        colour_cell(value, bits_color, season_summary$bits_per_game,
+                    function(v) round(v, 3))
+      }
+    ),
+    total_bits = colDef(
+      name  = "Total Bits",
+      align = "center",
+      cell  = function(value) {
+        colour_cell(value, bits_color, season_summary$total_bits,
+                    function(v) round(v, 1))
+      }
+    )
+  )
+)
+
+div(class = "standings", h3("Season Summary"), season_tbl)
+```
+
+```{r round_table, echo=FALSE}
+available_years <- sort(unique(round_summary$year), decreasing = TRUE)
+default_yr      <- available_years[1]
+
+year_options <- tagList(lapply(available_years, function(y) {
+  tags$option(
+    value    = paste0("year-", y),
+    selected = if (y == default_yr) "selected" else NULL,
+    as.character(y)
+  )
+}))
+
+round_tables <- tagList(lapply(available_years, function(y) {
+  rd <- round_summary %>%
+    filter(year == y) %>%
+    select(round, games, tips_correct, tip_pct, mae, bits) %>%
+    arrange(round)
+
+  tbl <- reactable(
+    rd,
+    pagination    = FALSE,
+    width         = "100%",
+    borderless    = TRUE,
+    class         = "standings-table",
+    defaultColDef = colDef(class = "cell", headerClass = "header"),
+    columns = list(
+      round = colDef(
+        name     = "Round",
+        maxWidth = 70,
+        align    = "center",
+        cell     = function(value) div(style = "font-weight:700", value)
+      ),
+      games        = colDef(name = "Games", maxWidth = 70, align = "center"),
+      tips_correct = colDef(
+        name     = "Tips Correct",
+        maxWidth = 120,
+        align    = "center",
+        cell     = function(value, index) {
+          div(paste0(value, " / ", rd$games[index]))
+        }
+      ),
+      tip_pct = colDef(
+        name     = "Tip %",
+        maxWidth = 90,
+        align    = "center",
+        cell     = function(value) {
+          colour_cell(value, pct_color, rd$tip_pct,
+                      function(v) paste0(round(v * 100, 1), "%"))
+        }
+      ),
+      mae = colDef(
+        name  = "Avg Margin Error",
+        align = "center",
+        cell  = function(value) {
+          colour_cell(value, mae_color, rd$mae,
+                      function(v) round(v, 1))
+        }
+      ),
+      bits = colDef(
+        name  = "Bits",
+        align = "center",
+        cell  = function(value) {
+          colour_cell(value, bits_color, rd$bits,
+                      function(v) round(v, 3))
+        }
+      )
+    )
+  )
+
+  tags$div(
+    id    = paste0("year-", y),
+    class = "year-table",
+    style = if (y == default_yr) "display:block" else "display:none",
+    tbl
+  )
+}))
+
+div(
+  class = "standings",
+  div(
+    style = "display:flex; align-items:center; gap:16px; margin:20px 0 12px;",
+    h3(style = "margin:0", "Round by Round"),
+    tags$select(
+      id    = "year-selector",
+      style = "font-family:Karla,sans-serif; font-size:14px; padding:4px 8px;
+               border:1px solid #ccc; border-radius:4px; cursor:pointer;",
+      year_options
+    )
+  ),
+  round_tables
+)
+```
+
+```{r fonts, echo=FALSE}
+tags$link(
+  href = "https://fonts.googleapis.com/css?family=Karla:400,700|Fira+Mono&display=fallback",
+  rel  = "stylesheet"
+)
+```
+
+```{js, echo=FALSE}
+document.addEventListener('DOMContentLoaded', function() {
+  const sel = document.getElementById('year-selector');
+  if (!sel) return;
+  function showYear(id) {
+    document.querySelectorAll('.year-table').forEach(el => el.style.display = 'none');
+    const t = document.getElementById(id);
+    if (t) t.style.display = 'block';
+  }
+  showYear(sel.value);
+  sel.addEventListener('change', function() { showYear(this.value); });
+});
+```
+
+```{css, echo=FALSE}
+.kpi-strip {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 16px 0 28px;
+}
+.kpi-card {
+  flex: 1;
+  min-width: 160px;
+  background: var(--bs-body-bg, #fff);
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 8px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+}
+.kpi-value {
+  font-family: "Fira Mono", Consolas, monospace;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.kpi-label {
+  font-family: Karla, sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: #666;
+  margin-top: 4px;
+}
+.kpi-sub {
+  font-family: "Fira Mono", monospace;
+  font-size: 12px;
+  color: #44ab43;
+  margin-top: 2px;
+}
+.standings {
+  font-family: Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+.standings-table { margin-bottom: 20px; }
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-bottom-color: #555;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.header:hover,
+.header[aria-sort="ascending"],
+.header[aria-sort="descending"] { background-color: #eee; }
+.cell { box-shadow: inset 0 -1px 0 rgba(0,0,0,.15); }
+.number {
+  font-family: "Fira Mono", Consolas, Monaco, monospace;
+  font-size: 16px;
+  line-height: 30px;
+  white-space: pre;
+}
+.container[role="main"],
+.container {
+  min-width: 100% !important;
+  max-width: 100% !important;
+  width: 100%;
+}
+```
