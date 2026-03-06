@@ -59,25 +59,29 @@ predictions_all <- map_dfr(all_rounds, function(rnd) {
       filter(Round.Number == rnd, Predicted_Round == latest_predicted_round)
   }
 }) %>%
-  left_join(actuals, by = "Game") %>%
+  select(-any_of("Margin")) %>%        # drop NA Margin from history
+  left_join(actuals, by = "Game") %>%  # join actual margins cleanly
   mutate(
-    Date = format(as.Date(Date), "%a, %b %d"),
+    Date = as.character(Date),
     Time = as.character(Time)
   )
 
-predictions_all <- predictions_all %>%
-  left_join(actuals, by = "Game") %>%
-  mutate(
-    Date = as.character(Date),
-    Time   = as.character(Time)
-  )
-
-# Ensure Margin column always exists even if no actuals yet
-if (!"Margin" %in% names(predictions_all)) {
-  predictions_all$Margin <- NA_real_
-}
-
 if (!"Time" %in% names(predictions_all)) predictions_all$Time <- NA
+if (!"Margin" %in% names(predictions_all)) predictions_all$Margin <- NA_real_
+
+# Tip correct: predicted winner matches actual winner
+# Margin diff: actual - predicted (from home team perspective)
+predictions_all <- predictions_all %>%
+  mutate(
+    Tip.Correct = case_when(
+      is.na(Margin)              ~ NA,
+      Prediction > 0 & Margin > 0 ~ TRUE,
+      Prediction < 0 & Margin < 0 ~ TRUE,
+      Prediction == 0 | Margin == 0 ~ NA,
+      TRUE                         ~ FALSE
+    ),
+    Margin.Diff = ifelse(!is.na(Margin), Margin - round(Prediction), NA_real_)
+  )
 
 # Default round: earliest round with any missing results
 rounds_with_missing <- predictions_all %>%
@@ -93,7 +97,7 @@ default_round <- if (length(rounds_with_missing) > 0) {
 
 match_cols   <- c("Date", "Time", "Round.Number", "Venue")
 team_cols    <- c("Home.Team", "Away.Team")
-outcome_cols <- c("Prediction", "Probability", "Margin")
+outcome_cols <- c("Prediction", "Probability", "Margin", "Margin.Diff", "Tip.Correct")
 keep_cols    <- c("Game", "Season", match_cols, team_cols, outcome_cols)
 
 # Only keep columns that exist
@@ -175,7 +179,7 @@ create_table <- function(predictions, outcome_cols) {
     defaultSortOrder = "asc",
     defaultColGroup = colGroup(headerClass = "group-header"),
     columnGroups    = list(
-      colGroup(name = "Home Team Prediction", columns = outcome_cols)
+      colGroup(name = "Result", columns = c("Prediction", "Probability", "Margin", "Margin.Diff", "Tip.Correct"))
     ),
     defaultColDef = colDef(class = "cell", headerClass = "header"),
     columns = list(
@@ -183,14 +187,44 @@ create_table <- function(predictions, outcome_cols) {
       Game         = colDef(show = FALSE),
       Day          = colDef(show = FALSE),
       Time         = colDef(show = FALSE),
-      Date         = colDef(show = TRUE, maxWidth = 90),
-      Round.Number = colDef(show = TRUE, name = "Round", maxWidth = 60),
-      Venue        = colDef(show = TRUE, maxWidth = 100),
-      Home.Team    = team_column(name = "Home", maxWidth = 185),
-      Away.Team    = team_column(name = "Away", maxWidth = 185),
-      Prediction   = colDef(show = TRUE, name = "Pred. Margin", maxWidth = 70),
-      Probability  = knockout_column(name = "Prob.", show = TRUE),
-      Margin       = colDef(name = "Actual Margin", show = TRUE, maxWidth = 70)
+      Date         = colDef(show = TRUE, maxWidth = 85),
+      Round.Number = colDef(show = TRUE, name = "Rnd", maxWidth = 45),
+      Venue        = colDef(show = TRUE, maxWidth = 90),
+      Home.Team    = team_column(name = "Home", minWidth = 130),
+      Away.Team    = team_column(name = "Away", minWidth = 130),
+      Prediction   = colDef(show = TRUE, name = "Pred.", maxWidth = 55, align = "center"),
+      Probability  = knockout_column(name = "Prob.", show = TRUE, maxWidth = 60),
+      Margin       = colDef(
+        name     = "Actual",
+        show     = TRUE,
+        maxWidth = 60,
+        align    = "center",
+        cell     = function(value) {
+          if (is.na(value)) return("–")
+          as.character(value)
+        }
+      ),
+      Margin.Diff = colDef(
+        name     = "Diff",
+        show     = TRUE,
+        maxWidth = 60,
+        align    = "center",
+        cell     = function(value) {
+          if (is.na(value)) return("–")
+          if (value > 0) paste0("+", value) else as.character(value)
+        }
+      ),
+      Tip.Correct = colDef(
+        name     = "Tip",
+        show     = TRUE,
+        maxWidth = 45,
+        align    = "center",
+        cell     = function(value) {
+          if (is.na(value))   return("–")
+          if (isTRUE(value))  return("\u2705")   # ✅
+          return("\u274C")                        # ❌
+        }
+      )
     ),
     rowClass = JS("
       function(rowInfo, state) {
@@ -387,12 +421,20 @@ document.addEventListener('DOMContentLoaded', function() {
 ```{css form-css, echo=FALSE}
 .container[role="main"] {
   min-width: 100% !important;
-  max-width: 1054 !important;
+  max-width: 100% !important;
   width: 100%;
 }
 .container {
   min-width: 100% !important;
-  max-width: 1054px !important;
+  max-width: 100% !important;
   width: 100%;
+}
+
+.standings-table {
+  width: 100% !important;
+}
+
+.ReactTable {
+  width: 100% !important;
 }
 ```
