@@ -3,6 +3,7 @@ title: "AFLM Season Predictions"
 description: "ELO ratings and chances of making various finals for every team in the AFLM competition"
 execute:
   freeze: false
+page-layout: full
 ---
 
 ```{r setup, include=FALSE}
@@ -417,15 +418,18 @@ tags$link(href = "https://fonts.googleapis.com/css?family=Karla:400,700|Fira+Mon
 
 ```{css form-css, echo=FALSE}
 /* rmarkdown html documents */
-.container[role="main"] {
-  min-width: 100% !important;
-  max-width: 1054 !important;
+.page-columns .column-body {
+  max-width: 100% !important;
+}
+
+.column-body {
+  max-width: 100% !important;
   width: 100%;
 }
 
+.container[role="main"],
 .container {
-  min-width: 100% !important;
-  max-width: 1054px !important;
+  max-width: 100% !important;
   width: 100%;
 }
 ```
