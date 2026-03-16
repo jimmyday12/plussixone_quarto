@@ -1,0 +1,93 @@
+---
+title: "fitzRoy v1.7.0 on CRAN"
+author: "James Day"
+date: "2025-03-12"
+execute:
+  error: TRUE
+---
+
+I'm pleased to announce that fitzRoy v1.7.0 has just been accepted to CRAN!
+
+You can read about all the changes below.
+
+```{r prep, eval=TRUE, include=TRUE}
+library(fitzRoy)
+```
+
+## New Features
+
+### Fantasy and Supercoach scores
+
+New functions have been added to fetch AFL Fantasy (Dream Team) and Supercoach round scores from Footywire.
+
+-   `fetch_scores()` - Wrapper function to fetch either scoring system. Specify `type = "supercoach"` or `type = "dream_team"` along with a year and rounds.
+-   `fetch_supercoach_scores()` - Fetch Supercoach scores directly.
+-   `fetch_fantasy_scores()` - Fetch AFL Fantasy scores directly.
+
+```{r fetch_scores, eval=TRUE, include=TRUE}
+fitzRoy::fetch_scores(type = "supercoach", year = 2025, rounds = 1) |> head()
+fitzRoy::fetch_scores(type = "dream_team", year = 2025, rounds = 1) |> head()
+```
+
+Each returns player-level data for the specified rounds, including rank, salary, round score, and value.
+
+### AFL Awards
+
+A new `fetch_awards()` wrapper function has been added to retrieve data for three major AFL awards from Footywire.
+
+-   `fetch_awards_brownlow()` - Returns player and team Brownlow vote tallies for a given season.
+-   `fetch_awards_allaustralian()` - Returns the final All-Australian team (22 players) or the initial squad (44 players).
+-   `fetch_rising_star()` - Returns Rising Star nominations and round-level performance stats.
+
+```{r fetch_awards_brownlow, eval=TRUE, include=TRUE}
+# Player vote tallies
+fitzRoy::fetch_awards(2024, award = "brownlow", type = "player")
+
+# Team vote summary
+fitzRoy::fetch_awards(2024, award = "brownlow", type = "team")
+```
+
+```{r fetch_awards_allaustralian, eval=TRUE, include=TRUE}
+fitzRoy::fetch_awards(2023, award = "allaustralian", type = "team")
+fitzRoy::fetch_awards(2023, award = "allaustralian", type = "squad")
+```
+
+```{r fetch_awards_risingstar, eval=TRUE, include=TRUE}
+# All nominations for the season
+fitzRoy::fetch_awards(2024, award = "risingstar", type = "nominations")
+
+# Stats for a specific round's nominees
+fitzRoy::fetch_awards(2024, award = "risingstar", round_number = 5, type = "stats")
+```
+
+### Out-of-contract players
+
+`fetch_outofcontract()` returns a list of players whose contracts expire at the end of a given year — useful for team list analysis and end-of-season trade period research. Data is available from 2025 onwards.
+
+```{r fetch_outofcontract, eval=TRUE, include=TRUE}
+fitzRoy::fetch_outofcontract(year = 2026)
+```
+
+### Team statistics
+
+A new `fetch_team_stats()` wrapper has been added for retrieving team-level aggregate statistics. It supports three sources: AFL Tables, Footywire, and VFL Stats.
+
+```{r fetch_team_stats, eval=TRUE, include=TRUE}
+# Team totals from AFL Tables
+fitzRoy::fetch_team_stats(2024, summary_type = "totals", source = "afltables")
+
+# Per-game averages from Footywire
+fitzRoy::fetch_team_stats(2024, summary_type = "averages", source = "footywire")
+
+# VFL Men's team stats
+fitzRoy::fetch_team_stats(2024, source = "vflstats", comp = "VFLM")
+```
+
+## Bug Fixes
+
+-   Fixed duplicates for most recent game in `fetch_player_stats_afltables()` ([#250](https://github.com/jimmyday12/fitzRoy/issues/250))
+-   Fixed issues for `fetch_player_details` when indigenous names are used ([#261](https://github.com/jimmyday12/fitzRoy/issues/261), [#262](https://github.com/jimmyday12/fitzRoy/issues/262))
+-   Updated `replace_teams()` to handle the new AFL.com.au spelling of *Wallitj Marawar* ([#259](https://github.com/jimmyday12/fitzRoy/issues/259))
+-   Fixed issue with `fetch_player_footywire_stats` not working with the new season
+
+Enjoy!
