@@ -28,13 +28,13 @@ predictions_history <- read_csv(
 
 results <- read_csv(paste0(data_url, "AFLM_results.csv"), show_col_types = FALSE)
 
-# Actual margins for completed games
+# Actual margins for completed games — join by teams + date to avoid Game ID mismatch
 actuals <- results %>%
   filter(Season == current_season) %>%
   mutate(Margin = Home.Points - Away.Points) %>%
-  select(Game, Margin)
+  select(Date, Home.Team, Away.Team, Margin)
 
-completed_games <- actuals$Game
+completed_game_keys <- paste(actuals$Date, actuals$Home.Team, actuals$Away.Team)
 latest_predicted_round <- max(predictions_history$Predicted_Round)
 all_rounds <- sort(unique(predictions_history$Round.Number))
 
@@ -42,8 +42,13 @@ all_rounds <- sort(unique(predictions_history$Round.Number))
 #   - Complete rounds:      prediction made just before that round (Predicted_Round == Round - 1)
 #   - Current/future rounds: latest snapshot
 predictions_all <- map_dfr(all_rounds, function(rnd) {
+  rnd_rows <- predictions_history$Round.Number == rnd
   is_complete <- all(
-    predictions_history$Game[predictions_history$Round.Number == rnd] %in% completed_games
+    paste(
+      predictions_history$Date[rnd_rows],
+      predictions_history$Home.Team[rnd_rows],
+      predictions_history$Away.Team[rnd_rows]
+    ) %in% completed_game_keys
   )
 
   if (is_complete) {
@@ -59,8 +64,8 @@ predictions_all <- map_dfr(all_rounds, function(rnd) {
       filter(Round.Number == rnd, Predicted_Round == latest_predicted_round)
   }
 }) %>%
-  select(-any_of("Margin")) %>%        # drop NA Margin from history
-  left_join(actuals, by = "Game") %>%  # join actual margins cleanly
+  select(-any_of("Margin")) %>%                                    # drop NA Margin from history
+  left_join(actuals, by = c("Date", "Home.Team", "Away.Team")) %>% # join actual margins by teams + date
   mutate(
     Date = as.character(Date),
     Time = as.character(Time)
