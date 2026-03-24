@@ -41,15 +41,11 @@ all_rounds <- sort(unique(predictions_history$Round.Number))
 # For each round, pick the right prediction snapshot:
 #   - Complete rounds:      prediction made just before that round (Predicted_Round == Round - 1)
 #   - Current/future rounds: latest snapshot
+#   - Fall back to earlier snapshots for games missing from the selected snapshot
 predictions_all <- map_dfr(all_rounds, function(rnd) {
-  rnd_rows <- predictions_history$Round.Number == rnd
-  is_complete <- all(
-    paste(
-      predictions_history$Date[rnd_rows],
-      predictions_history$Home.Team[rnd_rows],
-      predictions_history$Away.Team[rnd_rows]
-    ) %in% completed_game_keys
-  )
+  rnd_data <- predictions_history %>% filter(Round.Number == rnd)
+  rnd_keys <- paste(rnd_data$Date, rnd_data$Home.Team, rnd_data$Away.Team)
+  is_complete <- all(rnd_keys %in% completed_game_keys)
 
   if (is_complete) {
     snap <- predictions_history %>%
@@ -57,12 +53,32 @@ predictions_all <- map_dfr(all_rounds, function(rnd) {
       pull(Predicted_Round) %>%
       max(na.rm = TRUE)
     if (is.infinite(snap)) snap <- min(predictions_history$Predicted_Round)
-    predictions_history %>%
+    round_data <- predictions_history %>%
       filter(Round.Number == rnd, Predicted_Round == snap)
   } else {
-    predictions_history %>%
+    round_data <- predictions_history %>%
       filter(Round.Number == rnd, Predicted_Round == latest_predicted_round)
   }
+
+  # Fall back to earlier snapshots for games missing from the selected snapshot
+  all_round_keys <- rnd_data %>%
+    distinct(Date, Home.Team, Away.Team) %>%
+    mutate(key = paste(Date, Home.Team, Away.Team))
+  found_keys <- paste(round_data$Date, round_data$Home.Team, round_data$Away.Team)
+  missing_keys <- setdiff(all_round_keys$key, found_keys)
+
+  if (length(missing_keys) > 0) {
+    missing_info <- all_round_keys %>% filter(key %in% missing_keys)
+    fallback <- predictions_history %>%
+      inner_join(missing_info, by = c("Date", "Home.Team", "Away.Team")) %>%
+      group_by(Date, Home.Team, Away.Team) %>%
+      filter(Predicted_Round == max(Predicted_Round)) %>%
+      ungroup() %>%
+      select(-key)
+    round_data <- bind_rows(round_data, fallback)
+  }
+
+  round_data
 }) %>%
   select(-any_of("Margin")) %>%                                    # drop NA Margin from history
   left_join(actuals, by = c("Date", "Home.Team", "Away.Team")) %>% # join actual margins by teams + date
@@ -87,6 +103,30 @@ predictions_all <- predictions_all %>%
     ),
     Margin.Diff = ifelse(!is.na(Margin), Margin - round(Prediction), NA_real_)
   )
+
+# Add Opening Round (Round 0) from results if not already in predictions
+if (!0 %in% all_rounds) {
+  opening_round <- results %>%
+    filter(Season == current_season, Round.Number == 0) %>%
+    mutate(
+      Margin      = Home.Points - Away.Points,
+      Prediction  = NA_real_,
+      Probability = NA_real_,
+      Tip.Correct = NA,
+      Margin.Diff = NA_real_,
+      Time        = NA_character_,
+      Date        = as.character(Date)
+    ) %>%
+    select(any_of(c("Game", "Season", "Date", "Time", "Round.Number",
+                     "Venue", "Home.Team", "Away.Team",
+                     "Prediction", "Probability", "Margin",
+                     "Tip.Correct", "Margin.Diff")))
+
+  if (nrow(opening_round) > 0) {
+    predictions_all <- bind_rows(opening_round, predictions_all)
+    all_rounds <- sort(unique(predictions_all$Round.Number))
+  }
+}
 
 # Default round: earliest round with any missing results
 rounds_with_missing <- predictions_all %>%
@@ -256,10 +296,11 @@ date <- lubridate::with_tz(Sys.Date(), tzone = "Australia/Melbourne") %>%
 
 # Build round selector options
 round_options <- tagList(lapply(all_rounds, function(r) {
+  label <- if (r == 0) "Opening Round" else paste0("Round ", r)
   tags$option(
     value    = paste0("round-", r),
     selected = if (r == default_round) "selected" else NULL,
-    paste0("Round ", r)
+    label
   )
 }))
 
