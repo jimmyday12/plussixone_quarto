@@ -28,24 +28,18 @@ predictions_history <- read_csv(
 
 results <- read_csv(paste0(data_url, "AFLM_results.csv"), show_col_types = FALSE)
 
-# Actual margins for completed games — join by teams + date to avoid Game ID mismatch
 actuals <- results %>%
   filter(Season == current_season) %>%
   mutate(Margin = Home.Points - Away.Points) %>%
-  select(Date, Home.Team, Away.Team, Margin)
+  select(Game, Margin)
 
-completed_game_keys <- paste(actuals$Date, actuals$Home.Team, actuals$Away.Team)
+completed_games <- actuals$Game
 latest_predicted_round <- max(predictions_history$Predicted_Round)
 all_rounds <- sort(unique(predictions_history$Round.Number))
 
-# For each round, pick the right prediction snapshot:
-#   - Complete rounds:      prediction made just before that round (Predicted_Round == Round - 1)
-#   - Current/future rounds: latest snapshot
-#   - Fall back to earlier snapshots for games missing from the selected snapshot
 predictions_all <- map_dfr(all_rounds, function(rnd) {
   rnd_data <- predictions_history %>% filter(Round.Number == rnd)
-  rnd_keys <- paste(rnd_data$Date, rnd_data$Home.Team, rnd_data$Away.Team)
-  is_complete <- all(rnd_keys %in% completed_game_keys)
+  is_complete <- all(rnd_data$Game %in% completed_games)
 
   if (is_complete) {
     snap <- predictions_history %>%
@@ -61,27 +55,22 @@ predictions_all <- map_dfr(all_rounds, function(rnd) {
   }
 
   # Fall back to earlier snapshots for games missing from the selected snapshot
-  all_round_keys <- rnd_data %>%
-    distinct(Date, Home.Team, Away.Team) %>%
-    mutate(key = paste(Date, Home.Team, Away.Team))
-  found_keys <- paste(round_data$Date, round_data$Home.Team, round_data$Away.Team)
-  missing_keys <- setdiff(all_round_keys$key, found_keys)
+  all_game_ids <- unique(rnd_data$Game)
+  missing_games <- setdiff(all_game_ids, round_data$Game)
 
-  if (length(missing_keys) > 0) {
-    missing_info <- all_round_keys %>% filter(key %in% missing_keys)
+  if (length(missing_games) > 0) {
     fallback <- predictions_history %>%
-      inner_join(missing_info, by = c("Date", "Home.Team", "Away.Team")) %>%
-      group_by(Date, Home.Team, Away.Team) %>%
+      filter(Game %in% missing_games) %>%
+      group_by(Game) %>%
       filter(Predicted_Round == max(Predicted_Round)) %>%
-      ungroup() %>%
-      select(-key)
+      ungroup()
     round_data <- bind_rows(round_data, fallback)
   }
 
   round_data
 }) %>%
-  select(-any_of("Margin")) %>%                                    # drop NA Margin from history
-  left_join(actuals, by = c("Date", "Home.Team", "Away.Team")) %>% # join actual margins by teams + date
+  select(-any_of("Margin")) %>%
+  left_join(actuals, by = "Game") %>%
   mutate(
     Date = as.character(Date),
     Time = as.character(Time)
