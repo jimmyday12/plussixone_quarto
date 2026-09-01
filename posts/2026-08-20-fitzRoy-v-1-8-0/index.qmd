@@ -1,0 +1,81 @@
+---
+title: "fitzRoy v1.8.0 on CRAN"
+author: "James Day"
+date: "2026-08-20"
+execute:
+  error: TRUE
+---
+
+I'm pleased to announce that `fitzRoy` v1.8.0 has just been accepted to CRAN!
+
+This one is a little different to recent releases. There are no headline new functions — instead it's a maintenance release focused on the boring stuff that makes everything else work: faster data loading, scraping that doesn't get blocked, and much better behaviour when a data source is having a bad day.
+
+You can read about all the changes below.
+
+```{r prep, eval=TRUE, include=TRUE}
+library(fitzRoy)
+```
+
+## Faster player stats
+
+`fetch_player_stats_afltables()` and `fetch_player_stats_footywire()` now read canonical Parquet files from the `fitzroy_data` release, rather than the legacy `.rda` files they used previously.
+
+The data you get back is unchanged — same columns, same types, same rows. It just arrives faster, and the cached files are smaller.
+
+```{r parquet, eval=TRUE, include=TRUE}
+fitzRoy::fetch_player_stats_afltables(2024) |> dim()
+```
+
+This adds `nanoparquet` as a dependency, which is a deliberately lightweight Parquet reader with no further dependencies of its own.
+
+## Scraping that doesn't get blocked
+
+Several data sources have added basic bot protection that rejects requests carrying a generic default User-Agent — R's own, or curl's. That was showing up as intermittent, confusing connection failures in functions like `fetch_player_details_footywire()`, `fetch_awards()` and `fetch_team_stats()`.
+
+Rather than pretending to be a browser, fitzRoy now identifies itself honestly:
+
+```         
+fitzRoy R package (https://github.com/jimmyday12/fitzRoy)
+```
+
+If you need to change it — say you're running fitzRoy behind something that requires a particular string — you can:
+
+```{r user_agent, eval=FALSE, include=TRUE}
+options(fitzRoy.user_agent = "your string here")
+```
+
+## Better errors when a site is down
+
+fitzRoy scrapes live websites, so sometimes a source is simply unreachable. Previously that surfaced as whatever the underlying reader happened to throw, which wasn't much help:
+
+```         
+Error: cannot open the connection
+```
+
+`fetch_results_afltables()` now tells you what it was actually trying to do:
+
+```         
+Error in `fetch_results_afltables()`:
+! Could not read data from <https://afltables.com/afl/stats/biglists/bg3.txt>.
+i The site may be unavailable, or you may not have an internet connection.
+x cannot open the connection
+```
+
+This also brings the package in line with CRAN policy, which asks that packages using internet resources fail gracefully with an informative message.
+
+## Bug Fixes
+
+-   Fixed an `R CMD check` ERROR on CRAN's Fedora machine. A test file worked out the current season by calling `fetch_results_afltables()` at the *top level* of the file — and top-level test code runs before the `skip_on_cran()` guards inside the test blocks, so it hit the network unconditionally on check machines that have none ([#290](https://github.com/jimmyday12/fitzRoy/pull/290))
+-   Fixed `fetch_player_details_footywire()`, `fetch_awards()` and `fetch_team_stats()` failing intermittently due to bot protection
+-   Fixed `get_aflw_detailed_data()` emitting a deprecation warning for `get_aflw_cookie()` — a function it called internally, that callers never touched and couldn't see in the public API ([#291](https://github.com/jimmyday12/fitzRoy/issues/291))
+-   Corrected two roxygen examples that pointed at the wrong replacement function ([#291](https://github.com/jimmyday12/fitzRoy/issues/291))
+
+## Under the hood
+
+The test suite has been reworked to cope with data sources being temporarily unreachable ([#292](https://github.com/jimmyday12/fitzRoy/issues/292)).
+
+Because fitzRoy tests against live sites, a brief outage at afltables.com or footywire.com used to fail the whole build — which meant a red CI run usually said more about the internet than about the code, and a genuine regression could hide in the noise. Tests that depend on a live source now skip cleanly when that source can't be reached, and fail only when something is actually broken.
+
+Not something you'll ever see as a user, but it makes every future release easier to trust.
+
+Enjoy!
